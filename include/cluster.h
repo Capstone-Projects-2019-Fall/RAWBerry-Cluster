@@ -23,6 +23,7 @@
 
 #define NODE_MASTER 0
 #define NODE_COLLECTOR 1
+#define TAG_S_RET 1
 
 #define FRAME_RAW_SIZEB (3840 * 2160 * 3)
 

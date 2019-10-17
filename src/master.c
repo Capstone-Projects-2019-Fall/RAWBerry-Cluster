@@ -18,36 +18,60 @@
 #include <mpi.h>
 #include "cluster.h"
 
+#define ACTION_SRECV
+#define ACTION_SSEND
+
 struct status_m{
 	MPI_Request *reqs;
 	int *actions;
 	int *nodes;
-	int vals;
+	void **data;
 	int mvals;
 };
 
-void _init_status(struct status_m *s, int slaves)
+void _init_status(struct status_m *s, int mvals)
 {
-	s->mvals = slaves * 2 + 2;
-	s->vals = 0;
+	s->mvals = mvals;
 	s->reqs = calloc(sizeof(MPI_Request), s->mvals);
 	s->actions = calloc(sizeof(int), s->mvals);
 	s->nodes = calloc(sizeof(int), s->mvals);
+	s->data = malloc(sizeof(void *) * s->mvals);
+}
+
+int _create_resp(struct status_m *s, int action, int node)
+{
+	int i = 0;
+	while((*(s->reqs + i) == MPI_REQUEST_NULL) && i < s->mvals)
+		i++;
+	*(s->actions + i) = action;
+	*(s->nodes + i) = node;
+	return i;
+}
+
+int _wait_status(struct status_m *s)
+{
+	int i; 
+	MPI_Status s;
+	MPI_Waitany(s->mvals, s->reqs, &i,  &s);
+	return i;
 }
 
 int master(struct cluster_args *params, int slaves)
 {
 	buf_handle_t buf;
-	int status;
+	int status, i, c;
 	void *frame;
 	struct status_m statm;
-	statm.vals = 0;
-	statm.mvals = 
-	 = malloc(sizeof(MPI_Request) * (slaves * 2 + 2));
+	_init_status(&statm, slaves * 2 + 2);
 	status = init_input(params, &buf);
+	for(i = 0; i < slaves; i++){
+		c = _create_resp(&m, ACTION_SRECV, 2 + i);
+		MPI_Irecv(&(statm.data[c]), 2, MPI_INT, i + 2, TAG_S_RET,
+			MPI_COMM_WORLD, &(statm.reqs[c]));
+	}
 
 	while(!master_done()){
-		
+		i = _wait_status(&statm);	
 	}
 
 }
