@@ -24,8 +24,9 @@
 #define NODE_MASTER 0
 #define NODE_COLLECTOR 1
 #define TAG_S_RET 1
+#define TAG_S_TO  2
 
-#define FRAME_RAW_SIZEB (3840 * 2160 * 3)
+#define FRAME_RAW_SIZEB (3840 * 2160 * 3 + 8)
 
 struct cluster_args;
 
@@ -59,7 +60,7 @@ int slave(struct cluster_args *params);
 
 //collector node funcs
 
-void collector(struct cluster_args *args);
+int collector(struct cluster_args *args);
 
 int init_stream_server(struct cluster_args *args);
 

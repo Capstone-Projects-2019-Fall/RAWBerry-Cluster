@@ -32,7 +32,7 @@ int cluster(struct cluster_args *params)
 	}
 	MPI_Comm_rank(MPI_COMM_WORLD, &id);
 	if(id == NODE_MASTER){
-		ret = master(params, slaves - 2);
+		ret = master(params, nodes - 2);
 	}else if(id == NODE_COLLECTOR){
 		ret = collector(params);
 	}else{
