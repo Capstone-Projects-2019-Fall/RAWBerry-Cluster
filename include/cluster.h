@@ -30,11 +30,26 @@
 #define FRAME_RAW_SIZEB (3840 * 2160 * 3 + 8)
 #endif
 
+
 struct cluster_args{
 	char *source;
 	long compopts;
 	//TODO: add additional ops as needed 
 };
+
+struct reply{
+	union{
+		uint8_t msg[4];
+		uint32_t msgb;
+	};
+	uint32_t plod;
+};
+
+#define REPLY_MSG_SUCCESS "SCS"
+
+extern int this_node_rank;
+
+int init_mpi(void);
 
 /* 
  * ===  FUNCTION  =============================================================
@@ -63,6 +78,7 @@ int master_done(void);
 //Slave node funcs
 
 int slave(struct cluster_args *params);
+int slave_done(void);
 
 //collector node funcs
 
