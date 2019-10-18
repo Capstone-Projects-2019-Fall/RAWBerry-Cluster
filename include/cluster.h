@@ -26,9 +26,15 @@
 #define TAG_S_RET 1
 #define TAG_S_TO  2
 
+#ifndef FRAME_RAW_SIZEB 
 #define FRAME_RAW_SIZEB (3840 * 2160 * 3 + 8)
+#endif
 
-struct cluster_args;
+struct cluster_args{
+	char *source;
+	long compopts;
+	//TODO: add additional ops as needed 
+};
 
 /* 
  * ===  FUNCTION  =============================================================

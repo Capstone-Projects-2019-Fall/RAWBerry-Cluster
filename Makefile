@@ -14,17 +14,18 @@ TARGET=bin/cluster
 
 all: $(TARGET)
 
-$(TARGET): bin  build
+$(TARGET):  build
 	$(CC) $(CFLAGS) -o $(TARGET) $(OBJECTS) $(LIBS)
 
-bin:
-	mkdir $(OBJDIR)
 
 build: $(OBJECTS)
 
-$(OBJDIR)/%.o: %.c
+$(OBJDIR)/%.o: %.c bin
 	$(CC) $(CFLAGS) -c -o $@ $< $(LIBS)
 
+
+bin:
+	mkdir $(OBJDIR)
 clean:
 	rm $(OBJECTS)
 	rm $(TARGET)

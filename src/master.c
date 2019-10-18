@@ -61,6 +61,7 @@ void _send_frame(struct status_m *s, int to, void *frame)
 	int c, err;
 	c = _create_resp(s, ACTION_SLAVE_SENT, to);
 	err = MPI_Isend(frame, FRAME_RAW_SIZEB, MPI_BYTE, to, TAG_S_TO, MPI_COMM_WORLD, s->reqs + c);
+	*(s->data + c) = frame;
 	if(err != MPI_SUCCESS){
 
 	}
@@ -94,6 +95,7 @@ int master(struct cluster_args *params, int slaves)
 				break;
 			case ACTION_SLAVE_SENT:
 				//TODO: FREE FRAME
+				//free(*(s->data + i));
 				break;
 		}
 	}
