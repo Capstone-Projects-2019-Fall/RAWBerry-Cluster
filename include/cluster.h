@@ -38,14 +38,12 @@ struct cluster_args{
 };
 
 struct reply{
-	union{
-		uint8_t msg[4];
-		uint32_t msgb;
-	};
-	uint32_t plod;
+	uint8_t  message;
+	uint8_t  padding[3];
+	int32_t payload;
 };
 
-#define REPLY_MSG_SUCCESS "SCS"
+#define REPLY_MSG_SUCCESS  0x01
 
 extern int this_node_rank;
 

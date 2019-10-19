@@ -21,17 +21,18 @@
 #include "cluster.h"
 
 int this_node_rank;
+int num_nodes;
 
 int init_mpi(void)
 {
-	int err, sup, nodes;
+	int err, sup;
 	err = MPI_Init_thread(NULL, NULL, MPI_THREAD_FUNNELED, &sup);
 	if(err != MPI_SUCCESS || sup < MPI_THREAD_FUNNELED){
 		fprintf(stderr, "Cannot initialize MPI\n");
 		return -1;
 	}
-	MPI_Comm_size(MPI_COMM_WORLD, &nodes);
-	if(nodes <= 2){
+	MPI_Comm_size(MPI_COMM_WORLD, &num_nodes);
+	if(num_nodes <= 2){
 		fprintf(stderr, 
 			"This program must be run with at least 3 nodes.");
 		return -2;
@@ -42,13 +43,10 @@ int init_mpi(void)
 
 int cluster(struct cluster_args *params)
 {
-	int id, nodes, ret;
-	MPI_Init(NULL, NULL);
-	
-	MPI_Comm_rank(MPI_COMM_WORLD, &id);
-	if(id == NODE_MASTER){
-		ret = master(params, nodes - 2);
-	}else if(id == NODE_COLLECTOR){
+	int  ret;
+	if(this_node_rank == NODE_MASTER){
+		ret = master(params, num_nodes - 2);
+	}else if(this_node_rank == NODE_COLLECTOR){
 		ret = collector(params);
 	}else{
 		ret = slave(params);

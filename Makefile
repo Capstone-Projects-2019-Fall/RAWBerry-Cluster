@@ -26,8 +26,7 @@ $(OBJDIR)/%.o: %.c bin
 
 bin:
 	mkdir $(OBJDIR)
-clean:
-	rm $(OBJECTS)
-	rm $(TARGET)
 
+clean:
+	rm bin/*
 

@@ -20,31 +20,87 @@
 #include <mpi.h>
 
 #include "cluster.h"
+#include "sopool.h"
+
+#define ACTION_FRAME_GET 	1
+#define ACTION_REPLY_DONE 	2
+#define ACTION_SEND_DONE 	3
+#define ACTION_BCAST_ALRT 	4
 
 struct slave_m{
-	MPI_Request in;
-	MPI_Request reply;
-	MPI_Request send;
-	MPI_Request bcast;
+	union{ 
+		struct{ 
+			MPI_Request in;
+			MPI_Request reply;
+			MPI_Request send;
+			MPI_Request bcast;
+		};
+		MPI_Request arr[4];
+	};
 };
 
-#define RPSZ 16
+static int actions[] = { ACTION_FRAME_GET, ACTION_REPLY_DONE, ACTION_SEND_DONE,
+	ACTION_BCAST_ALRT };
+static void *datas[4] = {NULL, NULL, NULL, NULL};
 
-static struct reply rpool[RPSZ];
-static int rpidx;
+static struct sopool reply_pool;
 
-void _slave_reply(struct slave_m *s, uint32_t framenum)
+void _slave_reply_scs(struct slave_m *s, int32_t framenum)
 {
-	struct reply *r = rpool + (rpidx % RPSZ);
-	strcpy(r, REPLY_MSG_SUCCESS);
-	r->plod = framenum;
+	struct reply *r = sopool_get_new(&reply_pool);
+	r->message = REPLY_MSG_SUCCESS;
+	r->payload = framenum;
+	MPI_Isend(r, sizeof(struct reply), MPI_BYTE, NODE_MASTER,  TAG_S_RET,
+			MPI_COMM_WORLD, &s->reply);  
+	datas[1] = r;
+}
+
+int _slave_wait(struct slave_m *s, int *errc)
+{
+	int i;
+	MPI_Status stat;
+	*errc = MPI_Waitany(4, s->arr, &i, &stat);
+	s->arr[i] = MPI_REQUEST_NULL;
+	return actions[i];
+}
+
+static void _recv_frame(struct slave_m *s, void *frame)
+{
+	MPI_Irecv(frame, FRAME_RAW_SIZEB, MPI_BYTE, NODE_MASTER, TAG_S_TO, 
+		MPI_COMM_WORLD, &(s->in));
 }
 
 int slave(struct cluster_args *params)
 {
-
+	int i = 0, errc = 0, frnum = 0;
+	void *frame_in = malloc(FRAME_RAW_SIZEB);
+	struct slave_m ctl = { .arr = { MPI_REQUEST_NULL, MPI_REQUEST_NULL, 
+		MPI_REQUEST_NULL, MPI_REQUEST_NULL } };
+	sopool_init(&reply_pool, sizeof(struct reply), 3, 0);
+	_slave_reply_scs(&ctl, 0);
+	_recv_frame(&ctl, frame_in);
 	while(!slave_done()){
-		
+		i = _slave_wait(&ctl, &errc);
+		if(errc != MPI_SUCCESS){
+			//TODO:Handle error
+		}
+		switch(i){
+			case ACTION_FRAME_GET:
+				//Send to griff
+				_slave_reply_scs(&ctl, frnum);
+				break;
+			case ACTION_REPLY_DONE:
+				sopool_return(&reply_pool, datas[1]);
+				break;
+			case ACTION_SEND_DONE:
+				break;
+			case ACTION_BCAST_ALRT:
+				break;
+
+			default:
+				//ERROR
+				break;
+		}
 	}
 	return 0;
 }
