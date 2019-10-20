@@ -5,10 +5,13 @@
 
 #include "buffer.h"
 
+/*int main(){
+    return EXIT_SUCCESS;
+}*/
 
 //Our Glorious Buffer
 struct buf_t {
-    uint8_t * buffer;
+    gpr_buffer * buffer;
     size_t head;
     size_t tail;
     size_t max; 
@@ -16,10 +19,11 @@ struct buf_t {
 };
 
 
-
+static void adv_pointer(buf_handle_t buf);
+static void ret_pointer(buf_handle_t buf);
 
 //First we need a way to initialize this thing
-buf_handle_t buf_init(uint8_t* buffer, size_t size)
+buf_handle_t buf_init(gpr_buffer* buffer, size_t size)
 {
     assert(buffer && size);
 
@@ -122,17 +126,22 @@ static void ret_pointer(buf_handle_t buf)
 }
 
 //Lets do something fun, how about stick something in this thing
-void buf_put(buf_handle_t buf, uint8_t data)
+void buf_put(buf_handle_t buf, gpr_buffer * data)
 {
     assert(buf && buf->buffer);
-
-    buf->buffer[buf->head] = data;
+    gpr_buffer * dest = (buf->head * sizeof(gpr_buffer)) + &buf->buffer;
+    //printf("%d\n", buf->buffer);
+    //printf("%d\n", (buf->head * sizeof(gpr_buffer)));
+    //printf("%d\n", dest);
+    //printf("%d\n", data->size);
+    memcpy(dest, &data, sizeof(gpr_buffer));
+    //buf->buffer[buf->head] = data;
 
     adv_pointer(buf);
 }
 
 //Wouldn't be very useful if we can't get our stuff back...
-int buf_get(buf_handle_t buf, uint8_t * data)
+int buf_get(buf_handle_t buf, gpr_buffer * data)
 {
     assert(buf && data && buf->buffer);
 
