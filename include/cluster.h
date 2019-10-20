@@ -23,8 +23,10 @@
 
 #define NODE_MASTER 0
 #define NODE_COLLECTOR 1
+#define NSLAVE_START   2
 #define TAG_S_RET 1
 #define TAG_S_TO  2
+#define TAG_B_ALRT 3
 
 #ifndef FRAME_RAW_SIZEB 
 #define FRAME_RAW_SIZEB (3840 * 2160 * 3 + 8)
@@ -46,6 +48,7 @@ struct reply{
 #define REPLY_MSG_SUCCESS  0x01
 
 extern int this_node_rank;
+extern int num_nodes;
 
 int init_mpi(void);
 
@@ -81,7 +84,7 @@ int slave_done(void);
 //collector node funcs
 
 int collector(struct cluster_args *args);
-
+int collector_done(void);
 int init_stream_server(struct cluster_args *args);
 
 
