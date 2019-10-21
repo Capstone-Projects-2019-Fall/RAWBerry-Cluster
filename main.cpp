@@ -9,7 +9,7 @@
 void workerThread(SOCKET s)
 {
     SimStreamer streamer(s, true);                     // our streamer for UDP/TCP based RTP transport
-
+    puts("Simstream made");
     CRtspSession rtsp(s, &streamer);     // our threads RTSP session and state
 
     while (!rtsp.m_stopped)

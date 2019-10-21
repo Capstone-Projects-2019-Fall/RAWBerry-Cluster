@@ -2,6 +2,7 @@
 #include "CStreamer.h"
 
 #define INPUT_PIPE "/tmp/pipe"
+#define BUFF_SIZE 400000000
 
 class SimStreamer : public CStreamer
 {

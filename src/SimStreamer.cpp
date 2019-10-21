@@ -20,6 +20,7 @@ void SimStreamer::streamImage(uint32_t curMsec)
         uint32_t len = 0;
         for(size_t length = 0; buffer[length] != '\0'; length++){
             len = length;
+            printf("len: %lu\n", length);
         }
         //stream frame
         streamFrame(bytes, len, curMsec);
@@ -30,26 +31,16 @@ void SimStreamer::streamImage(uint32_t curMsec)
 }
 
 unsigned char * SimStreamer::readBuffer(){
-    // open pipe
+    // open named pipe
     FILE *pipe = fopen(INPUT_PIPE, "r");
     //if sucessful 
     if (pipe){
-        //get size of file
-        fseek(pipe, 0L, SEEK_END);
-        size_t size = ftell(pipe);
-        rewind(pipe);
-
-        //if nothing in pipe
-        if (size < 1){
-            return NULL;
-        }        
+           
         //read input from the pipe
-        unsigned char *buffer = (unsigned char *) malloc(sizeof(char) * size);
-
-        fread(buffer, size, 1, pipe);
-
-        printf(" 1 %s\n", buffer);
-
+        unsigned char *buffer = (unsigned char *) malloc(sizeof(char) * BUFF_SIZE);
+        fread(buffer, BUFF_SIZE, 1, pipe);
+        
+        printf("%s", buffer);
         //close the pipe 
         fclose(pipe);
 
@@ -58,6 +49,6 @@ unsigned char * SimStreamer::readBuffer(){
     }
     //open failed, panic
     else {
-
+        return NULL;
     }
 }

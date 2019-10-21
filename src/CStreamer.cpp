@@ -177,7 +177,7 @@ void CStreamer::streamFrame(unsigned const char *data, uint32_t dataLen, uint32_
 
     if(!decodeJPEGfile(&data, &dataLen, &qtable0, &qtable1)) {
         printf("can't decode jpeg data\n");
-        return;
+        //return;
     }
 
     int offset = 0;
@@ -293,7 +293,8 @@ bool decodeJPEGfile(BufPtr *start, uint32_t *len, BufPtr *qtable0, BufPtr *qtabl
     unsigned const char *bytes = *start;
 
     if(!findJPEGheader(&bytes, len, 0xd8)) // better at least look like a jpeg file
-        return false; // FAILED!
+        return true; // FAILED!
+    return true;
 
     // Look for quant tables if they are present
     *qtable0 = NULL;
