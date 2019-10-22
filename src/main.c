@@ -19,12 +19,8 @@ void fire(struct cluster_args payload);
 int main(int argc, char **argv){
 
 
-    int read_status;//status of readFiles(..) function
-    int cluster_mpi_status;//status of mpi initialization init_mpi(..)
-    int cluster_status;//number 
     char dir[DIR_LENGTH];//string of directory to ingest to buffer
     long opts;//options parameter for cluster
-
 
     gpr_buffer *buffer = malloc(BUFFER_SIZE * sizeof(gpr_buffer));//define and allocate memory for input-buffer
     buf_handle_t buf = buf_init(buffer, BUFFER_SIZE);//instantiate buffer
@@ -55,6 +51,9 @@ int main(int argc, char **argv){
 }
 
 void initialize(){
+
+    int cluster_mpi_status;//status of mpi initialization init_mpi(..)
+
     //initialize cluster components
     if((cluster_mpi_status = init_mpi()) != 0){
         exit(cluster_mpi_status);//terminate - cluster prints error desc., exit with error status
@@ -62,6 +61,9 @@ void initialize(){
 }
 
 void read(char[] dir, buf_handle_t buf){
+
+    int read_status;//status of readFiles(..) function
+
     //read data to buffer
     if((read_status = readFiles(dir, buf)) != 0){
         exit(read_status);//terminate - exit with error status
@@ -69,6 +71,9 @@ void read(char[] dir, buf_handle_t buf){
 }
 
 void fire(struct cluster_args payload){
+
+    int cluster_status;//number 
+
     //pass buffer handle of datastream and options long to cluster for execution
     if((cluster_status = cluster(payload)) != 0){
         exit(cluster_status);//terminate - cluster prints error desc., exit with error status
