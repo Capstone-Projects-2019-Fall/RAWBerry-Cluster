@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/Documents/streaming-udp-video-master/src/gpr/source/lib/tiny_jpeg/jpeg.c
+tiny_jpeg.h
+/home/pi/Documents/streaming-udp-video-master/src/gpr/source/lib/tiny_jpeg/tiny_jpeg.h
+
+/home/pi/Documents/streaming-udp-video-master/src/gpr/source/lib/tiny_jpeg/tiny_jpeg.h
+stb_image.h
+/home/pi/Documents/streaming-udp-video-master/src/gpr/source/lib/tiny_jpeg/stb_image.h
+tiny_jpeg.h
+/home/pi/Documents/streaming-udp-video-master/src/gpr/source/lib/tiny_jpeg/tiny_jpeg.h
+assert.h
+-
+inttypes.h
+-
+math.h
+-
+stdio.h
+-
+string.h
+-
+windows.h
+-
+
