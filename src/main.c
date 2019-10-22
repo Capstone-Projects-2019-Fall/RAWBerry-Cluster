@@ -10,6 +10,12 @@ Desc: file containing main function, as well as functions to initialize componen
 
 #define DIR_LENGTH 64
 
+
+void initialize();
+void read(char[] dir, buf_handle_t buf);
+void fire(struct cluster_args payload);
+
+
 int main(int argc, char **argv){
 
 
@@ -31,30 +37,15 @@ int main(int argc, char **argv){
 
 
 
+    initialize();//initialize cluster components
+    read(dir, buf);//read contents of dir to buf
 
-    //initialize cluster components
-    if((cluster_mpi_status = init_mpi()) != 0){
-        exit(cluster_mpi_status);//terminate - cluster prints error desc., exit with error status
-    }
-
-
-
-
-    //read data to buffer
-    if((read_status = readFiles(dir, buf)) != 0){
-        exit(read_status);//terminate - exit with error status
-    }
-    //set up cluster entry
     payload.source = buf;//populate cluster_args struct source
     payload.compopts = opts;//populate cluster_args struct opts
 
 
 
-
-    //pass buffer handle of datastream and options long to cluster for execution
-    if((cluster_status = cluster(payload)) != 0){
-        exit(cluster_status);//terminate - cluster prints error desc., exit with error status
-    }
+    fire();
 
 
 
@@ -63,3 +54,23 @@ int main(int argc, char **argv){
 
 }
 
+void initialize(){
+    //initialize cluster components
+    if((cluster_mpi_status = init_mpi()) != 0){
+        exit(cluster_mpi_status);//terminate - cluster prints error desc., exit with error status
+    }
+}
+
+void read(char[] dir, buf_handle_t buf){
+    //read data to buffer
+    if((read_status = readFiles(dir, buf)) != 0){
+        exit(read_status);//terminate - exit with error status
+    }
+}
+
+void fire(struct cluster_args payload){
+    //pass buffer handle of datastream and options long to cluster for execution
+    if((cluster_status = cluster(payload)) != 0){
+        exit(cluster_status);//terminate - cluster prints error desc., exit with error status
+    }
+}
