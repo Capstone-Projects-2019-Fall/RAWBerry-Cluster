@@ -14,6 +14,7 @@ Desc: file containing main function, as well as functions to initialize componen
 
 
 //argp argument parser documentation
+//*************************************************************************
 static char doc[] = "RAWBerry Cluster -- a RAW video compression tool";
 static char args_doc[] = "<DIRECTORY> <CLUSTER_CONFIG>";
 static struct argp_option options[] = {
@@ -25,8 +26,8 @@ struct arguments {
     char *args[2]; //these are our DIRECTORY and CONFIG arguments
     //other variables can be added here for more args, options, etc
 };
-
 static struct argp argp = { options, parse_opt, args_doc, doc};//argp argument parser struct
+//**************************************************************************
 
 void initialize();
 void read(char[] dir, buf_handle_t buf);
@@ -50,12 +51,14 @@ int main(int argc, char **argv){
     dir = arguments.args[0];//first argument is directory to be read to buffer
 
     initialize();//initialize cluster components
+
+    //***NOTE*** left this unthreaded for now to work out integration data path
     read(dir, buf);//read contents of dir to buf
 
     payload.source = buf;//populate cluster_args struct source
     payload.compopts = opts;//populate cluster_args struct opts
 
-    fire();
+    fire(payload);//sends cluster_arguments (source and buffer) to cluster
 
 
 
@@ -64,6 +67,7 @@ int main(int argc, char **argv){
 
 }
 
+//init cluster's mpi procedure
 void initialize(){
 
     int cluster_mpi_status;//status of mpi initialization init_mpi(..)
@@ -74,6 +78,7 @@ void initialize(){
     }
 }
 
+//read contents of DIR to buffer BUF
 void read(char[] dir, buf_handle_t buf){
 
     int read_status;//status of readFiles(..) function
@@ -84,6 +89,7 @@ void read(char[] dir, buf_handle_t buf){
     }
 }
 
+//send buffer and datasource to cluster
 void fire(struct cluster_args payload){
 
     int cluster_status;//number 
