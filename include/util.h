@@ -29,6 +29,10 @@
 			#A, S * M); 						\
 	} 
 
-
+#ifdef TEST
+#define tprintf(S, ...) printf(S, ##__VA_ARGS__); fflush(stdout);
+#else
+#define tprintf(S, ...)
+#endif
 
 #endif   /* ----- #ifndef util_INC  ----- */

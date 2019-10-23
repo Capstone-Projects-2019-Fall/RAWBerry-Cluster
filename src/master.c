@@ -67,7 +67,7 @@ void _init_status(struct status_m *s, int mvals)
 int _create_resp(struct status_m *s, int action, int node)
 {
 	int i = 0;
-	while((*(s->reqs + i) == MPI_REQUEST_NULL) && i < s->mvals)
+	while((*(s->reqs + i) != MPI_REQUEST_NULL) && i < s->mvals)
 		i++;
 	*(s->actions + i) = action;
 	*(s->nodes + i) = node;
@@ -78,7 +78,7 @@ int _wait_status(struct status_m *s, int *errc)
 {
 	int i; 
 	MPI_Status stat;
-	*errc = MPI_Waitany(s->mvals, s->reqs, &i,  &stat);
+	*errc = nb_waitany(s->mvals, s->reqs, &i,  &stat);
 	*(s->reqs + i) = MPI_REQUEST_NULL;
 	return i;
 }
@@ -101,15 +101,16 @@ int master(struct cluster_args *params, int slaves)
 	int errorc = 0;
 	struct status_m statm;
 	void *frame, *tmp;
-
+	tprintf("Master init\n");
 	sopool_init(&frame_pool, FRAME_RAW_SIZEB, 3, SOPOOL_HINT_GROW_1);
 	sopool_init(&reply_pool, sizeof(struct reply), slaves, 0);
 	frame = sopool_get_new(&frame_pool);
 	_init_status(&statm, slaves * 2 + 2);
 	si = init_input(params, &_in);
+	tprintf("Master init\n");
 	for(i = 0; i < slaves; i++){
 		c = _create_resp(&statm, ACTION_SLAVE_AVALIBLE, 2 + i);
-		MPI_Irecv(&(statm.data[c]), 2, MPI_INT, i + 2, TAG_S_RET,
+		errorc =	MPI_Irecv(&(statm.data[c]), 2, MPI_INT, i + 2, TAG_S_RET,
 			MPI_COMM_WORLD, &(statm.reqs[c]));
 	}
 	get_frame(&frame);
