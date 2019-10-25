@@ -21,10 +21,12 @@
 
 #include "cluster.h"
 #include "util.h"
+#include <buffer.h>
 
 #define A_FRAME_AVALIBLE 1
 #define A_FRAMETX_DONE   2
 #define A_BCAST_RECV 	 3
+#define STREAM_PIPE "/tmp/pipe"
 
 static int nslaves;
 static MPI_Request *reqs;
@@ -60,10 +62,10 @@ int _coll_recv_frame(MPI_Status *s, void **frame, int *sz)
 
 void _coll_stream_frame(void *frame, int sz)
 {
-	/* TODO: Connect with streaming server
-	get msec somehow?
-	streamFrame(frame, sz, msec);
-	 */
+	/* write frame to streaming server's input pipe */
+	int pipe_fd = open(STREAM_PIPE, O_WRONLY);
+	write(pipe_fd, frame, FRAME_RAW_SIZEB);
+	close(pipe_fd);
 	tprintf("%s: %d\n", ((char*)frame)+4, *(int*)frame);
 }
 

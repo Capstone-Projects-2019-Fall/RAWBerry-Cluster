@@ -21,6 +21,9 @@
 #define  util_INC
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
 
 #define XCALLOC(A, S, M) 							\
 	A = calloc(S, M); 							\
