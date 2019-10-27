@@ -20,28 +20,11 @@ Desc: Instatiates system components (buffer, cluster), manages UI and creates th
 //*************************************************************************
 static char doc[] = "RAWBerry Cluster -- a RAW video compression tool";
 static char args_doc[] = "<DIRECTORY> <CLUSTER_CONFIG>";
-static struct argp_option options[] = {
-    //here we can choose what options to encore for cluster
-    //some of these may be passed to cluster via payload.ops
-};
-struct arguments {
-    //argument entities
-    char *args[2]; //these are our DIRECTORY and CONFIG arguments
-    //other variables can be added here for more args, options, etc
-};
-static struct argp argp = { options, parse_opt, args_doc, doc};//argp argument parser struct
-//**************************************************************************
-
+static struct argp argp = { options, parse_opt, args_doc, doc};//arguments defined
 
 //thread declarations
 //*************************************************************************
 pthread_t read_t;
-
-struct read_args {
-    char dir[DIR_LENGTH];//string of directory to ingest to buffer
-    buf_handle_t buf;
-}
-//**************************************************************************
 
 
 //function declarations
