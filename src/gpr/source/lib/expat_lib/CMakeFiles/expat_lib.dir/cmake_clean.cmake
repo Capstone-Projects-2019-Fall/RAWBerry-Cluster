@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/expat_lib.dir/xmlparse.c.o"
-  "CMakeFiles/expat_lib.dir/xmlrole.c.o"
-  "CMakeFiles/expat_lib.dir/xmltok.c.o"
-  "CMakeFiles/expat_lib.dir/xmltok_impl.c.o"
   "CMakeFiles/expat_lib.dir/xmltok_ns.c.o"
+  "CMakeFiles/expat_lib.dir/xmltok_impl.c.o"
+  "CMakeFiles/expat_lib.dir/xmlparse.c.o"
+  "CMakeFiles/expat_lib.dir/xmltok.c.o"
+  "CMakeFiles/expat_lib.dir/xmlrole.c.o"
   "libexpat_lib.pdb"
   "libexpat_lib.a"
 )

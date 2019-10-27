@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,25 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/Documents/streaming-udp-video-master/src/gpr/source/lib/common/private/gpr_buffer_auto.cpp
+/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer_auto.cpp
 gpr_buffer.h
-/home/pi/Documents/streaming-udp-video-master/src/gpr/source/lib/common/private/gpr_buffer.h
+/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer.h
 gpr_buffer_auto.h
-/home/pi/Documents/streaming-udp-video-master/src/gpr/source/lib/common/private/gpr_buffer_auto.h
+/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer_auto.h
 stdlib.h
 -
 
-/home/pi/Documents/streaming-udp-video-master/src/gpr/source/lib/common/private/gpr_buffer_auto.h
+/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer_auto.h
 gpr_allocator.h
-/home/pi/Documents/streaming-udp-video-master/src/gpr/source/lib/common/private/gpr_allocator.h
+/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_allocator.h
 gpr_buffer.h
-/home/pi/Documents/streaming-udp-video-master/src/gpr/source/lib/common/private/gpr_buffer.h
+/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer.h
 gpr_platform.h
-/home/pi/Documents/streaming-udp-video-master/src/gpr/source/lib/common/private/gpr_platform.h
+/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_platform.h
 stdc_includes.h
-/home/pi/Documents/streaming-udp-video-master/src/gpr/source/lib/common/private/stdc_includes.h
+/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/stdc_includes.h
 
-/home/pi/Documents/streaming-udp-video-master/src/gpr/source/lib/common/private/stdc_includes.h
+/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/stdc_includes.h
 ctype.h
 -
 assert.h
@@ -48,21 +48,21 @@ string.h
 time.h
 -
 
-src/gpr/source/lib/common/./public/gpr_allocator.h
+source/lib/common/./public/gpr_allocator.h
 gpr_platform.h
-src/gpr/source/lib/common/./public/gpr_platform.h
+source/lib/common/./public/gpr_platform.h
 
-src/gpr/source/lib/common/./public/gpr_buffer.h
+source/lib/common/./public/gpr_buffer.h
 gpr_allocator.h
-src/gpr/source/lib/common/./public/gpr_allocator.h
+source/lib/common/./public/gpr_allocator.h
 gpr_platform.h
-src/gpr/source/lib/common/./public/gpr_platform.h
+source/lib/common/./public/gpr_platform.h
 
-src/gpr/source/lib/common/./public/gpr_platform.h
+source/lib/common/./public/gpr_platform.h
 stdlib.h
 -
 stdint.h
 -
 TargetConditionals.h
-src/gpr/source/lib/common/./public/TargetConditionals.h
+source/lib/common/./public/TargetConditionals.h
 

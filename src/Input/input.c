@@ -116,13 +116,13 @@ int openImage(char* filePath, buf_handle_t buf){
     }
     buf_put(buf, &output_buffer);
     //Temp Write out file for giggles
-    char* output_file_path = filePath;
+    /*char* output_file_path = filePath;
     int len = strlen(filePath);
     output_file_path[(len - 3)] = 'R';
     output_file_path[(len - 2)] = 'A';
     output_file_path[(len - 1)] = 'W';
 
-    write_to_file( &output_buffer, output_file_path );
+    write_to_file( &output_buffer, output_file_path );*/
     return 0;
 }
 

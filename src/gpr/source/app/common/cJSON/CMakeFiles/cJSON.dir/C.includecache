@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/Documents/streaming-udp-video-master/src/gpr/source/app/common/cJSON/cJSON.c
+/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/common/cJSON/cJSON.c
 string.h
 -
 stdio.h
@@ -24,13 +24,13 @@ ctype.h
 locale.h
 -
 cJSON.h
-/home/pi/Documents/streaming-udp-video-master/src/gpr/source/app/common/cJSON/cJSON.h
+/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/common/cJSON/cJSON.h
 
-/home/pi/Documents/streaming-udp-video-master/src/gpr/source/app/common/cJSON/cJSON.h
+/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/common/cJSON/cJSON.h
 stddef.h
 -
 
-/home/pi/Documents/streaming-udp-video-master/src/gpr/source/app/common/cJSON/cJSON_Utils.c
+/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/common/cJSON/cJSON_Utils.c
 ctype.h
 -
 string.h
@@ -42,9 +42,9 @@ stdio.h
 limits.h
 -
 cJSON_Utils.h
-/home/pi/Documents/streaming-udp-video-master/src/gpr/source/app/common/cJSON/cJSON_Utils.h
+/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/common/cJSON/cJSON_Utils.h
 
-/home/pi/Documents/streaming-udp-video-master/src/gpr/source/app/common/cJSON/cJSON_Utils.h
+/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/common/cJSON/cJSON_Utils.h
 cJSON.h
-/home/pi/Documents/streaming-udp-video-master/src/gpr/source/app/common/cJSON/cJSON.h
+/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/common/cJSON/cJSON.h
 

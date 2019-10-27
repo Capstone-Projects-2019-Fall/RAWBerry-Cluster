@@ -5,8 +5,8 @@ Author: Patrick Pettus (tuf50784@temple.edu), 10/19/19
 Desc: file containing main function, as well as functions to initialize components and read data into Cluster
 */
 
-#include <cluster.h>
-#include <input.h>
+#include "cluster.h"
+#include "input.h"
 #include <argp.h>
 
 
