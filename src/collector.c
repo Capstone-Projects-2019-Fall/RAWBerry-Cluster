@@ -18,6 +18,7 @@
 
 #include <stdlib.h>
 #include <mpi.h>
+#include <unistd.h>
 
 #include "cluster.h"
 #include "util.h"
@@ -64,7 +65,8 @@ void _coll_stream_frame(void *frame, int sz)
 {
 	/* write frame to streaming server's input pipe */
 	int pipe_fd = open(STREAM_PIPE, O_WRONLY);
-	write(pipe_fd, frame, FRAME_RAW_SIZEB);
+	write(pipe_fd, &sz, sizeof(int));
+	write(pipe_fd, frame, sz);
 	close(pipe_fd);
 	tprintf("%s: %d\n", ((char*)frame)+4, *(int*)frame);
 }
