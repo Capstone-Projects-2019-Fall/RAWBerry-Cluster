@@ -14,6 +14,7 @@ include_directories( "../common/argument_parser" )
 include_directories( "../common/TinyJPEG" )
 include_directories( "../../lib/common/public" )
 include_directories( "../../lib/vc5_common" )
+include_directories( "../../lib/common/private" )
 
 include_directories(${MPI_INCLUDE_PATH})
 

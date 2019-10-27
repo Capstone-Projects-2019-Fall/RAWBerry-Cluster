@@ -246,8 +246,8 @@ source/app/vc5_decoder_app/preinstall:
 # Target rules for target source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir
 
 # All Build rule for target.
-source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/all: source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
 source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/all: source/lib/common/CMakeFiles/common.dir/all
+source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/all: source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
 source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/all: source/lib/vc5_decoder/CMakeFiles/vc5_decoder.dir/all
 source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/all: source/lib/md5_lib/CMakeFiles/md5_lib.dir/all
 source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/all: source/app/common/argument_parser/CMakeFiles/argument_parser.dir/all
@@ -360,8 +360,8 @@ source/app/vc5_encoder_app/preinstall:
 # Target rules for target source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir
 
 # All Build rule for target.
-source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all: source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
 source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all: source/lib/common/CMakeFiles/common.dir/all
+source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all: source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
 source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all: source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/all
 source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all: source/lib/md5_lib/CMakeFiles/md5_lib.dir/all
 source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all: source/app/common/argument_parser/CMakeFiles/argument_parser.dir/all
@@ -859,11 +859,11 @@ source/app/gpr_tools/preinstall:
 # Target rules for target source/app/gpr_tools/CMakeFiles/gpr_tools.dir
 
 # All Build rule for target.
-source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
 source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/common/CMakeFiles/common.dir/all
+source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
 source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/vc5_decoder/CMakeFiles/vc5_decoder.dir/all
-source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/all
 source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/all
+source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/all
 source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/all
 source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/xmp_core/CMakeFiles/xmp_core.dir/all
 source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/expat_lib/CMakeFiles/expat_lib.dir/all
@@ -925,11 +925,11 @@ source/app/RAWBerry/preinstall:
 # Target rules for target source/app/RAWBerry/CMakeFiles/RAWBerry.dir
 
 # All Build rule for target.
-source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/common/CMakeFiles/common.dir/all
+source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/vc5_decoder/CMakeFiles/vc5_decoder.dir/all
-source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/all
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/all
+source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/all
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/all
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/xmp_core/CMakeFiles/xmp_core.dir/all
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/expat_lib/CMakeFiles/expat_lib.dir/all

@@ -20,6 +20,7 @@ source/app/RAWBerry/CMakeFiles/RAWBerry.dir/collector.c.o: /usr/include/mpich/mp
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o: source/app/RAWBerry/buffer.h
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o: source/app/RAWBerry/input.c
+source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o: source/app/RAWBerry/../../lib/common/private/timer.h
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o: source/app/RAWBerry/../../lib/common/public/gpr_allocator.h
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o: source/app/RAWBerry/../../lib/common/public/gpr_buffer.h
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o: source/app/RAWBerry/../../lib/common/public/gpr_platform.h
@@ -28,6 +29,11 @@ source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o: source/app/RAWBerry/../..
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o: source/app/RAWBerry/../../lib/gpr_sdk/public/gpr_exif_info.h
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o: source/app/RAWBerry/../../lib/gpr_sdk/public/gpr_profile_info.h
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o: source/app/RAWBerry/../../lib/gpr_sdk/public/gpr_tuning_info.h
+source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o: source/app/RAWBerry/../../lib/vc5_common/config.h
+source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o: source/app/RAWBerry/../../lib/vc5_common/error.h
+source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o: source/app/RAWBerry/../../lib/vc5_common/types.h
+source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o: source/app/RAWBerry/../../lib/vc5_common/vc5_common.h
+source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o: source/app/RAWBerry/../../lib/vc5_encoder/vc5_encoder.h
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/main.c.o: source/app/RAWBerry/buffer.h
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/main.c.o: source/app/RAWBerry/cluster.h

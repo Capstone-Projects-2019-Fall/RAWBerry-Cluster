@@ -18,12 +18,19 @@
 #include "gpr_allocator.h"
 #include "gpr_buffer.h"
 #include "buffer.h"
+#include "vc5_encoder.h"
+#include "timer.h"
+#include "config.h"
 
 #define EXAMPLE_BUFFER_SIZE 10
+#define INPUT_WIDTH 1952
+#define INPUT_HEIGHT 1112
+
 
 int readFiles(char* directory, buf_handle_t buf);
 int openImage(char* filePath, buf_handle_t buf);
 void print_buffer_status(buf_handle_t buf);
+int encodeImage(gpr_buffer * output_buffer, vc5_encoder_parameters * vc5_encoder_params, gpr_buffer * vc5_image);
 
 /*int main(int argc, char **argv)
 {
@@ -61,7 +68,7 @@ if ((dir = opendir (directory)) != NULL) {
 	openImage(fullpath, buf);
 	/* use fullpath */
 	free(fullpath);
-	print_buffer_status(buf);
+	//print_buffer_status(buf);
     //Do Things with files
     
   }
@@ -106,7 +113,6 @@ int openImage(char* filePath, buf_handle_t buf){
     
     int success = gpr_convert_dng_to_raw( &allocator, &input_buffer, &output_buffer );
     printf ("%s\n", filePath);
-	
     gpr_parameters_destroy(&params, allocator.Free);
 	
     if( success == 0 )
@@ -114,17 +120,51 @@ int openImage(char* filePath, buf_handle_t buf){
         printf("Conversion failed \n");
         return -1;
     }
-    buf_put(buf, &output_buffer);
-    //Temp Write out file for giggles
-    /*char* output_file_path = filePath;
-    int len = strlen(filePath);
-    output_file_path[(len - 3)] = 'R';
-    output_file_path[(len - 2)] = 'A';
-    output_file_path[(len - 1)] = 'W';
+    //buf_put(buf, &output_buffer);
 
-    write_to_file( &output_buffer, output_file_path );*/
+    gpr_buffer vc5_image = { NULL, 0  };
+	
+   vc5_encoder_parameters vc5_encoder_params;
+    vc5_encoder_parameters_set_default(&vc5_encoder_params);
+    vc5_encoder_params.enabled_parts    = VC5_ENABLED_PARTS;
+   vc5_encoder_params.input_width      = INPUT_WIDTH;
+    vc5_encoder_params.input_height     = INPUT_HEIGHT;
+    vc5_encoder_params.input_pitch      = INPUT_WIDTH * 2;
+    vc5_encoder_params.mem_alloc        = malloc;
+    vc5_encoder_params.mem_free         = free;
+
+    encodeImage(&output_buffer, &vc5_encoder_params, &vc5_image);
+    //LogPrint("Encoding %.3f secs per frame", encodeImage(&output_buffer, vc5_encoder_params, &vc5_image));
+    //Temp Write out file for giggles
+    char* output_file_path = filePath;
+    int len = strlen(filePath);
+    output_file_path[(len - 3)] = 'V';
+    output_file_path[(len - 2)] = 'C';
+    output_file_path[(len - 1)] = '5';
+
+    
+    if( write_to_file( &vc5_image, output_file_path ) )
+        {
+            LogPrint("Error writing bitstream to location %s",  output_file_path);
+            return -1;
+        }
     return 0;
 }
+
+int encodeImage(gpr_buffer * output_buffer, vc5_encoder_parameters * vc5_encoder_params, gpr_buffer * vc5_image){
+	TIMER timer;
+    	InitTimer(&timer);
+	
+	StartTimer(&timer);
+        vc5_encoder_process( vc5_encoder_params, output_buffer, vc5_image, NULL );
+        StopTimer(&timer);
+        assert( vc5_image->buffer && vc5_image->size > 0 );
+	return TimeSecs(&timer);
+
+}
+
+
+
 
 void print_buffer_status(buf_handle_t buf)
 {

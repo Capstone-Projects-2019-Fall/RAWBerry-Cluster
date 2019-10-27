@@ -29,6 +29,7 @@
 #include "logcurve.h"
 #include "common_app_def.h"
 
+
 using namespace std;
 
 class my_argument_parser : public argument_parser

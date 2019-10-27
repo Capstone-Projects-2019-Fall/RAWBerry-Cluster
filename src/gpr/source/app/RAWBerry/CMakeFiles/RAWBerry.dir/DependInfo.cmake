@@ -32,6 +32,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "source/app/RAWBerry/../common/TinyJPEG"
   "source/app/RAWBerry/../../lib/common/public"
   "source/app/RAWBerry/../../lib/vc5_common"
+  "source/app/RAWBerry/../../lib/common/private"
   "/usr/include/mpich"
   "source/app/RAWBerry/../../lib/vc5_decoder"
   "source/app/RAWBerry/../../lib/vc5_encoder"
