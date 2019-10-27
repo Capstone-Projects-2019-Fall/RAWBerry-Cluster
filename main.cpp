@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
     sockaddr_in ClientAddr;                                   // address parameters of a new RTSP client
     socklen_t ClientAddrLen = sizeof(ClientAddr);
 
-   
+    
     printf("running RTSP server\n");
 
     ServerAddr.sin_family      = AF_INET;

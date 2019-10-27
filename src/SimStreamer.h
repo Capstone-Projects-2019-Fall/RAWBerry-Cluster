@@ -12,5 +12,5 @@ public:
 
     virtual void    streamImage(uint32_t curMsec);
 private:
-    unsigned char * readBuffer();
+    unsigned char * readPipe();
 };

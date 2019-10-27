@@ -29,6 +29,19 @@ CStreamer::~CStreamer()
     udpsocketclose(m_RtcpSocket);
 };
 
+/*
+    Warning: Uses a non-standard rtp packet format to for higher sequence counter. Increases max transfer to ~1TB, instead of ~ 40MB. 
+    Packet Structure is as follows:
+    
+    Byte: |      0        |      1        |      2 to 5   |      6 to 9       |      10 to 13     |       14+           |
+    Bits: |0|1|2|3|4|5|6|7|0|1|2|3|4|5|6|7|   |   |   |   |    |    |    |    |    |    |    |    | | | | | | | | | | | |
+          | V |P|X|   CC  |M|    PT       |Sequence Number|      TimeStamp    |      SSRC         |      *PAYLOAD*      |
+
+    All our client actually looks at is the Last Packet Marker (M), Sequence, TimeStamp, and Payload, so they need to be in the right spots
+    Also, it only does UDP so the TCP Header is not included, and can be ignored
+
+*/
+
 int CStreamer::SendRtpPacket(unsigned const char * jpeg, int jpegLen, int fragmentOffset, BufPtr quant0tbl, BufPtr quant1tbl)
 {
 #define KRtpHeaderSize 12           // size of the RTP header
@@ -47,7 +60,7 @@ int CStreamer::SendRtpPacket(unsigned const char * jpeg, int jpegLen, int fragme
     uint8_t q = includeQuantTbl ? 128 : 0x5e;
 
     static char RtpBuf[2048]; // Note: we assume single threaded, this large buf we keep off of the tiny stack
-    int RtpPacketSize = fragmentLen + KRtpHeaderSize + KJpegHeaderSize + (includeQuantTbl ? (4 + 64 * 2) : 0);
+    int RtpPacketSize = (fragmentLen + KRtpHeaderSize);
 
     memset(RtpBuf,0x00,sizeof(RtpBuf));
     // Prepare the first 4 byte of the packet. This is the Rtp over Rtsp header in case of TCP based transport
@@ -57,18 +70,23 @@ int CStreamer::SendRtpPacket(unsigned const char * jpeg, int jpegLen, int fragme
     RtpBuf[3]  = (RtpPacketSize & 0x000000FF);
     // Prepare the 12 byte RTP header
     RtpBuf[4]  = 0x80;                               // RTP version
-    RtpBuf[5]  = 0x1a | (isLastFragment ? 0x80 : 0x00);                               // JPEG payload (26) and marker bit
-    RtpBuf[7]  = m_SequenceNumber & 0x0FF;           // each packet is counted with a sequence counter
-    RtpBuf[6]  = m_SequenceNumber >> 8;
-    RtpBuf[8]  = (m_Timestamp & 0xFF000000) >> 24;   // each image gets a timestamp
-    RtpBuf[9]  = (m_Timestamp & 0x00FF0000) >> 16;
-    RtpBuf[10] = (m_Timestamp & 0x0000FF00) >> 8;
-    RtpBuf[11] = (m_Timestamp & 0x000000FF);
-    RtpBuf[12] = 0x13;                               // 4 byte SSRC (sychronization source identifier)
-    RtpBuf[13] = 0xf9;                               // we just an arbitrary number here to keep it simple
-    RtpBuf[14] = 0x7e;
-    RtpBuf[15] = 0x67;
+    RtpBuf[5]  = 0x60 | (isLastFragment ? 0x80 : 0x00);   // Dynamic payload (96) and marker bit
+    RtpBuf[6]  = m_SequenceNumber & 0x0FF;           // each packet is counted with a sequence counter
+    RtpBuf[7]  = (m_SequenceNumber >> 8) & 0x0FF;
+    RtpBuf[8]  = (m_SequenceNumber >> 16) & 0x0FF;
+    RtpBuf[9]  = (m_SequenceNumber >> 24) & 0x0FF;
+    RtpBuf[10]  = (m_Timestamp & 0xFF000000) >> 24;   // each image gets a timestamp
+    RtpBuf[11]  = (m_Timestamp & 0x00FF0000) >> 16;
+    RtpBuf[12] = (m_Timestamp & 0x0000FF00) >> 8;
+    RtpBuf[13] = (m_Timestamp & 0x000000FF);
+    RtpBuf[14] = 0x13;                               // 4 byte SSRC (sychronization source identifier)
+    RtpBuf[15] = 0xf9;                               // we just an arbitrary number here to keep it simple
+    RtpBuf[16] = 0x7e;
+    RtpBuf[17] = 0x67;
 
+
+    //Removed to allow other formats
+    #ifdef JPEG
     // Prepare the 8 byte payload JPEG header
     RtpBuf[16] = 0x00;                               // type specific
     RtpBuf[17] = (fragmentOffset & 0x00FF0000) >> 16;                               // 3 byte fragmentation offset for fragmented images
@@ -102,7 +120,10 @@ int CStreamer::SendRtpPacket(unsigned const char * jpeg, int jpegLen, int fragme
         memcpy(RtpBuf + headerLen, quant1tbl, numQantBytes);
         headerLen += numQantBytes;
     }
-    // printf("Sending timestamp %d, seq %d, fragoff %d, fraglen %d, jpegLen %d\n", m_Timestamp, m_SequenceNumber, fragmentOffset, fragmentLen, jpegLen);
+    #endif
+
+    int headerLen = 18;
+    printf("Sending timestamp %d, seq %d, fragoff %d, fraglen %d, jpegLen %d\n", m_Timestamp, m_SequenceNumber, fragmentOffset, fragmentLen, jpegLen);
 
     // append the JPEG scan data to the RTP buffer
     memcpy(RtpBuf + headerLen,jpeg + fragmentOffset, fragmentLen);
@@ -115,11 +136,14 @@ int CStreamer::SendRtpPacket(unsigned const char * jpeg, int jpegLen, int fragme
     socketpeeraddr(m_Client, &otherip, &otherport);
 
     // RTP marker bit must be set on last fragment
-    if (m_TCPTransport) // RTP over RTSP - we send the buffer + 4 byte additional header
+    if (m_TCPTransport){ // RTP over RTSP - we send the buffer + 4 byte additional header
         socketsend(m_Client,RtpBuf,RtpPacketSize + 4);
-    else                // UDP - we send just the buffer by skipping the 4 byte RTP over RTSP header
+        puts("TCP Packet Sent");
+    }
+    else{                // UDP - we send just the buffer by skipping the 4 byte RTP over RTSP header
         udpsocketsend(m_RtpSocket,&RtpBuf[4],RtpPacketSize, otherip, m_RtpClientPort);
-
+        puts("UDP Packet Sent");
+    }
     return isLastFragment ? 0 : fragmentOffset;
 };
 
@@ -175,10 +199,10 @@ void CStreamer::streamFrame(unsigned const char *data, uint32_t dataLen, uint32_
     // locate quant tables if possible
     BufPtr qtable0, qtable1;
 
-    if(!decodeJPEGfile(&data, &dataLen, &qtable0, &qtable1)) {
-        printf("can't decode jpeg data\n");
+    //if(!decodeJPEGfile(&data, &dataLen, &qtable0, &qtable1)) {
+        //printf("can't decode jpeg data\n");
         //return;
-    }
+    //}
 
     int offset = 0;
     do {
@@ -211,6 +235,7 @@ void CStreamer::streamFrame(unsigned const char *data, uint32_t dataLen, uint32_
 // SOS da
 // EOI d9 (no need to strip data after this RFC says client will discard)
 bool findJPEGheader(BufPtr *start, uint32_t *len, uint8_t marker) {
+    return false;
     // per https://en.wikipedia.org/wiki/JPEG_File_Interchange_Format
     unsigned const char *bytes = *start;
 
@@ -292,9 +317,9 @@ bool decodeJPEGfile(BufPtr *start, uint32_t *len, BufPtr *qtable0, BufPtr *qtabl
     // per https://en.wikipedia.org/wiki/JPEG_File_Interchange_Format
     unsigned const char *bytes = *start;
 
-    if(!findJPEGheader(&bytes, len, 0xd8)) // better at least look like a jpeg file
-        return true; // FAILED!
-    return true;
+    //if(!findJPEGheader(&bytes, len, 0xd8)) // better at least look like a jpeg file
+    //    return true; // FAILED!
+    //return true;
 
     // Look for quant tables if they are present
     *qtable0 = NULL;
