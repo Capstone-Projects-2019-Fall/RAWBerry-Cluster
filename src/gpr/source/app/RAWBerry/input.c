@@ -25,6 +25,10 @@
 #define EXAMPLE_BUFFER_SIZE 10
 #define INPUT_WIDTH 1952
 #define INPUT_HEIGHT 1112
+#define INPUT_PIPE "/tmp/pipe"
+#define BUFF_SIZE 400000000
+
+FILE *pipe;
 
 
 int readFiles(char* directory, buf_handle_t buf);
@@ -55,6 +59,9 @@ int readFiles(char* directory, buf_handle_t buf){
 	
 DIR *dir;
 struct dirent *ent;
+
+    printf("Opening Pipe\n");
+    pipe = fopen(INPUT_PIPE, "w");
 
 
 if ((dir = opendir (directory)) != NULL) {
@@ -141,13 +148,20 @@ int openImage(char* filePath, buf_handle_t buf){
     output_file_path[(len - 3)] = 'V';
     output_file_path[(len - 2)] = 'C';
     output_file_path[(len - 1)] = '5';
+	
+
+    if (pipe){
+
+        write(pipe, &vc5_image.buffer, vc5_image.size);
+	printf("Wrote %d Bytes\n",vc5_image.size);
+    }
 
     
-    if( write_to_file( &vc5_image, output_file_path ) )
+ /*   if( write_to_file( &vc5_image, output_file_path ) )
         {
             LogPrint("Error writing bitstream to location %s",  output_file_path);
             return -1;
-        }
+        }*/
     return 0;
 }
 
