@@ -2,12 +2,15 @@
 File: main.c
 Author: Patrick Pettus (tuf50784@temple.edu), 10/19/19
 
-Desc: file containing main function, as well as functions to initialize components and read data into Cluster
+Desc: Instatiates system components (buffer, cluster), manages UI and creates thread to concurrently read data to buffer while cluster executes
+
 */
 
 #include <cluster.h>
 #include <input.h>
 #include <argp.h>
+#include <unistd.h>
+#include <pthread.h>
 
 
 #define DIR_LENGTH 64
@@ -29,37 +32,56 @@ struct arguments {
 static struct argp argp = { options, parse_opt, args_doc, doc};//argp argument parser struct
 //**************************************************************************
 
+
+//thread declarations
+//*************************************************************************
+pthread_t read_t;
+
+struct read_args {
+    char dir[DIR_LENGTH];//string of directory to ingest to buffer
+    buf_handle_t buf;
+}
+//**************************************************************************
+
+
+//function declarations
 void initialize();
-void read(char[] dir, buf_handle_t buf);
+void* threaded_read(void *ptr);
 void fire(struct cluster_args payload);
 
-
+//this funcion parses command-line input, initializes cluster components, creates reader thread and fires cluster
 int main(int argc, char **argv){
 
 
-    char dir[DIR_LENGTH];//string of directory to ingest to buffer
     long opts;//options parameter for cluster
 
     gpr_buffer *buffer = malloc(BUFFER_SIZE * sizeof(gpr_buffer));//define and allocate memory for input-buffer
-    buf_handle_t buf = buf_init(buffer, BUFFER_SIZE);//instantiate buffer
+    buf = buf_init(buffer, BUFFER_SIZE);//instantiate buffer
+
     
     struct arguments arguments;//argp parser arguments
     struct cluster_args payload;//payload gets populated when command line arguments are parsed
-
+    struct read_args read_args;//structure to pass file io orguments to read thread
 
     argp_parse(&argp, argc, argv, 0, 0, &arguments);//parse arguments
+
+    buf = buf_init(buffer, BUFFER_SIZE);//instantiate buffer
     dir = arguments.args[0];//first argument is directory to be read to buffer
+    read_args.buf = buf;
+    read_args.dir = dir;
+    
 
     initialize();//initialize cluster components
 
-    //***NOTE*** left this unthreaded for now to work out integration data path
-    read(dir, buf);//read contents of dir to buf
+    pthread_create(&read_t, NULL, threaded_read, (void*)read_args);//create new thread to read directory contents into buffer - cluster fired from parent thread
+    //*NOTE - no join added here, since we want the cluster to begin concurrent with the buffer read-in
+    //may need to add some delay to master to allow for thread overhead/buffer head-start
 
     payload.source = buf;//populate cluster_args struct source
     payload.compopts = opts;//populate cluster_args struct opts
 
-    fire(payload);//sends cluster_arguments (source and buffer) to cluster
 
+    fire(payload);//sends cluster_arguments (source and buffer) to cluster
 
 
     //free data structures
@@ -78,8 +100,8 @@ void initialize(){
     }
 }
 
-//read contents of DIR to buffer BUF
-void read(char[] dir, buf_handle_t buf){
+//create thread to read contents of DIR to buffer BUF
+void* threaded_read(char[] dir, buf_handle_t buf){
 
     int read_status;//status of readFiles(..) function
 
