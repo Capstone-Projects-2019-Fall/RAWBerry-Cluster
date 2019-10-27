@@ -38,38 +38,24 @@ void SimStreamer::streamImage(uint32_t curMsec)
 
 //
 unsigned char * SimStreamer::readPipe(){
-    
+    size_t *frame_size = (size_t*)malloc(sizeof(int));
+    size_t bytes_read = 0;
     int pipe_fd;
 
 
     pipe_fd = open(INPUT_PIPE, O_RDONLY);
     if (pipe){
-        read(pipe_fd, frame_size, )
+        //get size of frame
+        read(pipe_fd, frame_size, sizeof(size_t));
+        //read untill full frame is captured
+        unsigned char *buffer = (unsigned char*)malloc(*frame_size + 1);
+        while (bytes_read != *frame_size){
+            bytes_read += read(pipe_fd, buffer, *frame_size - bytes_read);
+        }
+        //return buffer
+        return buffer;
         
     }
-    unsigned char *buffer = (unsigned char *) malloc(sizeof(char) * BUFF_SIZE);
-    read(pipe_fd, buffer, BUFF_SIZE);
-    return buffer;
-    
-    #ifdef N
-    // open named pip
-    FILE *pipe = fopen(INPUT_PIPE, "r");
-    //if sucessful 
-    if (pipe){
-        puts("Pipe Open");
-        //read input from the pipe
-        unsigned char *buffer = (unsigned char *) malloc(sizeof(char) * BUFF_SIZE);
-        fread(buffer, BUFF_SIZE, 1, pipe);
-        //close the pipe 
-        fclose(pipe);
-
-        //return the buffer
-        return buffer;
-    }
-    //open failed, panic
-    else {
-        puts("PIPE Failed :(");
-        return NULL;
-    }
-    #endif
+    else return NULL;
 }
+    
