@@ -20,7 +20,11 @@ stdbool.h
 assert.h
 -
 
-/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/input.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/cluster.h
+buffer.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/buffer.h
+
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/input.h
 stdio.h
 -
 stdlib.h
@@ -37,16 +41,6 @@ dirent.h
 -
 string.h
 -
-fcntl.h
--
-unistd.h
--
-fcntl.h
--
-sys/stat.h
--
-sys/types.h
--
 gpr.h
 /home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/gpr.h
 gpr_allocator.h
@@ -55,15 +49,17 @@ gpr_buffer.h
 /home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/gpr_buffer.h
 buffer.h
 /home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/buffer.h
-vc5_encoder.h
-/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/vc5_encoder.h
-timer.h
-/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/timer.h
-config.h
-/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/config.h
 
-source/app/RAWBerry/../../lib/common/private/timer.h
-time.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/main.c
+cluster.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/cluster.h
+input.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/input.h
+argp.h
+-
+sys/types.h
+-
+unistd.h
 -
 
 source/app/RAWBerry/../../lib/common/public/gpr_allocator.h
@@ -117,26 +113,4 @@ source/app/RAWBerry/../../lib/gpr_sdk/public/gpr_platform.h
 source/app/RAWBerry/../../lib/gpr_sdk/public/gpr_tuning_info.h
 gpr_platform.h
 source/app/RAWBerry/../../lib/gpr_sdk/public/gpr_platform.h
-
-source/app/RAWBerry/../../lib/vc5_common/config.h
-
-source/app/RAWBerry/../../lib/vc5_common/error.h
-
-source/app/RAWBerry/../../lib/vc5_common/types.h
-
-source/app/RAWBerry/../../lib/vc5_common/vc5_common.h
-config.h
-source/app/RAWBerry/../../lib/vc5_common/config.h
-
-source/app/RAWBerry/../../lib/vc5_encoder/vc5_encoder.h
-error.h
-source/app/RAWBerry/../../lib/vc5_encoder/error.h
-types.h
-source/app/RAWBerry/../../lib/vc5_encoder/types.h
-gpr_buffer.h
-source/app/RAWBerry/../../lib/vc5_encoder/gpr_buffer.h
-gpr_rgb_buffer.h
-source/app/RAWBerry/../../lib/vc5_encoder/gpr_rgb_buffer.h
-vc5_common.h
-source/app/RAWBerry/../../lib/vc5_encoder/vc5_common.h
 

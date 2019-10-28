@@ -326,6 +326,19 @@ Client/fast:
 	$(MAKE) -f source/app/Client/CMakeFiles/Client.dir/build.make source/app/Client/CMakeFiles/Client.dir/build
 .PHONY : Client/fast
 
+#=============================================================================
+# Target rules for targets named rtsp
+
+# Build rule for target.
+rtsp:
+	$(MAKE) -f CMakeFiles/Makefile2 rtsp
+.PHONY : rtsp
+
+# fast build rule for target.
+rtsp/fast:
+	$(MAKE) -f source/app/rtsp/CMakeFiles/rtsp.dir/build.make source/app/rtsp/CMakeFiles/rtsp.dir/build
+.PHONY : rtsp/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -350,6 +363,7 @@ help:
 	@echo "... gpr_tools"
 	@echo "... RAWBerry"
 	@echo "... Client"
+	@echo "... rtsp"
 .PHONY : help
 
 

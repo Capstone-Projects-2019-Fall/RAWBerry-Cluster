@@ -8,6 +8,8 @@ Desc: file containing main function, as well as functions to initialize componen
 #include "cluster.h"
 #include "input.h"
 #include <argp.h>
+#include <sys/types.h> 
+#include <unistd.h> 
 
 
 #define DIR_LENGTH 64
@@ -30,7 +32,7 @@ Desc: file containing main function, as well as functions to initialize componen
 //**************************************************************************
 
 void initialize();
-void read(char* dir, buf_handle_t buf);
+void readDNG(char* dir, buf_handle_t buf);
 void fire(struct cluster_args * payload);
 
 
@@ -53,7 +55,13 @@ int main(int argc, char **argv){
     //initialize();//initialize cluster components
     char dir[] = "/CDNG";
     //***NOTE*** left this unthreaded for now to work out integration data path
-    read(dir, buf);//read contents of dir to buf
+    
+    int pid = fork();
+
+	if ( pid == 0 ) {
+		execvp( "../rtsp/rtsp", "");
+	}
+    readDNG(dir, buf);//read contents of dir to buf
 
     //payload->source = buf;//populate cluster_args struct source
     //payload->compopts = opts;//populate cluster_args struct opts
@@ -79,7 +87,7 @@ void initialize(){
 }
 
 //read contents of DIR to buffer BUF
-void read(char * dir, buf_handle_t buf){
+void readDNG(char * dir, buf_handle_t buf){
 
     int read_status;//status of readFiles(..) function
 

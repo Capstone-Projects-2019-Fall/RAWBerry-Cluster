@@ -51,3 +51,6 @@
 /home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/Client/CMakeFiles/rebuild_cache.dir
 /home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/Client/CMakeFiles/Client.dir
 /home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/Client/CMakeFiles/edit_cache.dir
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/rtsp/CMakeFiles/rebuild_cache.dir
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/rtsp/CMakeFiles/rtsp.dir
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/rtsp/CMakeFiles/edit_cache.dir
