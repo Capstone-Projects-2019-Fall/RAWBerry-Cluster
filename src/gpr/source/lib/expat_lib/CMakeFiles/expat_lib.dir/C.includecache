@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,33 +6,33 @@
 
 #IncludeRegexTransform: 
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/amigaconfig.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/amigaconfig.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/ascii.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/ascii.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/expat.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/expat.h
 stdlib.h
 -
 expat_external.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/expat_external.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/expat_external.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/expat_external.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/expat_external.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/iasciitab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/iasciitab.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/internal.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/internal.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/macconfig.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/macconfig.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/nametab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/nametab.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/utf8tab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/utf8tab.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/winconfig.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/winconfig.h
 windows.h
 -
 memory.h
@@ -40,7 +40,7 @@ memory.h
 string.h
 -
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmlparse.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmlparse.c
 stddef.h
 -
 string.h
@@ -52,155 +52,155 @@ limits.h
 time.h
 -
 winconfig.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/winconfig.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/winconfig.h
 macconfig.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/macconfig.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/macconfig.h
 amigaconfig.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/amigaconfig.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/amigaconfig.h
 watcomconfig.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/watcomconfig.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/watcomconfig.h
 expat_config.h
 -
 ascii.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/ascii.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/ascii.h
 expat.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/expat.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/expat.h
 internal.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/internal.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/internal.h
 xmltok.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok.h
 xmlrole.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmlrole.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmlrole.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmlrole.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmlrole.c
 stddef.h
 -
 winconfig.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/winconfig.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/winconfig.h
 macconfig.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/macconfig.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/macconfig.h
 amigaconfig.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/amigaconfig.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/amigaconfig.h
 watcomconfig.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/watcomconfig.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/watcomconfig.h
 expat_config.h
 -
 expat_external.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/expat_external.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/expat_external.h
 internal.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/internal.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/internal.h
 xmlrole.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmlrole.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmlrole.h
 ascii.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/ascii.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/ascii.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmlrole.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmlrole.h
 xmltok.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok.c
 stddef.h
 -
 winconfig.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/winconfig.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/winconfig.h
 macconfig.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/macconfig.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/macconfig.h
 amigaconfig.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/amigaconfig.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/amigaconfig.h
 watcomconfig.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/watcomconfig.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/watcomconfig.h
 expat_config.h
 -
 expat_external.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/expat_external.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/expat_external.h
 internal.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/internal.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/internal.h
 xmltok.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok.h
 nametab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/nametab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/nametab.h
 xmltok_impl.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok_impl.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok_impl.h
 ascii.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/ascii.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/ascii.h
 xmltok_impl.c
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok_impl.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok_impl.c
 asciitab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
 utf8tab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/utf8tab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/utf8tab.h
 asciitab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
 utf8tab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/utf8tab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/utf8tab.h
 iasciitab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/iasciitab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/iasciitab.h
 utf8tab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/utf8tab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/utf8tab.h
 iasciitab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/iasciitab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/iasciitab.h
 utf8tab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/utf8tab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/utf8tab.h
 asciitab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
 latin1tab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
 asciitab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
 latin1tab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
 asciitab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
 asciitab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
 xmltok_impl.c
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok_impl.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok_impl.c
 asciitab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
 latin1tab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
 asciitab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
 latin1tab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
 iasciitab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/iasciitab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/iasciitab.h
 latin1tab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
 iasciitab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/iasciitab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/iasciitab.h
 latin1tab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
 xmltok_impl.c
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok_impl.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok_impl.c
 asciitab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
 latin1tab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
 asciitab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/asciitab.h
 latin1tab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
 iasciitab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/iasciitab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/iasciitab.h
 latin1tab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
 iasciitab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/iasciitab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/iasciitab.h
 latin1tab.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/latin1tab.h
 xmltok_ns.c
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok_ns.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok_ns.c
 xmltok_ns.c
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok_ns.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok_ns.c
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok_impl.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok_impl.c
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok_impl.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok_impl.h
 stddef.h
 -
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok_ns.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/xmltok_ns.c
 

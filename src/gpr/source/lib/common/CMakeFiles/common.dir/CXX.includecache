@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,25 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer_auto.cpp
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer_auto.cpp
 gpr_buffer.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer.h
 gpr_buffer_auto.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer_auto.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer_auto.h
 stdlib.h
 -
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer_auto.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer_auto.h
 gpr_allocator.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_allocator.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_allocator.h
 gpr_buffer.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer.h
 gpr_platform.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_platform.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_platform.h
 stdc_includes.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/stdc_includes.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/stdc_includes.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/stdc_includes.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/stdc_includes.h
 ctype.h
 -
 assert.h

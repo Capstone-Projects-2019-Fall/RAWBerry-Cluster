@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/bitstream.c" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/bitstream.c.o"
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/codec.c" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/codec.c.o"
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/companding.c" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/companding.c.o"
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/image.c" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/image.c.o"
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/logcurve.c" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/logcurve.c.o"
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/stream.c" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/stream.c.o"
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/syntax.c" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/syntax.c.o"
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/utilities.c" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/utilities.c.o"
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/wavelet.c" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/wavelet.c.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/bitstream.c" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/bitstream.c.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/codec.c" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/codec.c.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/companding.c" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/companding.c.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/image.c" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/image.c.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/logcurve.c" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/logcurve.c.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/stream.c" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/stream.c.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/syntax.c" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/syntax.c.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/utilities.c" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/utilities.c.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/wavelet.c" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/wavelet.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

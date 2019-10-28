@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,111 +6,111 @@
 
 #IncludeRegexTransform: 
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/codebooks.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/codebooks.c
 headers.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
 table17.inc
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/table17.inc
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/table17.inc
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/codebooks.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/codebooks.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/component.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/component.c
 headers.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/component.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/component.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/encoder.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/encoder.c
 headers.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
 arm_neon.h
 -
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/encoder.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/encoder.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/forward.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/forward.c
 headers.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
 arm_neon.h
 -
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/forward.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/forward.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
 common.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/common.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/common.h
 vlc.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/vlc.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/vlc.h
 bitstream.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/bitstream.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/bitstream.h
 raw.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/raw.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/raw.h
 codebooks.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/codebooks.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/codebooks.h
 component.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/component.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/component.h
 syntax.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/syntax.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/syntax.h
 forward.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/forward.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/forward.h
 sections.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/sections.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/sections.h
 parameters.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/parameters.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/parameters.h
 encoder.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/encoder.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/encoder.h
 vc5_encoder.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/vc5_encoder.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/vc5_encoder.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/parameters.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/parameters.c
 headers.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/parameters.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/parameters.h
 vc5_encoder.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/vc5_encoder.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/vc5_encoder.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/raw.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/raw.c
 headers.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
 arm_neon.h
 -
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/raw.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/raw.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/sections.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/sections.c
 headers.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/sections.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/sections.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/syntax.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/syntax.c
 headers.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/syntax.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/syntax.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/vc5_encoder.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/vc5_encoder.c
 headers.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/vc5_encoder.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/vc5_encoder.h
 error.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/error.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/error.h
 types.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/types.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/types.h
 gpr_buffer.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/gpr_buffer.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/gpr_buffer.h
 gpr_rgb_buffer.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/gpr_rgb_buffer.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/gpr_rgb_buffer.h
 vc5_common.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/vc5_common.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/vc5_common.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/vlc.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/vlc.c
 headers.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/headers.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/vlc.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/vlc.h
 
 source/lib/vc5_encoder/../common/private/log.h
 

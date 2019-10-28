@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,29 +6,29 @@
 
 #IncludeRegexTransform: 
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_allocator.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_allocator.c
 gpr_allocator.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_allocator.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_allocator.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer.c
 gpr_buffer.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer.h
 macros.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/macros.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/macros.h
 stdc_includes.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/stdc_includes.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/stdc_includes.h
 gpr_rgb_buffer.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_rgb_buffer.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_rgb_buffer.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/log.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/log.c
 timer.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/timer.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/timer.h
 stdc_includes.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/stdc_includes.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/stdc_includes.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/macros.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/macros.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/stdc_includes.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/stdc_includes.h
 ctype.h
 -
 assert.h
@@ -52,11 +52,11 @@ string.h
 time.h
 -
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/timer.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/timer.c
 timer.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/timer.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/timer.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/timer.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/timer.h
 time.h
 -
 

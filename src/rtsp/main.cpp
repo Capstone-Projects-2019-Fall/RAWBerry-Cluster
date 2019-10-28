@@ -19,6 +19,7 @@ void workerThread(SOCKET s)
             struct timeval now;
             gettimeofday(&now, NULL); // crufty msecish timer
             uint32_t msec = now.tv_sec * 1000 + now.tv_usec / 1000;
+            puts("New Frame");
             rtsp.broadcastCurrentFrame(msec);
         }
     }

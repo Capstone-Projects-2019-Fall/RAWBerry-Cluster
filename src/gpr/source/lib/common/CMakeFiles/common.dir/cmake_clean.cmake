@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/common.dir/private/gpr_buffer_auto.cpp.o"
-  "CMakeFiles/common.dir/private/timer.c.o"
   "CMakeFiles/common.dir/private/gpr_allocator.c.o"
   "CMakeFiles/common.dir/private/gpr_buffer.c.o"
+  "CMakeFiles/common.dir/private/gpr_buffer_auto.cpp.o"
   "CMakeFiles/common.dir/private/log.c.o"
+  "CMakeFiles/common.dir/private/timer.c.o"
   "libcommon.pdb"
   "libcommon.a"
 )

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/gpr_tools.dir/main_c.c.o"
+  "CMakeFiles/gpr_tools.dir/gpr_parse_utils.cpp.o"
   "CMakeFiles/gpr_tools.dir/gpr_print_utils.cpp.o"
   "CMakeFiles/gpr_tools.dir/main.cpp.o"
-  "CMakeFiles/gpr_tools.dir/gpr_parse_utils.cpp.o"
+  "CMakeFiles/gpr_tools.dir/main_c.c.o"
   "gpr_tools.pdb"
   "gpr_tools"
 )

@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr_parse_utils.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr_parse_utils.h
 gpr.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr_print_utils.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr_print_utils.h
 gpr.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/main_c.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/main_c.c
 stdio.h
 -
 string.h
@@ -22,17 +22,17 @@ string.h
 stdbool.h
 -
 gpr.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr.h
 main_c.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/main_c.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/main_c.h
 gpr_parse_utils.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr_parse_utils.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr_parse_utils.h
 gpr_print_utils.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr_print_utils.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr_print_utils.h
 jpeg.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/jpeg.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/jpeg.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/main_c.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/main_c.h
 
 source/app/gpr_tools/../../lib/common/public/gpr_allocator.h
 gpr_platform.h

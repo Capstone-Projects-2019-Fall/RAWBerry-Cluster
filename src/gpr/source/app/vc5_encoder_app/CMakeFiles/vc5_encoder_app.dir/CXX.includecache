@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,27 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/main.cpp
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/main.cpp
 stdc_includes.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/stdc_includes.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/stdc_includes.h
 stdcpp_includes.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/stdcpp_includes.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/stdcpp_includes.h
 vc5_encoder.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/vc5_encoder.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/vc5_encoder.h
 argument_parser.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/argument_parser.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/argument_parser.h
 timer.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/timer.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/timer.h
 gpr_buffer.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/gpr_buffer.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/gpr_buffer.h
 md5.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/md5.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/md5.h
 log.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/log.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/log.h
 logcurve.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/logcurve.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/logcurve.h
 common_app_def.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/common_app_def.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/common_app_def.h
 
 source/app/vc5_encoder_app/../../lib/common/private/log.h
 

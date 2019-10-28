@@ -38,7 +38,7 @@ void SimStreamer::streamImage(uint32_t curMsec)
 
 //
 unsigned char * SimStreamer::readPipe(){
-    int *frame_size = (int*)malloc(sizeof(int));
+    size_t *frame_size = (size_t*)malloc(sizeof(size_t));
     size_t bytes_read = 0;
     int pipe_fd;
 
@@ -46,11 +46,14 @@ unsigned char * SimStreamer::readPipe(){
     pipe_fd = open(INPUT_PIPE, O_RDONLY);
     if (pipe){
         //get size of frame
-        read(pipe_fd, frame_size, sizeof(int));
+        puts("Reading Pipe");
+        read(pipe_fd, frame_size, sizeof(size_t));
+        printf("Frame is %d Bytes\n", *frame_size);
         //read untill full frame is captured
         unsigned char *buffer = (unsigned char*)malloc(*frame_size + 1);
         while (bytes_read != *frame_size){
             bytes_read += read(pipe_fd, buffer, *frame_size - bytes_read);
+            //printf("Read %d Bytes\n", bytes_read);
         }
         //return buffer
         return buffer;

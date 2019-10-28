@@ -5,10 +5,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_allocator.c" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/CMakeFiles/common.dir/private/gpr_allocator.c.o"
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer.c" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/CMakeFiles/common.dir/private/gpr_buffer.c.o"
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/log.c" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/CMakeFiles/common.dir/private/log.c.o"
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/timer.c" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/CMakeFiles/common.dir/private/timer.c.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_allocator.c" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/CMakeFiles/common.dir/private/gpr_allocator.c.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer.c" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/CMakeFiles/common.dir/private/gpr_buffer.c.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/log.c" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/CMakeFiles/common.dir/private/log.c.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/timer.c" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/CMakeFiles/common.dir/private/timer.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -23,7 +23,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "source/lib/common/./public"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer_auto.cpp" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/CMakeFiles/common.dir/private/gpr_buffer_auto.cpp.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer_auto.cpp" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/common/CMakeFiles/common.dir/private/gpr_buffer_auto.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

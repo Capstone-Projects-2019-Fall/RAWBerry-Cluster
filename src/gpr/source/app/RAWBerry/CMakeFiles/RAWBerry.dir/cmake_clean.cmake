@@ -1,11 +1,11 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/RAWBerry.dir/master.c.o"
   "CMakeFiles/RAWBerry.dir/buffer.c.o"
   "CMakeFiles/RAWBerry.dir/cluster.c.o"
-  "CMakeFiles/RAWBerry.dir/slave.c.o"
-  "CMakeFiles/RAWBerry.dir/input.c.o"
   "CMakeFiles/RAWBerry.dir/collector.c.o"
+  "CMakeFiles/RAWBerry.dir/input.c.o"
   "CMakeFiles/RAWBerry.dir/main.c.o"
+  "CMakeFiles/RAWBerry.dir/master.c.o"
+  "CMakeFiles/RAWBerry.dir/slave.c.o"
   "RAWBerry.pdb"
   "RAWBerry"
 )

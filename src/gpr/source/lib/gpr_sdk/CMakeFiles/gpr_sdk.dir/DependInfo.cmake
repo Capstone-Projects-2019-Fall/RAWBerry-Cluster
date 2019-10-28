@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr.cpp" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr.cpp.o"
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr_exif_info.cpp" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_exif_info.cpp.o"
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr_image_writer.cpp" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_image_writer.cpp.o"
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr_profile_info.cpp" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_profile_info.cpp.o"
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr_read_image.cpp" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_read_image.cpp.o"
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr_tuning_info.cpp" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_tuning_info.cpp.o"
-  "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr_utils.cpp" "/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_utils.cpp.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr.cpp" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr.cpp.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr_exif_info.cpp" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_exif_info.cpp.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr_image_writer.cpp" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_image_writer.cpp.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr_profile_info.cpp" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_profile_info.cpp.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr_read_image.cpp" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_read_image.cpp.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr_tuning_info.cpp" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_tuning_info.cpp.o"
+  "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr_utils.cpp" "/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_utils.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

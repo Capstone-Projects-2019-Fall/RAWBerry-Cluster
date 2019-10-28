@@ -13,6 +13,12 @@
 #include <assert.h>
 #include <dirent.h>
 #include <string.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+
 
 #include "gpr.h"
 #include "gpr_allocator.h"
@@ -28,13 +34,14 @@
 #define INPUT_PIPE "/tmp/pipe"
 #define BUFF_SIZE 400000000
 
-FILE *pipe;
+int fd;
 
 
 int readFiles(char* directory, buf_handle_t buf);
 int openImage(char* filePath, buf_handle_t buf);
 void print_buffer_status(buf_handle_t buf);
 int encodeImage(gpr_buffer * output_buffer, vc5_encoder_parameters * vc5_encoder_params, gpr_buffer * vc5_image);
+void _coll_stream_frame(void *frame, int sz);
 
 /*int main(int argc, char **argv)
 {
@@ -57,34 +64,38 @@ int encodeImage(gpr_buffer * output_buffer, vc5_encoder_parameters * vc5_encoder
 
 int readFiles(char* directory, buf_handle_t buf){
 	
-DIR *dir;
-struct dirent *ent;
+//DIR *dir;
+//struct dirent *ent;
 
     printf("Opening Pipe\n");
-    pipe = fopen(INPUT_PIPE, "w");
-
-
-if ((dir = opendir (directory)) != NULL) {
+    mkfifo(INPUT_PIPE, 0666);
+    fd = open(INPUT_PIPE, O_WRONLY);
+    printf("Pipe Open");
+char dir[] = "/CDNG/Blackmagic Pocket Cinema Camera_1_2014-08-13_1850_C0002_000000.dng";
+openImage(dir, buf);
+//if ((dir = opendir (directory)) != NULL) {
   /* print all the files and directories within directory */
-  while ((ent = readdir (dir)) != NULL && (buf_full(buf) == false)) {
+ // while ((ent = readdir (dir)) != NULL && (buf_full(buf) == false)) {
     
     //Get us a string with the full path so we can open file
-	char *fullpath = malloc(strlen(directory)+ strlen(ent->d_name) + 2);
-	if (fullpath == NULL) { /* Uh We Might be F****d here? Whatever */ }
-	sprintf(fullpath, "%s/%s", directory, ent->d_name);
-	openImage(fullpath, buf);
+//	char *fullpath = malloc(strlen(directory)+ strlen(ent->d_name) + 2);
+//	if (fullpath == NULL) { /* Uh We Might be F****d here? Whatever */ }
+//	sprintf(fullpath, "%s/%s", directory, ent->d_name);
+//	openImage(fullpath, buf);
 	/* use fullpath */
-	free(fullpath);
+//	free(fullpath);
 	//print_buffer_status(buf);
     //Do Things with files
     
-  }
-  closedir (dir);
-} else {
+ // }
+  
+//  closedir (dir);
+  	unlink(INPUT_PIPE);
+//} else {
   /* could not open directory */
-  perror ("");
-  return EXIT_FAILURE;
-}
+//  perror ("");
+//  return EXIT_FAILURE;
+//}
 	return 0;
 }
 
@@ -149,19 +160,22 @@ int openImage(char* filePath, buf_handle_t buf){
     output_file_path[(len - 2)] = 'C';
     output_file_path[(len - 1)] = '5';
 	
+    //int fd = open(INPUT_PIPE, O_WRONLY);
+   // if (fd){
 
-    if (pipe){
+    //write(fd, &vc5_image.size, sizeof(size_t));
+   // write(fd, vc5_image.buffer, vc5_image.size);
+	//printf("Wrote %d Bytes\n",vc5_image.size);
+   // }
+    //close(fd);
+    _coll_stream_frame(vc5_image.buffer, vc5_image.size);
 
-        write(pipe, &vc5_image.buffer, vc5_image.size);
-	printf("Wrote %d Bytes\n",vc5_image.size);
-    }
-
-    
- /*   if( write_to_file( &vc5_image, output_file_path ) )
+  /*if( write_to_file( &vc5_image, output_file_path ) )
         {
             LogPrint("Error writing bitstream to location %s",  output_file_path);
             return -1;
         }*/
+    //while(1){}
     return 0;
 }
 
@@ -177,6 +191,25 @@ int encodeImage(gpr_buffer * output_buffer, vc5_encoder_parameters * vc5_encoder
 
 }
 
+void _coll_stream_frame(void *frame, int sz)
+{
+    //used to track bytes written to pipe
+    int bytes_written = 0;
+
+    //open pipe
+    int pipe_fd = open("/tmp/pipe", O_WRONLY);
+    //write size of frame to pipe
+    write(pipe_fd, &sz, sizeof(int));
+
+    //write frame to pipe piece-wise
+    while (bytes_written != sz){
+        //puts("Write");
+        bytes_written += write(pipe_fd, frame, (sz - bytes_written));
+    }
+    close(pipe_fd);
+    printf("Wrote: %d Bytes\n", bytes_written);
+    printf("%s: %d\n", ((char*)frame)+4, *(int*)frame);
+}
 
 
 

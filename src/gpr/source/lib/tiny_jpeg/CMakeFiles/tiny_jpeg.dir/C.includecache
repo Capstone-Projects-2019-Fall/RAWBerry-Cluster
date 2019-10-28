@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/tiny_jpeg/jpeg.c
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/tiny_jpeg/jpeg.c
 tiny_jpeg.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/tiny_jpeg/tiny_jpeg.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/tiny_jpeg/tiny_jpeg.h
 
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/tiny_jpeg/tiny_jpeg.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/tiny_jpeg/tiny_jpeg.h
 stb_image.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/tiny_jpeg/stb_image.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/tiny_jpeg/stb_image.h
 tiny_jpeg.h
-/home/greg/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/lib/tiny_jpeg/tiny_jpeg.h
+/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/lib/tiny_jpeg/tiny_jpeg.h
 assert.h
 -
 inttypes.h
