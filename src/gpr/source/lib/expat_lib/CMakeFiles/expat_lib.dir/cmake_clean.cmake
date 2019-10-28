@@ -4,8 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/expat_lib.dir/xmltok.c.o"
   "CMakeFiles/expat_lib.dir/xmltok_impl.c.o"
   "CMakeFiles/expat_lib.dir/xmltok_ns.c.o"
-  "libexpat_lib.pdb"
   "libexpat_lib.a"
+  "libexpat_lib.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

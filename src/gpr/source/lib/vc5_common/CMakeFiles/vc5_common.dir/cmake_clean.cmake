@@ -8,8 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/vc5_common.dir/syntax.c.o"
   "CMakeFiles/vc5_common.dir/utilities.c.o"
   "CMakeFiles/vc5_common.dir/wavelet.c.o"
-  "libvc5_common.pdb"
   "libvc5_common.a"
+  "libvc5_common.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -3,8 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/gpr_tools.dir/gpr_print_utils.cpp.o"
   "CMakeFiles/gpr_tools.dir/main.cpp.o"
   "CMakeFiles/gpr_tools.dir/main_c.c.o"
-  "gpr_tools.pdb"
   "gpr_tools"
+  "gpr_tools.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

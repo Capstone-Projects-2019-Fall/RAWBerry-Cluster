@@ -6,8 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/RAWBerry.dir/main.c.o"
   "CMakeFiles/RAWBerry.dir/master.c.o"
   "CMakeFiles/RAWBerry.dir/slave.c.o"
-  "RAWBerry.pdb"
   "RAWBerry"
+  "RAWBerry.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

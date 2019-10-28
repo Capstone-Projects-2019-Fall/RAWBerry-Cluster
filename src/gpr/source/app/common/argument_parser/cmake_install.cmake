@@ -1,4 +1,4 @@
-# Install script for directory: /home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/common/argument_parser
+# Install script for directory: /Users/user/Documents/Capstone/RAWBerry-Cluster/src/gpr/source/app/common/argument_parser
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -25,11 +25,6 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   else()
     set(CMAKE_INSTALL_COMPONENT)
   endif()
-endif()
-
-# Install shared libraries without execute permission?
-if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
 # Is this installation the result of a crosscompile?
