@@ -30,7 +30,7 @@ private:
     IPPORT m_RtpServerPort;      // RTP sender port on server
     IPPORT m_RtcpServerPort;     // RTCP sender port on server
 
-    unsigned int m_SequenceNumber;
+    uint16_t m_SequenceNumber;
     uint32_t m_Timestamp;
     int m_SendIdx;
     bool m_TCPTransport;
