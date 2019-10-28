@@ -70,11 +70,11 @@ int CStreamer::SendRtpPacket(unsigned const char * jpeg, int jpegLen, int fragme
     RtpBuf[3]  = (RtpPacketSize & 0x000000FF);
     // Prepare the 12 byte RTP header
     RtpBuf[4]  = 0x80;                               // RTP version
-    RtpBuf[5]  = 0x60 | (isLastFragment ? 0x80 : 0x00);   // Dynamic payload (96) and marker bit
-    RtpBuf[6]  = m_SequenceNumber & 0x0FF;           // each packet is counted with a sequence counter
-    RtpBuf[7]  = (m_SequenceNumber >> 8) & 0x0FF;
-    RtpBuf[8]  = (m_SequenceNumber >> 16) & 0x0FF;
-    RtpBuf[9]  = (m_SequenceNumber >> 24) & 0x0FF;
+    RtpBuf[5]  = 0x60; //| (isLastFragment ? 0x80 : 0x00);   // Dynamic payload (96) and marker bit
+    RtpBuf[9]  = m_SequenceNumber & 0x0FF;           // each packet is counted with a sequence counter
+    RtpBuf[8]  = (m_SequenceNumber >> 8) & 0x0FF;
+    RtpBuf[7]  = (m_SequenceNumber >> 16) & 0x0FF;
+    RtpBuf[6]  = (m_SequenceNumber >> 24) & 0x0FF;
     RtpBuf[10]  = (m_Timestamp & 0xFF000000) >> 24;   // each image gets a timestamp
     RtpBuf[11]  = (m_Timestamp & 0x00FF0000) >> 16;
     RtpBuf[12] = (m_Timestamp & 0x0000FF00) >> 8;
@@ -187,7 +187,7 @@ u_short CStreamer::GetRtcpServerPort()
     return m_RtcpServerPort;
 };
 
-void CStreamer::streamFrame(unsigned const char *data, uint32_t dataLen, uint32_t curMsec)
+void CStreamer::streamFrame(unsigned const char *data, int dataLen, uint32_t curMsec)
 {
     if(m_prevMsec == 0) // first frame init our timestamp
         m_prevMsec = curMsec;

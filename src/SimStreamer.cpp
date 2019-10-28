@@ -14,46 +14,49 @@ SimStreamer::SimStreamer(SOCKET aClient, bool showBig) : CStreamer(aClient, show
 //Gets an imaage/fram from the named input pipe and then sends it to be streamed
 void SimStreamer::streamImage(uint32_t curMsec)
 {
+    int len = 0;
     //get buffer
-    unsigned char *buffer = readPipe();
+    unsigned char *buffer = readPipe(len);
     
     //if buffer not NULL
     if (buffer != NULL){
         BufPtr bytes = buffer;
-        //get length
-        uint32_t len = 0;
         for(size_t length = 0; buffer[length] != '\0'; length++){
             len = length;
             printf("len: %lu\n", length);
         }
         //stream frame
-        puts("streamFrame 0");
+        //puts("Begin Frame");
         streamFrame(bytes, len, curMsec);
-        puts("streamFrame 1");
+        //puts("End Frame");
         //free the buffer
+        free(buffer);
     }
-    free(buffer);
 
 }
 
 //
-unsigned char * SimStreamer::readPipe(){
-    size_t *frame_size = (size_t*)malloc(sizeof(int));
-    size_t bytes_read = 0;
-    int pipe_fd;
-
-
-    pipe_fd = open(INPUT_PIPE, O_RDONLY);
+unsigned char * SimStreamer::readPipe(int &len){
+    unsigned char *buffer;
+    unsigned char *buff_pointer = buffer; 
+    
+    int bytes_read = 0;
+    
+    int pipe_fd = open(INPUT_PIPE, O_RDONLY);
     if (pipe){
         //get size of frame
-        read(pipe_fd, frame_size, sizeof(size_t));
-        //read untill full frame is captured
-        unsigned char *buffer = (unsigned char*)malloc(*frame_size + 1);
-        while (bytes_read != *frame_size){
-            bytes_read += read(pipe_fd, buffer, *frame_size - bytes_read);
+        read(pipe_fd, &len, sizeof(int));
+        printf("Expected frame size: %d \n", len);
+        //malloc mem for buffer
+        buffer = (unsigned char *)malloc(len);
+
+        while (bytes_read != len){
+            bytes_read += read(pipe_fd, (buffer+bytes_read), (len - bytes_read));
+            printf("Bytes Read: %d \nFrame Size: %d\n", bytes_read, len);
         }
-        //return buffer
+        
         return buffer;
+        //return NULL;
         
     }
     else return NULL;
