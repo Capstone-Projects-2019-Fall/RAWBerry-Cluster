@@ -206,7 +206,9 @@ void CStreamer::streamFrame(unsigned const char *data, uint32_t dataLen, uint32_
 
     int offset = 0;
     do {
+        printf("Data Length:%d\n", dataLen);
         offset = SendRtpPacket(data, dataLen, offset, qtable0, qtable1);
+        printf("offset:%d\n", offset);
     } while(offset != 0);
 
     // Increment ONLY after a full frame

@@ -64,38 +64,38 @@ void _coll_stream_frame(void *frame, int sz);
 
 int readFiles(char* directory, buf_handle_t buf){
 	
-//DIR *dir;
-//struct dirent *ent;
+DIR *dir;
+struct dirent *ent;
 
     printf("Opening Pipe\n");
     mkfifo(INPUT_PIPE, 0666);
     fd = open(INPUT_PIPE, O_WRONLY);
     printf("Pipe Open");
-char dir[] = "/CDNG/Blackmagic Pocket Cinema Camera_1_2014-08-13_1850_C0002_000000.dng";
-openImage(dir, buf);
-//if ((dir = opendir (directory)) != NULL) {
+//char dir[] = "/CDNG/Blackmagic Pocket Cinema Camera_1_2014-08-13_1850_C0002_000000.dng";
+//openImage(dir, buf);
+if ((dir = opendir (directory)) != NULL) {
   /* print all the files and directories within directory */
- // while ((ent = readdir (dir)) != NULL && (buf_full(buf) == false)) {
+  while ((ent = readdir (dir)) != NULL && (buf_full(buf) == false)) {
     
     //Get us a string with the full path so we can open file
-//	char *fullpath = malloc(strlen(directory)+ strlen(ent->d_name) + 2);
-//	if (fullpath == NULL) { /* Uh We Might be F****d here? Whatever */ }
-//	sprintf(fullpath, "%s/%s", directory, ent->d_name);
-//	openImage(fullpath, buf);
+	char *fullpath = malloc(strlen(directory)+ strlen(ent->d_name) + 2);
+	if (fullpath == NULL) { /* Uh We Might be F****d here? Whatever */ }
+	sprintf(fullpath, "%s/%s", directory, ent->d_name);
+	openImage(fullpath, buf);
 	/* use fullpath */
-//	free(fullpath);
+	free(fullpath);
 	//print_buffer_status(buf);
     //Do Things with files
     
- // }
+}
   
-//  closedir (dir);
+ closedir (dir);
   	unlink(INPUT_PIPE);
-//} else {
+} else {
   /* could not open directory */
-//  perror ("");
-//  return EXIT_FAILURE;
-//}
+  perror ("");
+ return EXIT_FAILURE;
+}
 	return 0;
 }
 

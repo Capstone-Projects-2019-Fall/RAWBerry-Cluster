@@ -313,6 +313,19 @@ RAWBerry/fast:
 	$(MAKE) -f source/app/RAWBerry/CMakeFiles/RAWBerry.dir/build.make source/app/RAWBerry/CMakeFiles/RAWBerry.dir/build
 .PHONY : RAWBerry/fast
 
+#=============================================================================
+# Target rules for targets named Client
+
+# Build rule for target.
+Client:
+	$(MAKE) -f CMakeFiles/Makefile2 Client
+.PHONY : Client
+
+# fast build rule for target.
+Client/fast:
+	$(MAKE) -f source/app/Client/CMakeFiles/Client.dir/build.make source/app/Client/CMakeFiles/Client.dir/build
+.PHONY : Client/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -336,6 +349,7 @@ help:
 	@echo "... argument_parser"
 	@echo "... gpr_tools"
 	@echo "... RAWBerry"
+	@echo "... Client"
 .PHONY : help
 
 

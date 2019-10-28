@@ -55,6 +55,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/common/argument_parser/cmake_install.cmake")
   include("/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/cmake_install.cmake")
   include("/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/cmake_install.cmake")
+  include("/home/pi/Capstone/RAWBerry-Cluster/src/gpr/source/app/Client/cmake_install.cmake")
 
 endif()
 

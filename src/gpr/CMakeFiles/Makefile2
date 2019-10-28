@@ -89,7 +89,7 @@ source/lib/common/preinstall:
 source/lib/common/CMakeFiles/common.dir/all:
 	$(MAKE) -f source/lib/common/CMakeFiles/common.dir/build.make source/lib/common/CMakeFiles/common.dir/depend
 	$(MAKE) -f source/lib/common/CMakeFiles/common.dir/build.make source/lib/common/CMakeFiles/common.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=9,10,11,12 "Built target common"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=11,12,13 "Built target common"
 .PHONY : source/lib/common/CMakeFiles/common.dir/all
 
 # Include target in all.
@@ -99,7 +99,7 @@ all: source/lib/common/CMakeFiles/common.dir/all
 
 # Build rule for subdir invocation for target.
 source/lib/common/CMakeFiles/common.dir/rule:
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 source/lib/common/CMakeFiles/common.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles 0
 .PHONY : source/lib/common/CMakeFiles/common.dir/rule
@@ -144,7 +144,7 @@ source/lib/vc5_common/preinstall:
 source/lib/vc5_common/CMakeFiles/vc5_common.dir/all:
 	$(MAKE) -f source/lib/vc5_common/CMakeFiles/vc5_common.dir/build.make source/lib/vc5_common/CMakeFiles/vc5_common.dir/depend
 	$(MAKE) -f source/lib/vc5_common/CMakeFiles/vc5_common.dir/build.make source/lib/vc5_common/CMakeFiles/vc5_common.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=67,68,69,70,71,72,73 "Built target vc5_common"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=68,69,70,71,72,73 "Built target vc5_common"
 .PHONY : source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
 
 # Include target in all.
@@ -154,7 +154,7 @@ all: source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
 
 # Build rule for subdir invocation for target.
 source/lib/vc5_common/CMakeFiles/vc5_common.dir/rule:
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles 0
 .PHONY : source/lib/vc5_common/CMakeFiles/vc5_common.dir/rule
@@ -251,11 +251,11 @@ source/app/vc5_decoder_app/preinstall:
 # Target rules for target source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir
 
 # All Build rule for target.
-source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/all: source/lib/md5_lib/CMakeFiles/md5_lib.dir/all
+source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/all: source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
 source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/all: source/lib/common/CMakeFiles/common.dir/all
 source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/all: source/lib/vc5_decoder/CMakeFiles/vc5_decoder.dir/all
 source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/all: source/app/common/argument_parser/CMakeFiles/argument_parser.dir/all
-source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/all: source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
+source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/all: source/lib/md5_lib/CMakeFiles/md5_lib.dir/all
 	$(MAKE) -f source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/build.make source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/depend
 	$(MAKE) -f source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/build.make source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=81 "Built target vc5_decoder_app"
@@ -268,7 +268,7 @@ all: source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/all
 
 # Build rule for subdir invocation for target.
 source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/rule:
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles 20
 	$(MAKE) -f CMakeFiles/Makefile2 source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles 0
 .PHONY : source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/rule
@@ -365,11 +365,11 @@ source/app/vc5_encoder_app/preinstall:
 # Target rules for target source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir
 
 # All Build rule for target.
-source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all: source/lib/md5_lib/CMakeFiles/md5_lib.dir/all
-source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all: source/lib/common/CMakeFiles/common.dir/all
-source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all: source/app/common/argument_parser/CMakeFiles/argument_parser.dir/all
 source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all: source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
 source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all: source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/all
+source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all: source/lib/common/CMakeFiles/common.dir/all
+source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all: source/app/common/argument_parser/CMakeFiles/argument_parser.dir/all
+source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all: source/lib/md5_lib/CMakeFiles/md5_lib.dir/all
 	$(MAKE) -f source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/build.make source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/depend
 	$(MAKE) -f source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/build.make source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=89 "Built target vc5_encoder_app"
@@ -382,7 +382,7 @@ all: source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all
 
 # Build rule for subdir invocation for target.
 source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/rule:
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles 20
 	$(MAKE) -f CMakeFiles/Makefile2 source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles 0
 .PHONY : source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/rule
@@ -427,7 +427,7 @@ source/lib/dng_sdk/preinstall:
 source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/all:
 	$(MAKE) -f source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/build.make source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/depend
 	$(MAKE) -f source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/build.make source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52 "Built target dng_sdk"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53 "Built target dng_sdk"
 .PHONY : source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/all
 
 # Include target in all.
@@ -482,7 +482,7 @@ source/lib/gpr_sdk/preinstall:
 source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/all:
 	$(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/depend
 	$(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=57,58,59,60,61 "Built target gpr_sdk"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=58,59,60,61,62 "Built target gpr_sdk"
 .PHONY : source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/all
 
 # Include target in all.
@@ -592,7 +592,7 @@ source/lib/expat_lib/preinstall:
 source/lib/expat_lib/CMakeFiles/expat_lib.dir/all:
 	$(MAKE) -f source/lib/expat_lib/CMakeFiles/expat_lib.dir/build.make source/lib/expat_lib/CMakeFiles/expat_lib.dir/depend
 	$(MAKE) -f source/lib/expat_lib/CMakeFiles/expat_lib.dir/build.make source/lib/expat_lib/CMakeFiles/expat_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=53,54,55,56 "Built target expat_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=54,55,56,57 "Built target expat_lib"
 .PHONY : source/lib/expat_lib/CMakeFiles/expat_lib.dir/all
 
 # Include target in all.
@@ -647,7 +647,7 @@ source/lib/md5_lib/preinstall:
 source/lib/md5_lib/CMakeFiles/md5_lib.dir/all:
 	$(MAKE) -f source/lib/md5_lib/CMakeFiles/md5_lib.dir/build.make source/lib/md5_lib/CMakeFiles/md5_lib.dir/depend
 	$(MAKE) -f source/lib/md5_lib/CMakeFiles/md5_lib.dir/build.make source/lib/md5_lib/CMakeFiles/md5_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=65 "Built target md5_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=66 "Built target md5_lib"
 .PHONY : source/lib/md5_lib/CMakeFiles/md5_lib.dir/all
 
 # Include target in all.
@@ -702,7 +702,7 @@ source/lib/tiny_jpeg/preinstall:
 source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/all:
 	$(MAKE) -f source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/build.make source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/depend
 	$(MAKE) -f source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/build.make source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=66 "Built target tiny_jpeg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=67 "Built target tiny_jpeg"
 .PHONY : source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/all
 
 # Include target in all.
@@ -757,7 +757,7 @@ source/app/common/cJSON/preinstall:
 source/app/common/cJSON/CMakeFiles/cJSON.dir/all:
 	$(MAKE) -f source/app/common/cJSON/CMakeFiles/cJSON.dir/build.make source/app/common/cJSON/CMakeFiles/cJSON.dir/depend
 	$(MAKE) -f source/app/common/cJSON/CMakeFiles/cJSON.dir/build.make source/app/common/cJSON/CMakeFiles/cJSON.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=7,8 "Built target cJSON"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=9,10 "Built target cJSON"
 .PHONY : source/app/common/cJSON/CMakeFiles/cJSON.dir/all
 
 # Include target in all.
@@ -812,7 +812,7 @@ source/app/common/argument_parser/preinstall:
 source/app/common/argument_parser/CMakeFiles/argument_parser.dir/all:
 	$(MAKE) -f source/app/common/argument_parser/CMakeFiles/argument_parser.dir/build.make source/app/common/argument_parser/CMakeFiles/argument_parser.dir/depend
 	$(MAKE) -f source/app/common/argument_parser/CMakeFiles/argument_parser.dir/build.make source/app/common/argument_parser/CMakeFiles/argument_parser.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=5,6 "Built target argument_parser"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=7,8 "Built target argument_parser"
 .PHONY : source/app/common/argument_parser/CMakeFiles/argument_parser.dir/all
 
 # Include target in all.
@@ -864,21 +864,21 @@ source/app/gpr_tools/preinstall:
 # Target rules for target source/app/gpr_tools/CMakeFiles/gpr_tools.dir
 
 # All Build rule for target.
-source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/md5_lib/CMakeFiles/md5_lib.dir/all
-source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/common/CMakeFiles/common.dir/all
-source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/xmp_core/CMakeFiles/xmp_core.dir/all
 source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/app/common/cJSON/CMakeFiles/cJSON.dir/all
-source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/vc5_decoder/CMakeFiles/vc5_decoder.dir/all
-source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/all
-source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/app/common/argument_parser/CMakeFiles/argument_parser.dir/all
-source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/all
-source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/expat_lib/CMakeFiles/expat_lib.dir/all
 source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
+source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/xmp_core/CMakeFiles/xmp_core.dir/all
 source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/all
+source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/expat_lib/CMakeFiles/expat_lib.dir/all
+source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/common/CMakeFiles/common.dir/all
+source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/vc5_decoder/CMakeFiles/vc5_decoder.dir/all
+source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/app/common/argument_parser/CMakeFiles/argument_parser.dir/all
+source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/all
+source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/all
+source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/md5_lib/CMakeFiles/md5_lib.dir/all
 source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/all
 	$(MAKE) -f source/app/gpr_tools/CMakeFiles/gpr_tools.dir/build.make source/app/gpr_tools/CMakeFiles/gpr_tools.dir/depend
 	$(MAKE) -f source/app/gpr_tools/CMakeFiles/gpr_tools.dir/build.make source/app/gpr_tools/CMakeFiles/gpr_tools.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=62,63,64 "Built target gpr_tools"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=63,64,65 "Built target gpr_tools"
 .PHONY : source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all
 
 # Include target in all.
@@ -888,7 +888,7 @@ all: source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all
 
 # Build rule for subdir invocation for target.
 source/app/gpr_tools/CMakeFiles/gpr_tools.dir/rule:
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles 94
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles 92
 	$(MAKE) -f CMakeFiles/Makefile2 source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles 0
 .PHONY : source/app/gpr_tools/CMakeFiles/gpr_tools.dir/rule
@@ -930,21 +930,21 @@ source/app/RAWBerry/preinstall:
 # Target rules for target source/app/RAWBerry/CMakeFiles/RAWBerry.dir
 
 # All Build rule for target.
-source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/md5_lib/CMakeFiles/md5_lib.dir/all
-source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/common/CMakeFiles/common.dir/all
-source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/xmp_core/CMakeFiles/xmp_core.dir/all
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/app/common/cJSON/CMakeFiles/cJSON.dir/all
-source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/vc5_decoder/CMakeFiles/vc5_decoder.dir/all
-source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/all
-source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/app/common/argument_parser/CMakeFiles/argument_parser.dir/all
-source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/all
-source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/expat_lib/CMakeFiles/expat_lib.dir/all
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
+source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/xmp_core/CMakeFiles/xmp_core.dir/all
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/all
+source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/expat_lib/CMakeFiles/expat_lib.dir/all
+source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/common/CMakeFiles/common.dir/all
+source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/vc5_decoder/CMakeFiles/vc5_decoder.dir/all
+source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/app/common/argument_parser/CMakeFiles/argument_parser.dir/all
+source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/all
+source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/all
+source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/md5_lib/CMakeFiles/md5_lib.dir/all
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/all
 	$(MAKE) -f source/app/RAWBerry/CMakeFiles/RAWBerry.dir/build.make source/app/RAWBerry/CMakeFiles/RAWBerry.dir/depend
 	$(MAKE) -f source/app/RAWBerry/CMakeFiles/RAWBerry.dir/build.make source/app/RAWBerry/CMakeFiles/RAWBerry.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=1,2,3,4 "Built target RAWBerry"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=2,3,4,5,6 "Built target RAWBerry"
 .PHONY : source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all
 
 # Include target in all.
@@ -954,7 +954,7 @@ all: source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all
 
 # Build rule for subdir invocation for target.
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/rule:
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles 95
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles 94
 	$(MAKE) -f CMakeFiles/Makefile2 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles 0
 .PHONY : source/app/RAWBerry/CMakeFiles/RAWBerry.dir/rule
@@ -971,6 +971,72 @@ source/app/RAWBerry/CMakeFiles/RAWBerry.dir/clean:
 
 # clean rule for target.
 clean: source/app/RAWBerry/CMakeFiles/RAWBerry.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory source/app/Client
+
+# Convenience name for "all" pass in the directory.
+source/app/Client/all: source/app/Client/CMakeFiles/Client.dir/all
+
+.PHONY : source/app/Client/all
+
+# Convenience name for "clean" pass in the directory.
+source/app/Client/clean: source/app/Client/CMakeFiles/Client.dir/clean
+
+.PHONY : source/app/Client/clean
+
+# Convenience name for "preinstall" pass in the directory.
+source/app/Client/preinstall:
+
+.PHONY : source/app/Client/preinstall
+
+#=============================================================================
+# Target rules for target source/app/Client/CMakeFiles/Client.dir
+
+# All Build rule for target.
+source/app/Client/CMakeFiles/Client.dir/all: source/app/common/cJSON/CMakeFiles/cJSON.dir/all
+source/app/Client/CMakeFiles/Client.dir/all: source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
+source/app/Client/CMakeFiles/Client.dir/all: source/lib/xmp_core/CMakeFiles/xmp_core.dir/all
+source/app/Client/CMakeFiles/Client.dir/all: source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/all
+source/app/Client/CMakeFiles/Client.dir/all: source/lib/expat_lib/CMakeFiles/expat_lib.dir/all
+source/app/Client/CMakeFiles/Client.dir/all: source/lib/common/CMakeFiles/common.dir/all
+source/app/Client/CMakeFiles/Client.dir/all: source/lib/vc5_decoder/CMakeFiles/vc5_decoder.dir/all
+source/app/Client/CMakeFiles/Client.dir/all: source/app/common/argument_parser/CMakeFiles/argument_parser.dir/all
+source/app/Client/CMakeFiles/Client.dir/all: source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/all
+source/app/Client/CMakeFiles/Client.dir/all: source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/all
+source/app/Client/CMakeFiles/Client.dir/all: source/lib/md5_lib/CMakeFiles/md5_lib.dir/all
+source/app/Client/CMakeFiles/Client.dir/all: source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/all
+	$(MAKE) -f source/app/Client/CMakeFiles/Client.dir/build.make source/app/Client/CMakeFiles/Client.dir/depend
+	$(MAKE) -f source/app/Client/CMakeFiles/Client.dir/build.make source/app/Client/CMakeFiles/Client.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles --progress-num=1 "Built target Client"
+.PHONY : source/app/Client/CMakeFiles/Client.dir/all
+
+# Include target in all.
+all: source/app/Client/CMakeFiles/Client.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+source/app/Client/CMakeFiles/Client.dir/rule:
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles 90
+	$(MAKE) -f CMakeFiles/Makefile2 source/app/Client/CMakeFiles/Client.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Capstone/RAWBerry-Cluster/src/gpr/CMakeFiles 0
+.PHONY : source/app/Client/CMakeFiles/Client.dir/rule
+
+# Convenience name for target.
+Client: source/app/Client/CMakeFiles/Client.dir/rule
+
+.PHONY : Client
+
+# clean rule for target.
+source/app/Client/CMakeFiles/Client.dir/clean:
+	$(MAKE) -f source/app/Client/CMakeFiles/Client.dir/build.make source/app/Client/CMakeFiles/Client.dir/clean
+.PHONY : source/app/Client/CMakeFiles/Client.dir/clean
+
+# clean rule for target.
+clean: source/app/Client/CMakeFiles/Client.dir/clean
 
 .PHONY : clean
 
