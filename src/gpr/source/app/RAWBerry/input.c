@@ -97,9 +97,8 @@ void *_get_raw_image(char *path)
 	//int success = gpr_convert_dng_to_gpr( &allocator, &params, &input_buffer, &output_buffer );
 
 	int success = gpr_convert_dng_to_raw( &allocator, &input_buffer, &output_buffer );
-	printf ("%s\n", path);
-	printf("size %d\n", output_buffer.size);
 	gpr_parameters_destroy(&params, allocator.Free);
+	free(input_buffer.buffer);
 	return output_buffer.buffer;
 	
 }
@@ -107,14 +106,22 @@ void *_get_raw_image(char *path)
 int get_frame(void **frame)
 {
 	struct dirent *ent;
-	if((ent = readdir(_dir)) && !buf_full(_buf)) {
+start:	if((ent = readdir(_dir))) {
+		if(*(ent->d_name) == '.'){
+			goto start;
+		}
 		char *fullpath = malloc(strlen(_dirname) 
 				+ strlen(ent->d_name) + 2);
-		if (fullpath == NULL) { /* Uh We Might be F****d here? Whatever */ }
+		if (fullpath == NULL) { 
+			exit(5);
+			/* Uh We Might be F****d here? Whatever */ }
 		sprintf(fullpath, "%s/%s", _dirname, ent->d_name);
-		openImage(fullpath, _buf);
+		*frame = _get_raw_image(fullpath);
 		/* use fullpath */
 		free(fullpath);
+	}else{
+		fprintf(stderr, "could not read");
+		exit(2);
 	}
 }
 
@@ -254,39 +261,6 @@ int openImage(char* filePath, buf_handle_t buf){
     //while(1){}
     return 0;
 }
-
-int encodeImage(gpr_buffer * output_buffer, vc5_encoder_parameters * vc5_encoder_params, gpr_buffer * vc5_image){
-	TIMER timer;
-    	InitTimer(&timer);
-	
-	StartTimer(&timer);
-        vc5_encoder_process( vc5_encoder_params, output_buffer, vc5_image, NULL );
-        StopTimer(&timer);
-        assert( vc5_image->buffer && vc5_image->size > 0 );
-	return TimeSecs(&timer);
-
-}
-
-void _coll_stream_frame(void *frame, int sz)
-{
-    //used to track bytes written to pipe
-    int bytes_written = 0;
-
-    //open pipe
-    int pipe_fd = open("/tmp/pipe", O_WRONLY);
-    //write size of frame to pipe
-    write(pipe_fd, &sz, sizeof(int));
-
-    //write frame to pipe piece-wise
-    while (bytes_written != sz){
-        //puts("Write");
-        bytes_written += write(pipe_fd, frame, (sz - bytes_written));
-    }
-    close(pipe_fd);
-    printf("Wrote: %d Bytes\n", bytes_written);
-    printf("%s: %d\n", ((char*)frame)+4, *(int*)frame);
-}
-
 
 
 void print_buffer_status(buf_handle_t buf)

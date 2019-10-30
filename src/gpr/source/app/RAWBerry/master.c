@@ -97,25 +97,32 @@ void _send_frame(struct status_m *s, int to, void *frame)
 	}
 }
 
+void _irecv_reply(struct status_m *s, int action, int node)
+{
+	int c = _create_resp(s, action, node);
+	struct reply *r = sopool_get_new(&reply_pool);
+	s->data[c] = r;
+	MPI_Irecv(r, sizeof(struct reply), MPI_INT, node, TAG_S_RET,
+			MPI_COMM_WORLD, &(s->reqs[c]));
+}
+
 int master(struct cluster_args *params, int slaves)
 {
 	int si = 0, i = 0, c = 0;
 	int errorc = 0;
 	struct status_m statm;
-	void *frame, *tmp;
-	tprintf("Master init\n");
-	sopool_init(&frame_pool, FRAME_RAW_SIZEB, 3, SOPOOL_HINT_GROW_1);
+	void *frame = NULL, *tmp;
 	sopool_init(&reply_pool, sizeof(struct reply), slaves, 0);
-	frame = sopool_get_new(&frame_pool);
 	_init_status(&statm, slaves * 2 + 2);
 	si = init_input(params, &_in);
-	tprintf("Master init\n");
-	for(i = 0; i < slaves; i++){
-		c = _create_resp(&statm, ACTION_SLAVE_AVALIBLE, 2 + i);
-		errorc =	MPI_Irecv(&(statm.data[c]), 2, MPI_INT, i + 2, TAG_S_RET,
-			MPI_COMM_WORLD, &(statm.reqs[c]));
-	}
 	get_frame(&frame);
+
+	for(i = 0; i < slaves; i++){
+		_irecv_reply(&statm, ACTION_SLAVE_AVALIBLE, 2 + i);
+		/*c = _create_resp(&statm, ACTION_SLAVE_AVALIBLE, 2 + i);*/
+		/*errorc =	MPI_Irecv(&(statm.data[c]), 2, MPI_INT, i + 2, TAG_S_RET,*/
+			/*MPI_COMM_WORLD, &(statm.reqs[c]));*/
+	}
 	while(!master_done()){
 		i = _wait_status(&statm, &errorc);	
 		if(errorc != MPI_SUCCESS){
@@ -123,18 +130,21 @@ int master(struct cluster_args *params, int slaves)
 		}
 		switch(statm.actions[i]){
 			case ACTION_SLAVE_AVALIBLE:
+				sopool_return(&reply_pool, statm.data[i]);
 				_send_frame(&statm, statm.nodes[i], frame); 
-				frame = sopool_get_new(&frame_pool);
+				/*frame = sopool_get_new(&frame_pool);*/
 				get_frame(&frame);
 				break;
 			case ACTION_SLAVE_SENT:
 				tmp = statm.data[i];
-				sopool_return(&frame_pool, tmp);
-				c = _create_resp(&statm, ACTION_SLAVE_AVALIBLE,
-					2 + i);
-				MPI_Irecv(&(statm.data[c]), 2, MPI_INT, 
-					i + 2, TAG_S_RET, MPI_COMM_WORLD, 
-					&(statm.reqs[c]));
+				/*sopool_return(&frame_pool, tmp);*/
+				free(tmp);
+				_irecv_reply(&statm, ACTION_SLAVE_AVALIBLE, statm.nodes[i] );
+				/*c = _create_resp(&statm, ACTION_SLAVE_AVALIBLE,*/
+					/*2 + i);*/
+				/*MPI_Irecv(&(statm.data[c]), 2, MPI_INT, */
+					/*i + 2, TAG_S_RET, MPI_COMM_WORLD, */
+					/*&(statm.reqs[c]));*/
 				break;
 		}
 	}

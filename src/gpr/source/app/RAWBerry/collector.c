@@ -19,6 +19,9 @@
 #include <stdlib.h>
 #include <mpi.h>
 #include <unistd.h>
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 
 #include "cluster.h"
 #include "util.h"
@@ -61,6 +64,26 @@ int _coll_recv_frame(MPI_Status *s, void **frame, int *sz)
 	return errc;
 }
 
+void _coll_stream_frame(void *frame, int sz)
+{
+    //used to track bytes written to pipe
+    int bytes_written = 0;
+
+    //open pipe
+    int pipe_fd = open("/tmp/pipe", O_WRONLY);
+    //write size of frame to pipe
+    write(pipe_fd, &sz, sizeof(int));
+
+    //write frame to pipe piece-wise
+    while (bytes_written != sz){
+        //puts("Write");
+        bytes_written += write(pipe_fd, frame, (sz - bytes_written));
+    }
+    close(pipe_fd);
+    printf("Wrote: %d Bytes\n", bytes_written);
+}
+
+
 /*void _coll_stream_frame(void *frame, int sz)*/
 /*{*/
 	/*[> write frame to streaming server's input pipe <]*/
@@ -98,6 +121,7 @@ int collector(struct cluster_args *args)
 			case A_FRAME_AVALIBLE:
 				_coll_recv_frame(&stat, &cframe, &sz);
 				_coll_stream_frame(cframe, sz);
+				free(cframe);
 				break;
 			case A_BCAST_RECV:
 				break;

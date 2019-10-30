@@ -90,6 +90,7 @@ void _s_compress(void *in, void **out, int *sz)
 	vc5_encoder_parameters params;
 	vc5_encoder_process(&params, in, NULL, out);
 	 */
+	encode(in, out, sz);
 }
 #endif
 

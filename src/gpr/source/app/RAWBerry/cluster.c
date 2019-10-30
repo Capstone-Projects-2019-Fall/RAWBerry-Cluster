@@ -45,13 +45,13 @@ int init_mpi(void)
 		return -1;
 	}
 	MPI_Comm_size(MPI_COMM_WORLD, &num_nodes);
-	if(num_nodes <= 2){
-		fprintf(stderr, 
-			"This program must be run with at least 3 nodes.");
-		return -2;
-	}
+	/*if(num_nodes <= 2){*/
+		/*fprintf(stderr, */
+			/*"This program must be run with at least 3 nodes.");*/
+		/*return -2;*/
+	/*}*/
 	MPI_Comm_rank(MPI_COMM_WORLD, &this_node_rank);
-	tprintf("Proc %d, rank %d, on %s\n", getpid(), this_node_rank, hostname);
+	printf("Proc %d, rank %d, on %s\n", getpid(), this_node_rank, hostname);
 	return 0;
 }
 

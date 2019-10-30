@@ -84,6 +84,7 @@ int master_done(void);
 
 int slave(struct cluster_args *params);
 int init_engine(struct cluster_args *params);
+int encode(void *in, void **out, int *sz);
 int slave_done(void);
 
 //collector node funcs

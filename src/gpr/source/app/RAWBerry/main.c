@@ -37,8 +37,8 @@ void fire(struct cluster_args * payload);
 
 int main(int argc, char **argv){
 
-//	initialize();
-//	fire(NULL);
+	initialize();
+	fire(NULL);
 
     //char dir[DIR_LENGTH];//string of directory to ingest to buffer
     long opts;//options parameter for cluster
