@@ -20,6 +20,7 @@
 #include <mpi.h>
 
 #include "cluster.h"
+#include "util.h"
 #include "sopool.h"
 
 #define ACTION_FRAME_GET 	1
@@ -45,9 +46,11 @@ static void *datas[4] = {NULL, NULL, NULL, NULL};
 
 static struct sopool reply_pool;
 
+static struct reply rmaster;
+
 void _slave_reply_scs(struct slave_m *s, int32_t framenum)
 {
-	struct reply *r = sopool_get_new(&reply_pool);
+	struct reply *r = &rmaster;
 	r->message = REPLY_MSG_SUCCESS;
 	r->payload = framenum;
 	MPI_Isend(r, sizeof(struct reply), MPI_BYTE, NODE_MASTER,  TAG_S_RET,
@@ -70,12 +73,36 @@ static void _recv_frame(struct slave_m *s, void *frame)
 		MPI_COMM_WORLD, &(s->in));
 }
 
+static void _send_cframe(struct slave_m *s, void *cframe, int sz)
+{
+	int errc = 0;
+	errc = MPI_Isend(cframe, sz, MPI_BYTE, NODE_COLLECTOR, TAG_S_TO, 
+		MPI_COMM_WORLD, &(s->send));
+	if(errc != MPI_SUCCESS){
+		//TODO:Error handle
+	}
+}
+
+#ifndef TEST
+void _s_compress(void *in, void **out, int *sz)
+{
+	/* TODO: Hook this up right somehow
+	vc5_encoder_parameters params;
+	vc5_encoder_process(&params, in, NULL, out);
+	 */
+}
+#endif
+
 int slave(struct cluster_args *params)
 {
 	int i = 0, errc = 0, frnum = 0;
-	void *frame_in = malloc(FRAME_RAW_SIZEB);
+	int v = 0, sz = 0;
+	void *frame_in = NULL;
+	void *frame_out = NULL;
+	frame_in = malloc(FRAME_RAW_SIZEB);
 	struct slave_m ctl = { .arr = { MPI_REQUEST_NULL, MPI_REQUEST_NULL, 
 		MPI_REQUEST_NULL, MPI_REQUEST_NULL } };
+	init_engine(params);
 	sopool_init(&reply_pool, sizeof(struct reply), 3, 0);
 	_slave_reply_scs(&ctl, 0);
 	_recv_frame(&ctl, frame_in);
@@ -84,22 +111,36 @@ int slave(struct cluster_args *params)
 		if(errc != MPI_SUCCESS){
 			//TODO:Handle error
 		}
+		/*tprintf("Slave action: %d\n", i);*/
 		switch(i){
-			case ACTION_FRAME_GET:
-				//Send to griff
+		case ACTION_FRAME_GET:
+			if(frame_out == NULL){ 
+				_s_compress(frame_in, &frame_out, &sz);
+				_send_cframe(&ctl, frame_in, sz);
 				_slave_reply_scs(&ctl, frnum);
-				break;
-			case ACTION_REPLY_DONE:
-				sopool_return(&reply_pool, datas[1]);
-				break;
-			case ACTION_SEND_DONE:
-				break;
-			case ACTION_BCAST_ALRT:
-				break;
-
-			default:
-				//ERROR
-				break;
+				_recv_frame(&ctl, frame_in);
+			}else{
+				v = 1;
+			}
+			break;
+		case ACTION_REPLY_DONE:
+			break;
+		case ACTION_SEND_DONE:
+			free(frame_out);
+			frame_out = NULL;
+			if(v){
+				v = 0;
+				_s_compress(frame_in, &frame_out, &sz);
+				_slave_reply_scs(&ctl, frnum);
+				_recv_frame(&ctl, frame_in);
+			}
+			break;
+		case ACTION_BCAST_ALRT:
+			break;
+		
+		default:
+			//ERROR
+			break;
 		}
 	}
 	return 0;

@@ -28,6 +28,9 @@
 #include "timer.h"
 #include "config.h"
 
+#include "cluster.h"
+#include "input.h"
+
 #define EXAMPLE_BUFFER_SIZE 10
 #define INPUT_WIDTH 1952
 #define INPUT_HEIGHT 1112
@@ -42,6 +45,78 @@ int openImage(char* filePath, buf_handle_t buf);
 void print_buffer_status(buf_handle_t buf);
 int encodeImage(gpr_buffer * output_buffer, vc5_encoder_parameters * vc5_encoder_params, gpr_buffer * vc5_image);
 void _coll_stream_frame(void *frame, int sz);
+
+static DIR *_dir;
+static buf_handle_t _buf;
+static char *_dirname;
+
+int init_input(struct cluster_args *args, buf_handle_t *buf)
+{
+	gpr_buffer *buffer = malloc(BUFFER_SIZE * sizeof(gpr_buffer));
+	_dirname = "./CDNG"; //do something later
+	//define and allocate memory for input-buffer
+	*buf = buf_init(buffer, BUFFER_SIZE);//instantiate buffer
+	_buf = *buf;
+	if(_dir = opendir(_dirname)) {
+		return 0;
+	}else{
+		//abort
+		exit(-1);
+	}
+}
+
+void *_get_raw_image(char *path)
+{
+
+	//Allocate a buffer to read this shiz into
+	gpr_allocator allocator;
+	//for now use malloc, eventually use buffer allocators
+	allocator.Alloc = malloc;
+	allocator.Free = free;
+
+	//Struct for image parameters
+	gpr_parameters params;
+	gpr_parameters_set_defaults(&params);
+
+	//create gpr_buffer struct
+	gpr_buffer input_buffer  = { NULL, 0 };
+
+	//Use routine in gpr libraries to make this easy
+	if( read_from_file( &input_buffer, path, allocator.Alloc, allocator.Free ) != 0 )
+	{
+	    return NULL;
+	}
+
+	//Now we have an image open, read parameters into struct
+	gpr_parse_metadata( &allocator, &input_buffer, &params );
+
+	//This should be in the circular buffer
+	gpr_buffer output_buffer = { NULL, 0 };
+
+
+	//int success = gpr_convert_dng_to_gpr( &allocator, &params, &input_buffer, &output_buffer );
+
+	int success = gpr_convert_dng_to_raw( &allocator, &input_buffer, &output_buffer );
+	printf ("%s\n", path);
+	printf("size %d\n", output_buffer.size);
+	gpr_parameters_destroy(&params, allocator.Free);
+	return output_buffer.buffer;
+	
+}
+
+int get_frame(void **frame)
+{
+	struct dirent *ent;
+	if((ent = readdir(_dir)) && !buf_full(_buf)) {
+		char *fullpath = malloc(strlen(_dirname) 
+				+ strlen(ent->d_name) + 2);
+		if (fullpath == NULL) { /* Uh We Might be F****d here? Whatever */ }
+		sprintf(fullpath, "%s/%s", _dirname, ent->d_name);
+		openImage(fullpath, _buf);
+		/* use fullpath */
+		free(fullpath);
+	}
+}
 
 /*int main(int argc, char **argv)
 {
@@ -131,6 +206,7 @@ int openImage(char* filePath, buf_handle_t buf){
     
     int success = gpr_convert_dng_to_raw( &allocator, &input_buffer, &output_buffer );
     printf ("%s\n", filePath);
+    printf("size %d\n", output_buffer.size);
     gpr_parameters_destroy(&params, allocator.Free);
 	
     if( success == 0 )

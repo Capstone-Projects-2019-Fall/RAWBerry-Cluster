@@ -21,6 +21,9 @@
 #define  util_INC
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
 
 #define XCALLOC(A, S, M) 							\
 	A = calloc(S, M); 							\
@@ -29,6 +32,10 @@
 			#A, S * M); 						\
 	} 
 
-
+#ifdef TEST
+#define tprintf(S, ...) printf(S, ##__VA_ARGS__); fflush(stdout);
+#else
+#define tprintf(S, ...)
+#endif
 
 #endif   /* ----- #ifndef util_INC  ----- */

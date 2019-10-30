@@ -28,8 +28,10 @@
 #define TAG_S_TO  2
 #define TAG_B_ALRT 3
 
-#ifndef FRAME_RAW_SIZEB 
-#define FRAME_RAW_SIZEB (3840 * 2160 * 3 + 8)
+#ifndef TEST
+#define FRAME_RAW_SIZEB _frame_size
+#else 
+#define FRAME_RAW_SIZEB 40
 #endif
 
 
@@ -49,8 +51,10 @@ struct reply{
 
 extern int this_node_rank;
 extern int num_nodes;
+extern int _frame_size;
 
 int init_mpi(void);
+void exit_mpi(void);
 
 /* 
  * ===  FUNCTION  =============================================================
@@ -79,6 +83,7 @@ int master_done(void);
 //Slave node funcs
 
 int slave(struct cluster_args *params);
+int init_engine(struct cluster_args *params);
 int slave_done(void);
 
 //collector node funcs
@@ -87,6 +92,13 @@ int collector(struct cluster_args *args);
 int collector_done(void);
 int init_stream_server(struct cluster_args *args);
 
+#ifndef NMPI
+#include <mpi.h>
+int nb_probe(int source, int tag, MPI_Comm comm, MPI_Status *stat);
+int nb_waitany(int len, MPI_Request *reqs, int *i, MPI_Status *stat);
+void c_bcast_send(struct reply *r);
+void c_bcast_irecv(struct reply *msg, MPI_Request *r);
+#endif
 
 #endif   /* ----- #ifndef cluster_INC  ----- */
 
