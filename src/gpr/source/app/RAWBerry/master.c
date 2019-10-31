@@ -106,6 +106,16 @@ void _irecv_reply(struct status_m *s, int action, int node)
 			MPI_COMM_WORLD, &(s->reqs[c]));
 }
 
+
+static int _master_get_frame(void **frame)
+{
+	get_frame(frame);
+	*frame = realloc(*frame, FRAME_RAW_SIZEB);
+	printf("Getting frame %d\n", _fn);
+	*(int *)(*frame)  = _fn++;
+	return 0;
+}
+
 int master(struct cluster_args *params, int slaves)
 {
 	int si = 0, i = 0, c = 0;
@@ -115,7 +125,7 @@ int master(struct cluster_args *params, int slaves)
 	sopool_init(&reply_pool, sizeof(struct reply), slaves, 0);
 	_init_status(&statm, slaves * 2 + 2);
 	si = init_input(params, &_in);
-	get_frame(&frame);
+	_master_get_frame(&frame);
 
 	for(i = 0; i < slaves; i++){
 		_irecv_reply(&statm, ACTION_SLAVE_AVALIBLE, 2 + i);
@@ -133,7 +143,7 @@ int master(struct cluster_args *params, int slaves)
 				sopool_return(&reply_pool, statm.data[i]);
 				_send_frame(&statm, statm.nodes[i], frame); 
 				/*frame = sopool_get_new(&frame_pool);*/
-				get_frame(&frame);
+				_master_get_frame(&frame);
 				break;
 			case ACTION_SLAVE_SENT:
 				tmp = statm.data[i];

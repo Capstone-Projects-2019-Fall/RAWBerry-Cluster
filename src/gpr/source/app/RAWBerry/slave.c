@@ -78,21 +78,26 @@ static void _send_cframe(struct slave_m *s, void *cframe, int sz)
 	int errc = 0;
 	errc = MPI_Isend(cframe, sz, MPI_BYTE, NODE_COLLECTOR, TAG_S_TO, 
 		MPI_COMM_WORLD, &(s->send));
+	
 	if(errc != MPI_SUCCESS){
 		//TODO:Error handle
 	}
 }
 
-#ifndef TEST
 void _s_compress(void *in, void **out, int *sz)
 {
 	/* TODO: Hook this up right somehow
 	vc5_encoder_parameters params;
 	vc5_encoder_process(&params, in, NULL, out);
 	 */
+	int fnum = *(int *)in;
+	printf("Compressing frame %d\n", fnum);
 	encode(in, out, sz);
+	*out = realloc(*out, *sz + 4);
+	memcpy((uint8_t *)*out + 4, *out, *sz);
+	*(int *)*out = fnum;
+	*sz += 4;
 }
-#endif
 
 int slave(struct cluster_args *params)
 {

@@ -91,6 +91,7 @@ int slave_done(void);
 
 int collector(struct cluster_args *args);
 int collector_done(void);
+void stream_frame(void *frame, int sz, int frnum);
 int init_stream_server(struct cluster_args *args);
 
 #ifndef NMPI

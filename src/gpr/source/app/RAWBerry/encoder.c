@@ -62,7 +62,7 @@ int encodeImage(gpr_buffer * output_buffer, vc5_encoder_parameters * vc5_encoder
 int encode(void *in, void **out, int *sz)
 {
 	
-	gpr_buffer input = { in, FRAME_RAW_SIZEB };
+	gpr_buffer input = { in, FRAME_RAW_SIZEB - 4 };
 	gpr_buffer vc5_image = { NULL, 0  };
 	     
 	vc5_encoder_parameters vc5_encoder_params;

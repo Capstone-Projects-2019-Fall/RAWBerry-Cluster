@@ -26,7 +26,7 @@
 
 int this_node_rank;
 int num_nodes;
-int _frame_size = 4341248; //black magic number, very cursed 0w0
+int _frame_size = 4341248 + 4; //black magic number, very cursed 0w0
 char hostname[256];
 
 void exit_mpi(void)

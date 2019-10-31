@@ -66,21 +66,9 @@ int _coll_recv_frame(MPI_Status *s, void **frame, int *sz)
 
 void _coll_stream_frame(void *frame, int sz)
 {
-    //used to track bytes written to pipe
-    int bytes_written = 0;
-
-    //open pipe
-    int pipe_fd = open("/tmp/pipe", O_WRONLY);
-    //write size of frame to pipe
-    write(pipe_fd, &sz, sizeof(int));
-
-    //write frame to pipe piece-wise
-    while (bytes_written != sz){
-        //puts("Write");
-        bytes_written += write(pipe_fd, frame, (sz - bytes_written));
-    }
-    close(pipe_fd);
-    printf("Wrote: %d Bytes\n", bytes_written);
+	int fnum = *(int *)(frame);
+	printf("Streaming frame %d\n", fnum);
+	stream_frame((uint8_t *)frame + 4, sz - 4, fnum);
 }
 
 

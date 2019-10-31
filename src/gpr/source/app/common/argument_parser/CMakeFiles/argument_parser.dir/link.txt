@@ -1,2 +1,0 @@
-/usr/bin/ar qc libargument_parser.a  CMakeFiles/argument_parser.dir/argument_parser.cpp.o CMakeFiles/argument_parser.dir/program_options_lite.cpp.o
-/usr/bin/ranlib libargument_parser.a

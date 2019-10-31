@@ -19,6 +19,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
+#include <errno.h>
 #include <assert.h>
 #include <dirent.h>
 #include <string.h>
@@ -37,7 +38,7 @@
 #define INPUT_PIPE "/tmp/pipe"
 #define BUFF_SIZE 400000000
 
-
+#define OUT_DIR "./out"
 
 int init_engine(struct cluster_args *params)
 {
@@ -47,16 +48,45 @@ int init_engine(struct cluster_args *params)
 
 int init_stream_server(struct cluster_args *params)
 {
-	printf("Opening Pipe\n");
-	mkfifo(INPUT_PIPE, 0666);
-	int fd = open(INPUT_PIPE, O_WRONLY);
-	printf("Pipe Open");
+	/*printf("Opening Pipe\n");*/
+	/*mkfifo(INPUT_PIPE, 0666);*/
+	/*int fd = open(INPUT_PIPE, O_WRONLY);*/
+	/*printf("Pipe Open");*/
 	
-	int pid = fork();
+	/*int pid = fork();*/
 
-	if ( pid == 0 ) {
-		execlp( "../rtsp/rtsp", "", NULL);
+	/*if ( pid == 0 ) {*/
+		/*execlp( "../rtsp/rtsp", "", NULL);*/
+	/*}*/
+
+	/*return 0;*/
+}
+
+void stream_frame(void *frame, int sz, int frnum)
+{
+	/* Temp output */
+	char fname[50];
+	snprintf(fname, 50, "%s/fr%d.vc5", OUT_DIR, frnum);
+	int fd = open(fname, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP);
+	int wrote = write(fd, frame, sz);
+	printf("Wrote %d bytes to %s\n", wrote, fname);
+	if(wrote == -1){
+		perror("Write error");
 	}
+    /*used to track bytes written to pipe*/
+    /*int bytes_written = 0;*/
 
-	return 0;
+    /*open pipe*/
+    /*int pipe_fd = open("/tmp/pipe", O_WRONLY);*/
+    /*write size of frame to pipe*/
+    /*write(pipe_fd, &sz, sizeof(int));*/
+
+    /*write frame to pipe piece-wise*/
+    /*while (bytes_written != sz){*/
+	/*puts("Write");*/
+	/*bytes_written += write(pipe_fd, frame, (sz - bytes_written));*/
+    /*}*/
+    /*close(pipe_fd);*/
+    /*printf("Wrote: %d Bytes\n", bytes_written);*/
+
 }
