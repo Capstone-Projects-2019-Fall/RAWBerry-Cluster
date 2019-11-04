@@ -53,7 +53,7 @@ extern int this_node_rank;
 extern int num_nodes;
 extern int _frame_size;
 
-int init_mpi(void);
+int init_mpi(int argc, char **argv);
 void exit_mpi(void);
 
 /* 

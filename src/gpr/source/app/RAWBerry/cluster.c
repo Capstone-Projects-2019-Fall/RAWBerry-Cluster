@@ -35,11 +35,11 @@ void exit_mpi(void)
 	exit(-1);
 }
 
-int init_mpi(void)
+int init_mpi(int argc, char **argv)
 {
 	int err, sup, i = 0;
 	gethostname(hostname, sizeof(hostname));
-	err = MPI_Init_thread(NULL, NULL, MPI_THREAD_FUNNELED, &sup);
+	err = MPI_Init_thread(&argc, &argv, MPI_THREAD_FUNNELED, &sup);
 	if(err != MPI_SUCCESS || sup < MPI_THREAD_FUNNELED){
 		fprintf(stderr, "Cannot initialize MPI\n");
 		return -1;

@@ -44,7 +44,7 @@ static int _coll_select(MPI_Status *s, int *action)
 		/**action = A_FRAMETX_DONE;*/
 		/*return er;*/
 	/*}*/
-	er = nb_probe(MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, s);
+	er = MPI_Probe(MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, s);
 	if(s->MPI_TAG == TAG_S_TO){
 		*action = A_FRAME_AVALIBLE;
 	}else if(s->MPI_TAG == TAG_B_ALRT){

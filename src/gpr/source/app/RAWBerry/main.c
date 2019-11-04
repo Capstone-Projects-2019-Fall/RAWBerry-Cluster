@@ -37,7 +37,7 @@ void fire(struct cluster_args * payload);
 
 int main(int argc, char **argv){
 
-	initialize();
+	init_mpi(argc, argv);
 	fire(NULL);
 
     //char dir[DIR_LENGTH];//string of directory to ingest to buffer
@@ -71,10 +71,6 @@ void initialize(){
 
     int cluster_mpi_status;//status of mpi initialization init_mpi(..)
 
-    //initialize cluster components
-    if((cluster_mpi_status = init_mpi()) != 0){
-        exit(cluster_mpi_status);//terminate - cluster prints error desc., exit with error status
-    }
 }
 
 //read contents of DIR to buffer BUF

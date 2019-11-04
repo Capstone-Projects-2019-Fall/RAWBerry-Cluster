@@ -80,7 +80,7 @@ int _wait_status(struct status_m *s, int *errc)
 {
 	int i; 
 	MPI_Status stat;
-	*errc = nb_waitany(s->mvals, s->reqs, &i,  &stat);
+	*errc = MPI_Waitany(s->mvals, s->reqs, &i,  &stat);
 	*(s->reqs + i) = MPI_REQUEST_NULL;
 	return i;
 }
