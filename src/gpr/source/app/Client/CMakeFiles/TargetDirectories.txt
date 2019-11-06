@@ -1,0 +1,3 @@
+/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/Client/CMakeFiles/rebuild_cache.dir
+/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/Client/CMakeFiles/Client.dir
+/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/Client/CMakeFiles/edit_cache.dir
