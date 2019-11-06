@@ -17,6 +17,6 @@
 
 #define BUFFER_SIZE 10
 
-int readFiles(char* directory, buf_handle_t buf);
-int openImage(char* filePath, buf_handle_t buf);
-void print_buffer_status(buf_handle_t buf);
+int readFiles(char* directory);
+int openImage(char* filePath);
+

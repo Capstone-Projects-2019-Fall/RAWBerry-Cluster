@@ -1,0 +1,157 @@
+/*
+ * input.c
+ * 
+ * 
+ */
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <stddef.h>
+#include <stdbool.h>
+#include <assert.h>
+#include <dirent.h>
+#include <string.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+
+
+#include "gpr.h"
+#include "gpr_allocator.h"
+#include "gpr_buffer.h"
+#include "buffer.h"
+#include "vc5_decoder.h"
+#include "timer.h"
+#include "config.h"
+#include "gpr_parse_utils.h"
+
+
+#define EXAMPLE_BUFFER_SIZE 10
+#define INPUT_WIDTH 1952
+#define INPUT_HEIGHT 1112
+#define INPUT_PIPE "/tmp/pipe"
+#define BUFF_SIZE 400000000
+
+int fd;
+
+
+int readFiles(char* directory);
+int openImage(char* filePath);
+
+
+int main(int argc, char **argv)
+{
+    
+    
+    char dir[] = "/home/pi/Documents/VC5";
+    int status = readFiles(dir);
+    
+
+    return status;
+	}
+
+int readFiles(char* directory){
+	
+DIR *dir;
+struct dirent *ent;
+
+if ((dir = opendir (directory)) != NULL) {
+  /* print all the files and directories within directory */
+  while ((ent = readdir (dir)) != NULL) {
+    
+    //Get us a string with the full path so we can open file
+	char *fullpath = malloc(strlen(directory)+ strlen(ent->d_name) + 2);
+	if (fullpath == NULL) { /* Uh We Might be F****d here? Whatever */  return -1; }
+	sprintf(fullpath, "%s/%s", directory, ent->d_name);
+	openImage(fullpath);
+	/* use fullpath */
+	free(fullpath);
+
+    
+}
+  
+ closedir (dir);
+} else {
+  /* could not open directory */
+  perror ("");
+ return EXIT_FAILURE;
+}
+	return 0;
+}
+
+int openImage(char* filePath){
+    
+    CODEC_ERROR error = CODEC_ERROR_OKAY;
+    
+    vc5_decoder_parameters vc5_decoder_params;
+    vc5_decoder_parameters_set_default(&vc5_decoder_params);
+    vc5_decoder_params.enabled_parts = VC5_ENABLED_PARTS;
+    vc5_decoder_params.mem_alloc     = malloc;
+    vc5_decoder_params.mem_free      = free;
+	
+	vc5_decoder_params.pixel_format = VC5_DECODER_PIXEL_FORMAT_RGGB_14;
+    gpr_buffer vc5_image = { NULL, 0  };
+    
+    printf("Opening File:%s\n", filePath);
+    if( read_from_file( &vc5_image, filePath, vc5_decoder_params.mem_alloc, vc5_decoder_params.mem_free ) )
+    {
+        LogPrint("Could not read input file: %s\n", filePath);
+        return 0;
+    }
+    printf("Read:%d Bytes\n", vc5_image.size);
+	
+
+    gpr_buffer raw_image = { NULL, 0  };
+    gpr_rgb_buffer rgb_image;
+        
+
+        
+    vc5_decoder_process( &vc5_decoder_params, &vc5_image, &raw_image, &rgb_image );
+        
+        
+    printf("Decompressed Size\n", raw_image.size);
+    
+    gpr_parameters params;
+    gpr_parameters_set_defaults(&params);
+    
+    gpr_allocator allocator;
+    allocator.Alloc = malloc;
+    allocator.Free = free;
+    char metadata_file_path[] = "/home/pi/Documents/BMPCC.txt";
+    
+    if( gpr_parameters_parse( &params, metadata_file_path ) != 0 )
+            return -1;
+    
+    gpr_buffer output_buffer = { NULL, 0 };
+    
+    gpr_convert_raw_to_dng( &allocator, &params, &raw_image, &output_buffer );
+
+
+
+    //LogPrint("Encoding %.3f secs per frame", encodeImage(&output_buffer, vc5_encoder_params, &vc5_image));
+    //Temp Write out file for giggles
+    char* output_file_path = filePath;
+    int len = strlen(filePath);
+    output_file_path[(len - 3)] = 'D';
+    output_file_path[(len - 2)] = 'N';
+    output_file_path[(len - 1)] = 'G';
+
+  if( write_to_file( &output_buffer, output_file_path ) )
+        {
+            LogPrint("Error writing bitstream to location %s",  output_file_path);
+            return -1;
+        }
+    printf("Wrote %d Bytes\n",vc5_image.size);
+    return 0;
+}
+
+
+
+
+
+
+

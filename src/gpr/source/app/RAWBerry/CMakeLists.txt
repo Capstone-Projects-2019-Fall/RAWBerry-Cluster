@@ -2,6 +2,7 @@
 set( EXE_NAME RAWBerry )
 
 find_package(MPI REQUIRED)
+find_package( OpenCV REQUIRED )
 
 # get source and include files
 file( GLOB GPRTOOLS_SRC_FILES "*.c" "*.cpp" )
@@ -49,6 +50,7 @@ add_executable( ${EXE_NAME} ${GPRTOOLS_SRC_FILES} ${GPRTOOLS_INC_FILES} )
 # Linked libraries
 target_link_libraries( ${EXE_NAME} gpr_sdk )
 target_link_libraries(${EXE_NAME} ${MPI_LIBRARIES})
+target_link_libraries( ${EXE_NAME} ${OpenCV_LIBS} )
 
 if(EXISTS "${CMAKE_SOURCE_DIR}/source/lib/tiny_jpeg")
   target_link_libraries( ${EXE_NAME} tiny_jpeg )
