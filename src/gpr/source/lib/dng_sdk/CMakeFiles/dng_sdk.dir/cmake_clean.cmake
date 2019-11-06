@@ -64,8 +64,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/dng_sdk.dir/dng_xmp.cpp.o"
   "CMakeFiles/dng_sdk.dir/dng_xmp_sdk.cpp.o"
   "CMakeFiles/dng_sdk.dir/dng_xy_coord.cpp.o"
-  "libdng_sdk.pdb"
   "libdng_sdk.a"
+  "libdng_sdk.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

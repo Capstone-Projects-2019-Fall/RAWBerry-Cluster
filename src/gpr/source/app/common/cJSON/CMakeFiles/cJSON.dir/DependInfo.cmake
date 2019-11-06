@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/common/cJSON/cJSON.c" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/common/cJSON/CMakeFiles/cJSON.dir/cJSON.c.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/common/cJSON/cJSON_Utils.c" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/common/cJSON/CMakeFiles/cJSON.dir/cJSON_Utils.c.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/common/cJSON/cJSON.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/common/cJSON/CMakeFiles/cJSON.dir/cJSON.c.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/common/cJSON/cJSON_Utils.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/common/cJSON/CMakeFiles/cJSON.dir/cJSON_Utils.c.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C

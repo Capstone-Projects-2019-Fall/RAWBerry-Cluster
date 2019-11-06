@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/tiny_jpeg/jpeg.c
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/tiny_jpeg/jpeg.c
 tiny_jpeg.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/tiny_jpeg/tiny_jpeg.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/tiny_jpeg/tiny_jpeg.h
 
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/tiny_jpeg/tiny_jpeg.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/tiny_jpeg/tiny_jpeg.h
 stb_image.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/tiny_jpeg/stb_image.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/tiny_jpeg/stb_image.h
 tiny_jpeg.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/tiny_jpeg/tiny_jpeg.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/tiny_jpeg/tiny_jpeg.h
 assert.h
 -
 inttypes.h

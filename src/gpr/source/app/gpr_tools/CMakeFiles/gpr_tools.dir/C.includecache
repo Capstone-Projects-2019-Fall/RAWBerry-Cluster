@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/gpr_tools/gpr_parse_utils.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr_parse_utils.h
 gpr.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/gpr_tools/gpr.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr.h
 
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/gpr_tools/gpr_print_utils.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr_print_utils.h
 gpr.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/gpr_tools/gpr.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr.h
 
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/gpr_tools/main_c.c
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/main_c.c
 stdio.h
 -
 string.h
@@ -22,79 +22,79 @@ string.h
 stdbool.h
 -
 gpr.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/gpr_tools/gpr.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr.h
 main_c.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/gpr_tools/main_c.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/main_c.h
 gpr_parse_utils.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/gpr_tools/gpr_parse_utils.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr_parse_utils.h
 gpr_print_utils.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/gpr_tools/gpr_print_utils.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/gpr_print_utils.h
 jpeg.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/gpr_tools/jpeg.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/jpeg.h
 
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/gpr_tools/main_c.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/main_c.h
 
-source/app/gpr_tools/../../lib/common/public/gpr_allocator.h
+source/lib/common/public/gpr_allocator.h
 gpr_platform.h
-source/app/gpr_tools/../../lib/common/public/gpr_platform.h
+source/lib/common/public/gpr_platform.h
 
-source/app/gpr_tools/../../lib/common/public/gpr_buffer.h
+source/lib/common/public/gpr_buffer.h
 gpr_allocator.h
-source/app/gpr_tools/../../lib/common/public/gpr_allocator.h
+source/lib/common/public/gpr_allocator.h
 gpr_platform.h
-source/app/gpr_tools/../../lib/common/public/gpr_platform.h
+source/lib/common/public/gpr_platform.h
 
-source/app/gpr_tools/../../lib/common/public/gpr_platform.h
+source/lib/common/public/gpr_platform.h
 stdlib.h
 -
 stdint.h
 -
 TargetConditionals.h
-source/app/gpr_tools/../../lib/common/public/TargetConditionals.h
+source/lib/common/public/TargetConditionals.h
 
-source/app/gpr_tools/../../lib/common/public/gpr_rgb_buffer.h
+source/lib/common/public/gpr_rgb_buffer.h
 gpr_allocator.h
-source/app/gpr_tools/../../lib/common/public/gpr_allocator.h
+source/lib/common/public/gpr_allocator.h
 gpr_platform.h
-source/app/gpr_tools/../../lib/common/public/gpr_platform.h
+source/lib/common/public/gpr_platform.h
 
-source/app/gpr_tools/../../lib/gpr_sdk/public/gpr.h
+source/lib/gpr_sdk/public/gpr.h
 gpr_platform.h
-source/app/gpr_tools/../../lib/gpr_sdk/public/gpr_platform.h
+source/lib/gpr_sdk/public/gpr_platform.h
 gpr_exif_info.h
-source/app/gpr_tools/../../lib/gpr_sdk/public/gpr_exif_info.h
+source/lib/gpr_sdk/public/gpr_exif_info.h
 gpr_profile_info.h
-source/app/gpr_tools/../../lib/gpr_sdk/public/gpr_profile_info.h
+source/lib/gpr_sdk/public/gpr_profile_info.h
 gpr_tuning_info.h
-source/app/gpr_tools/../../lib/gpr_sdk/public/gpr_tuning_info.h
+source/lib/gpr_sdk/public/gpr_tuning_info.h
 gpr_allocator.h
-source/app/gpr_tools/../../lib/gpr_sdk/public/gpr_allocator.h
+source/lib/gpr_sdk/public/gpr_allocator.h
 gpr_buffer.h
-source/app/gpr_tools/../../lib/gpr_sdk/public/gpr_buffer.h
+source/lib/gpr_sdk/public/gpr_buffer.h
 gpr_rgb_buffer.h
-source/app/gpr_tools/../../lib/gpr_sdk/public/gpr_rgb_buffer.h
+source/lib/gpr_sdk/public/gpr_rgb_buffer.h
 
-source/app/gpr_tools/../../lib/gpr_sdk/public/gpr_exif_info.h
+source/lib/gpr_sdk/public/gpr_exif_info.h
 gpr_platform.h
-source/app/gpr_tools/../../lib/gpr_sdk/public/gpr_platform.h
+source/lib/gpr_sdk/public/gpr_platform.h
 
-source/app/gpr_tools/../../lib/gpr_sdk/public/gpr_profile_info.h
+source/lib/gpr_sdk/public/gpr_profile_info.h
 gpr_platform.h
-source/app/gpr_tools/../../lib/gpr_sdk/public/gpr_platform.h
+source/lib/gpr_sdk/public/gpr_platform.h
 
-source/app/gpr_tools/../../lib/gpr_sdk/public/gpr_tuning_info.h
+source/lib/gpr_sdk/public/gpr_tuning_info.h
 gpr_platform.h
-source/app/gpr_tools/../../lib/gpr_sdk/public/gpr_platform.h
+source/lib/gpr_sdk/public/gpr_platform.h
 
-source/app/gpr_tools/../../lib/tiny_jpeg/jpeg.h
+source/lib/tiny_jpeg/jpeg.h
 tiny_jpeg.h
-source/app/gpr_tools/../../lib/tiny_jpeg/tiny_jpeg.h
+source/lib/tiny_jpeg/tiny_jpeg.h
 
-source/app/gpr_tools/../../lib/tiny_jpeg/tiny_jpeg.h
+source/lib/tiny_jpeg/tiny_jpeg.h
 stb_image.h
-source/app/gpr_tools/../../lib/tiny_jpeg/stb_image.h
+source/lib/tiny_jpeg/stb_image.h
 tiny_jpeg.h
-source/app/gpr_tools/../../lib/tiny_jpeg/tiny_jpeg.h
+source/lib/tiny_jpeg/tiny_jpeg.h
 assert.h
 -
 inttypes.h

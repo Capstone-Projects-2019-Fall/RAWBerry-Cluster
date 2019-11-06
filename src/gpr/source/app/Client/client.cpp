@@ -13,9 +13,9 @@
 #include "config.h"
 #include "gpr_parse_utils.h"
 
-#include <opencv2/core/core_c.h>
-#include <opencv2/imgcodecs/imgcodecs_c.h>
-#include <opencv2/highgui/highgui_c.h>
+//#include <opencv2/legacy/constants_c.h>
+//#include <opencv2/imgcodecs/imgcodecs_c.h>
+//#include <opencv2/highgui/highgui_c.h>
 
 using namespace std;
 typedef int SOCKET;
@@ -200,11 +200,11 @@ bool session_handler(SOCKET rtsp_socket, int &request_count, string &session_id)
 //sends frame to decoder
 void frame_to_decoder(string frame){
 	
-	CvMat * image;
-	//FILE *file = fopen("/tmp/test", "w+");
-	//std::fwrite(frame.c_str(), frame.length(), 1, file);
+	//CvMat * image;
+	FILE *file = fopen("/tmp/test", "w+");
+	std::fwrite(frame.c_str(), frame.length(), 1, file);
 	
-	 gpr_allocator allocator;
+	/* gpr_allocator allocator;
     allocator.Alloc = malloc;
     allocator.Free = free;
     
@@ -246,7 +246,7 @@ void frame_to_decoder(string frame){
     image = cvDecodeImageM((CvMat *)&output_buffer, CV_LOAD_IMAGE_COLOR);
 	
 	cvShowImage( "Display window", image );                // Show our image inside it.
-    cvWaitKey(42); // Wait for a keystroke in the window
+    cvWaitKey(42); // Wait for a keystroke in the window*/
 	return;
 }
 

@@ -3,8 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/rtsp.dir/CStreamer.cpp.o"
   "CMakeFiles/rtsp.dir/SimStreamer.cpp.o"
   "CMakeFiles/rtsp.dir/main.cpp.o"
-  "rtsp.pdb"
   "rtsp"
+  "rtsp.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

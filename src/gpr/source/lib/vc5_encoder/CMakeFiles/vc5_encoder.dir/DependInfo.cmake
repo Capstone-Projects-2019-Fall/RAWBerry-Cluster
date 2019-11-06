@@ -4,18 +4,18 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/codebooks.c" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/codebooks.c.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/component.c" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/component.c.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/encoder.c" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/encoder.c.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/forward.c" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/forward.c.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/parameters.c" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/parameters.c.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/raw.c" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/raw.c.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/sections.c" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/sections.c.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/syntax.c" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/syntax.c.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/vc5_encoder.c" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/vc5_encoder.c.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/vlc.c" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/vlc.c.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/codebooks.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/codebooks.c.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/component.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/component.c.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/encoder.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/encoder.c.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/forward.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/forward.c.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/parameters.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/parameters.c.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/raw.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/raw.c.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/sections.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/sections.c.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/syntax.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/syntax.c.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/vc5_encoder.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/vc5_encoder.c.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/vlc.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/vlc.c.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C

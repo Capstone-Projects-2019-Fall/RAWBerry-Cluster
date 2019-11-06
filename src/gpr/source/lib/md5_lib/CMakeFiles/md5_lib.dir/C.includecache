@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/md5_lib/md5.c
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/md5_lib/md5.c
 stdint.h
 -
 string.h
 -
 md5.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/md5_lib/md5.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/md5_lib/md5.h
 
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/md5_lib/md5.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/md5_lib/md5.h
 stdint.h
 -
 

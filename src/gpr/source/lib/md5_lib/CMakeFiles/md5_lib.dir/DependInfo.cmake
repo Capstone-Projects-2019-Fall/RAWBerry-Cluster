@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/md5_lib/md5.c" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/md5_lib/CMakeFiles/md5_lib.dir/md5.c.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/md5_lib/md5.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/md5_lib/CMakeFiles/md5_lib.dir/md5.c.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C

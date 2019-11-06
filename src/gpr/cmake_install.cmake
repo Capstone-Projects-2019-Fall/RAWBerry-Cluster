@@ -1,4 +1,4 @@
-# Install script for directory: /home/pi/Desktop/RAWBerry-Cluster-old/src/gpr
+# Install script for directory: /Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -27,11 +27,6 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
-# Install shared libraries without execute permission?
-if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "1")
-endif()
-
 # Is this installation the result of a crosscompile?
 if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
@@ -39,24 +34,24 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/common/cmake_install.cmake")
-  include("/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_common/cmake_install.cmake")
-  include("/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_decoder/cmake_install.cmake")
-  include("/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/vc5_decoder_app/cmake_install.cmake")
-  include("/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/cmake_install.cmake")
-  include("/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/vc5_encoder_app/cmake_install.cmake")
-  include("/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/dng_sdk/cmake_install.cmake")
-  include("/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/gpr_sdk/cmake_install.cmake")
-  include("/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/cmake_install.cmake")
-  include("/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/expat_lib/cmake_install.cmake")
-  include("/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/md5_lib/cmake_install.cmake")
-  include("/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/tiny_jpeg/cmake_install.cmake")
-  include("/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/common/cJSON/cmake_install.cmake")
-  include("/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/common/argument_parser/cmake_install.cmake")
-  include("/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/gpr_tools/cmake_install.cmake")
-  include("/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/RAWBerry/cmake_install.cmake")
-  include("/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/Client/cmake_install.cmake")
-  include("/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/cmake_install.cmake")
+  include("/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/cmake_install.cmake")
+  include("/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/cmake_install.cmake")
+  include("/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_decoder/cmake_install.cmake")
+  include("/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/vc5_decoder_app/cmake_install.cmake")
+  include("/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/cmake_install.cmake")
+  include("/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/cmake_install.cmake")
+  include("/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/dng_sdk/cmake_install.cmake")
+  include("/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/cmake_install.cmake")
+  include("/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/cmake_install.cmake")
+  include("/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/cmake_install.cmake")
+  include("/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/md5_lib/cmake_install.cmake")
+  include("/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/tiny_jpeg/cmake_install.cmake")
+  include("/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/common/cJSON/cmake_install.cmake")
+  include("/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/common/argument_parser/cmake_install.cmake")
+  include("/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/gpr_tools/cmake_install.cmake")
+  include("/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/cmake_install.cmake")
+  include("/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/Client/cmake_install.cmake")
+  include("/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/rtsp/cmake_install.cmake")
 
 endif()
 
@@ -68,5 +63,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

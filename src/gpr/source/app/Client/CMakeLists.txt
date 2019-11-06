@@ -1,6 +1,10 @@
 # executable
 set( EXE_NAME Client )
 
+# Enable C++11
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
+
 find_package(MPI REQUIRED)
 find_package( OpenCV REQUIRED )
 

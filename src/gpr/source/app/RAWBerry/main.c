@@ -7,7 +7,7 @@ Desc: file containing main function, as well as functions to initialize componen
 
 #include "cluster.h"
 #include "input.h"
-#include <argp.h>
+
 #include <sys/types.h> 
 #include <unistd.h> 
 

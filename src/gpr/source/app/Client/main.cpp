@@ -1,8 +1,8 @@
 #include "client.hpp"
 
-#include <opencv2/core/core_c.h>
-#include <opencv2/imgcodecs/imgcodecs_c.h>
-#include <opencv2/highgui/highgui_c.h>
+//#include <opencv2/core/core_c.h>
+//#include <opencv2/imgcodecs/imgcodecs_c.h>
+//#include <opencv2/highgui/highgui_c.h>
 //Used for debugging msgs in client.pp
 //comment out to remove debug messages
 //#define DEBUG_MAIN 1
@@ -10,7 +10,7 @@
 #define DEBUG_PACKET 1
 
 int main(){
-	cvNamedWindow( "Display window", CV_WINDOW_AUTOSIZE ); // Create a window for display.
+	//cvNamedWindow( "Display window", CV_WINDOW_AUTOSIZE ); // Create a window for display.
 	//for rtsp socket
 	SOCKET rtsp_sock;
 	sockaddr_in rtsp_addr;

@@ -4,12 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/CRtspSession.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/CMakeFiles/rtsp.dir/CRtspSession.cpp.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/CStreamer.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/CMakeFiles/rtsp.dir/CStreamer.cpp.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/SimStreamer.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/CMakeFiles/rtsp.dir/SimStreamer.cpp.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/main.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/CMakeFiles/rtsp.dir/main.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/rtsp/CRtspSession.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/rtsp/CMakeFiles/rtsp.dir/CRtspSession.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/rtsp/CStreamer.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/rtsp/CMakeFiles/rtsp.dir/CStreamer.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/rtsp/SimStreamer.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/rtsp/CMakeFiles/rtsp.dir/SimStreamer.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/rtsp/main.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/rtsp/CMakeFiles/rtsp.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
@@ -30,8 +30,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "source/app/rtsp/../../lib/common/public"
   "source/app/rtsp/../../lib/vc5_common"
   "source/app/rtsp/../../lib/common/private"
-  "/usr/lib/arm-linux-gnueabihf/openmpi/include/openmpi"
-  "/usr/lib/arm-linux-gnueabihf/openmpi/include"
+  "/usr/local/Cellar/mpich/3.3.1/include"
   "source/app/rtsp/../../lib/vc5_decoder"
   "source/app/rtsp/../../lib/vc5_encoder"
   "source/app/rtsp/../../lib/md5_lib"
@@ -42,18 +41,18 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/DependInfo.cmake"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/DependInfo.cmake"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/DependInfo.cmake"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/DependInfo.cmake"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_decoder/CMakeFiles/vc5_decoder.dir/DependInfo.cmake"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/DependInfo.cmake"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/DependInfo.cmake"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/common/CMakeFiles/common.dir/DependInfo.cmake"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/md5_lib/CMakeFiles/md5_lib.dir/DependInfo.cmake"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/expat_lib/CMakeFiles/expat_lib.dir/DependInfo.cmake"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/common/cJSON/CMakeFiles/cJSON.dir/DependInfo.cmake"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/common/argument_parser/CMakeFiles/argument_parser.dir/DependInfo.cmake"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/DependInfo.cmake"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/DependInfo.cmake"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/DependInfo.cmake"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/DependInfo.cmake"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_decoder/CMakeFiles/vc5_decoder.dir/DependInfo.cmake"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/DependInfo.cmake"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/DependInfo.cmake"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/CMakeFiles/common.dir/DependInfo.cmake"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/md5_lib/CMakeFiles/md5_lib.dir/DependInfo.cmake"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/CMakeFiles/expat_lib.dir/DependInfo.cmake"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/common/cJSON/CMakeFiles/cJSON.dir/DependInfo.cmake"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/common/argument_parser/CMakeFiles/argument_parser.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -4,24 +4,24 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/ExpatAdapter.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/ExpatAdapter.cpp.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/ParseRDF.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/ParseRDF.cpp.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/UnicodeConversions.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/UnicodeConversions.cpp.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/WXMPIterator.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/WXMPIterator.cpp.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/WXMPMeta.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/WXMPMeta.cpp.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/WXMPUtils.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/WXMPUtils.cpp.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/XML_Node.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/XML_Node.cpp.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/XMPCore_Impl.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/XMPCore_Impl.cpp.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/XMPIterator.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/XMPIterator.cpp.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/XMPMeta-GetSet.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/XMPMeta-GetSet.cpp.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/XMPMeta-Parse.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/XMPMeta-Parse.cpp.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/XMPMeta-Serialize.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/XMPMeta-Serialize.cpp.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/XMPMeta.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/XMPMeta.cpp.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/XMPUtils-FileInfo.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/XMPUtils-FileInfo.cpp.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/XMPUtils.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/XMPUtils.cpp.o"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/XMP_LibUtils.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/XMP_LibUtils.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/ExpatAdapter.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/ExpatAdapter.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/ParseRDF.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/ParseRDF.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/UnicodeConversions.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/UnicodeConversions.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/WXMPIterator.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/WXMPIterator.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/WXMPMeta.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/WXMPMeta.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/WXMPUtils.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/WXMPUtils.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/XML_Node.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/XML_Node.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/XMPCore_Impl.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/XMPCore_Impl.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/XMPIterator.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/XMPIterator.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/XMPMeta-GetSet.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/XMPMeta-GetSet.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/XMPMeta-Parse.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/XMPMeta-Parse.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/XMPMeta-Serialize.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/XMPMeta-Serialize.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/XMPMeta.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/XMPMeta.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/XMPUtils-FileInfo.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/XMPUtils-FileInfo.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/XMPUtils.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/XMPUtils.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/XMP_LibUtils.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/XMP_LibUtils.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX

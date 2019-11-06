@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/vc5_encoder_app/main.cpp" "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/main.cpp.o"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/main.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
@@ -28,11 +28,11 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/DependInfo.cmake"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/DependInfo.cmake"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/common/CMakeFiles/common.dir/DependInfo.cmake"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/lib/md5_lib/CMakeFiles/md5_lib.dir/DependInfo.cmake"
-  "/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/common/argument_parser/CMakeFiles/argument_parser.dir/DependInfo.cmake"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/DependInfo.cmake"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/DependInfo.cmake"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/CMakeFiles/common.dir/DependInfo.cmake"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/md5_lib/CMakeFiles/md5_lib.dir/DependInfo.cmake"
+  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/common/argument_parser/CMakeFiles/argument_parser.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
