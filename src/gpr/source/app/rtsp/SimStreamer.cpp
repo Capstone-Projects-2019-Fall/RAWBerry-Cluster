@@ -21,10 +21,10 @@ void SimStreamer::streamImage(uint32_t curMsec)
     //if buffer not NULL
     if (buffer != NULL){
         BufPtr bytes = buffer;
-       //for(size_t length = 0; buffer[length] != '\0'; length++){
-        //    len = length;
-         //  printf("len: %lu\n", length);
-      // }
+       for(size_t length = 0; buffer[length] != '\0'; length++){
+            len = length;
+           printf("len: %lu\n", length);
+       }
         //stream frame
         puts("Begin Frame");
         streamFrame(bytes, (len -1), curMsec);

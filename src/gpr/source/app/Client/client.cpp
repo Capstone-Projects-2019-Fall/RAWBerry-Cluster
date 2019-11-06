@@ -201,6 +201,7 @@ bool session_handler(SOCKET rtsp_socket, int &request_count, string &session_id)
 void frame_to_decoder(string frame){
 	
 	//CvMat * image;
+	printf("Writing %d Bytes to File",frame.length());
 	FILE *file = fopen("/tmp/test", "w+");
 	std::fwrite(frame.c_str(), frame.length(), 1, file);
 	
@@ -262,6 +263,8 @@ unsigned char* merge_frame(unsigned char **&frame_buffer, int packet_count){
 		}
 
 }
+	printf("Frame Size is: %d", frame.str().length());
+	frame_to_decoder(frame.str());
 }
 
 /*
@@ -334,10 +337,12 @@ void handle_packet(unsigned char *&packet, unsigned char **&frame_buffer, int &p
 	//add packet to frame buffer
 	frame_buffer[sequence_num] = packet;
 	packet_count ++;
+	printf("Packet Count: %d",packet_count);
 	
 	//if last packet in sequence
 	if (last_packet){
 		//merge packets together and send it to decoder
+		printf("Packet Count Merged: %d",packet_count);
 		merge_frame(frame_buffer, packet_count);
 		packet_count = 0;
 	}

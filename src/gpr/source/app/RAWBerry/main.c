@@ -53,7 +53,7 @@ int main(int argc, char **argv){
  //   dir = arguments.args[0];//first argument is directory to be read to buffer
 
     //initialize();//initialize cluster components
-    char dir[] = "/CDNG";
+    char dir[] = "/Users/user/Documents/CDNG";
     //***NOTE*** left this unthreaded for now to work out integration data path
     
     int pid = fork();

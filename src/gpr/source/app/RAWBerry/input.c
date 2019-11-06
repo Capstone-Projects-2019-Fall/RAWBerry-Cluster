@@ -131,7 +131,19 @@ int openImage(char* filePath, buf_handle_t buf){
     int success = gpr_convert_dng_to_gpr( &allocator, &params, &input_buffer, &output_buffer );
     
     _coll_stream_frame(output_buffer.buffer, output_buffer.size);
+    //Temp Write out file for giggles
+    char* output_file_path = filePath;
+    int len = strlen(filePath);
+    output_file_path[(len - 3)] = 'G';
+    output_file_path[(len - 2)] = 'P';
+    output_file_path[(len - 1)] = 'R';
 
+  if( write_to_file( &output_buffer, output_file_path ) )
+        {
+            LogPrint("Error writing bitstream to location %s",  output_file_path);
+            return -1;
+        }
+    printf("Wrote %d Bytes\n",rgb_buffer.size);
   
     return 0;
 }

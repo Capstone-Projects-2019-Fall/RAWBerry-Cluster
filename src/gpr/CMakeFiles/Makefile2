@@ -360,9 +360,9 @@ source/app/vc5_encoder_app/clean: source/app/vc5_encoder_app/CMakeFiles/vc5_enco
 # Target rules for target source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir
 
 # All Build rule for target.
-source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all: source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/all
 source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all: source/lib/common/CMakeFiles/common.dir/all
 source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all: source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
+source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all: source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/all
 source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all: source/lib/md5_lib/CMakeFiles/md5_lib.dir/all
 source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/all: source/app/common/argument_parser/CMakeFiles/argument_parser.dir/all
 	$(MAKE) -f source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/build.make source/app/vc5_encoder_app/CMakeFiles/vc5_encoder_app.dir/depend
@@ -814,11 +814,11 @@ source/app/gpr_tools/clean: source/app/gpr_tools/CMakeFiles/gpr_tools.dir/clean
 # Target rules for target source/app/gpr_tools/CMakeFiles/gpr_tools.dir
 
 # All Build rule for target.
-source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/all
-source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/all
 source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/common/CMakeFiles/common.dir/all
 source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
 source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/vc5_decoder/CMakeFiles/vc5_decoder.dir/all
+source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/all
+source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/all
 source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/all
 source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/xmp_core/CMakeFiles/xmp_core.dir/all
 source/app/gpr_tools/CMakeFiles/gpr_tools.dir/all: source/lib/expat_lib/CMakeFiles/expat_lib.dir/all
@@ -875,11 +875,11 @@ source/app/RAWBerry/clean: source/app/RAWBerry/CMakeFiles/RAWBerry.dir/clean
 # Target rules for target source/app/RAWBerry/CMakeFiles/RAWBerry.dir
 
 # All Build rule for target.
-source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/all
-source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/all
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/common/CMakeFiles/common.dir/all
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/vc5_decoder/CMakeFiles/vc5_decoder.dir/all
+source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/all
+source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/all
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/all
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/xmp_core/CMakeFiles/xmp_core.dir/all
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/all: source/lib/expat_lib/CMakeFiles/expat_lib.dir/all
@@ -936,11 +936,11 @@ source/app/Client/clean: source/app/Client/CMakeFiles/Client.dir/clean
 # Target rules for target source/app/Client/CMakeFiles/Client.dir
 
 # All Build rule for target.
-source/app/Client/CMakeFiles/Client.dir/all: source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/all
-source/app/Client/CMakeFiles/Client.dir/all: source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/all
 source/app/Client/CMakeFiles/Client.dir/all: source/lib/common/CMakeFiles/common.dir/all
 source/app/Client/CMakeFiles/Client.dir/all: source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
 source/app/Client/CMakeFiles/Client.dir/all: source/lib/vc5_decoder/CMakeFiles/vc5_decoder.dir/all
+source/app/Client/CMakeFiles/Client.dir/all: source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/all
+source/app/Client/CMakeFiles/Client.dir/all: source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/all
 source/app/Client/CMakeFiles/Client.dir/all: source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/all
 source/app/Client/CMakeFiles/Client.dir/all: source/lib/xmp_core/CMakeFiles/xmp_core.dir/all
 source/app/Client/CMakeFiles/Client.dir/all: source/lib/expat_lib/CMakeFiles/expat_lib.dir/all
@@ -997,11 +997,11 @@ source/app/rtsp/clean: source/app/rtsp/CMakeFiles/rtsp.dir/clean
 # Target rules for target source/app/rtsp/CMakeFiles/rtsp.dir
 
 # All Build rule for target.
-source/app/rtsp/CMakeFiles/rtsp.dir/all: source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/all
-source/app/rtsp/CMakeFiles/rtsp.dir/all: source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/all
 source/app/rtsp/CMakeFiles/rtsp.dir/all: source/lib/common/CMakeFiles/common.dir/all
 source/app/rtsp/CMakeFiles/rtsp.dir/all: source/lib/vc5_common/CMakeFiles/vc5_common.dir/all
 source/app/rtsp/CMakeFiles/rtsp.dir/all: source/lib/vc5_decoder/CMakeFiles/vc5_decoder.dir/all
+source/app/rtsp/CMakeFiles/rtsp.dir/all: source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/all
+source/app/rtsp/CMakeFiles/rtsp.dir/all: source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/all
 source/app/rtsp/CMakeFiles/rtsp.dir/all: source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/all
 source/app/rtsp/CMakeFiles/rtsp.dir/all: source/lib/xmp_core/CMakeFiles/xmp_core.dir/all
 source/app/rtsp/CMakeFiles/rtsp.dir/all: source/lib/expat_lib/CMakeFiles/expat_lib.dir/all

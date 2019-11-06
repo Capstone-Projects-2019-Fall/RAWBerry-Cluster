@@ -6,35 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/CRtspSession.cpp
-CRtspSession.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/CRtspSession.h
-stdio.h
--
-time.h
--
-
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/CRtspSession.h
-CStreamer.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/CStreamer.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/rtsp/CStreamer.h
 platglue.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/platglue.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/rtsp/platglue.h
 
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/CStreamer.cpp
-CStreamer.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/CStreamer.h
-stdio.h
--
-assert.h
--
-
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/CStreamer.h
-platglue.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/platglue.h
-
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/SimStreamer.cpp
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/rtsp/SimStreamer.cpp
 SimStreamer.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/SimStreamer.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/rtsp/SimStreamer.h
 stdio.h
 -
 fcntl.h
@@ -48,23 +26,11 @@ sys/types.h
 unistd.h
 -
 
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/SimStreamer.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/rtsp/SimStreamer.h
 CStreamer.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/CStreamer.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/rtsp/CStreamer.h
 
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/main.cpp
-platglue.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/platglue.h
-SimStreamer.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/SimStreamer.h
-CRtspSession.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/CRtspSession.h
-assert.h
--
-sys/time.h
--
-
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/platglue-posix.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/rtsp/platglue-posix.h
 sys/socket.h
 -
 netinet/in.h
@@ -82,9 +48,9 @@ stdio.h
 errno.h
 -
 
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/platglue.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/rtsp/platglue.h
 platglue-esp32.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/platglue-esp32.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/rtsp/platglue-esp32.h
 platglue-posix.h
-/home/pi/Desktop/RAWBerry-Cluster-old/src/gpr/source/app/rtsp/platglue-posix.h
+/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/rtsp/platglue-posix.h
 
