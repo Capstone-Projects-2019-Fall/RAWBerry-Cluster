@@ -17,7 +17,7 @@ public:
     virtual void    streamImage(uint32_t curMsec) = 0; // send a new image to the client
 protected:
 
-    void    streamFrame(unsigned const char *data, int dataLen, uint32_t curMsec);
+    void    streamFrame(unsigned const char *data, uint32_t dataLen, uint32_t curMsec);
 
 private:
     int    SendRtpPacket(unsigned const char *jpeg, int jpegLen, int fragmentOffset, BufPtr quant0tbl = NULL, BufPtr quant1tbl = NULL);// returns new fragmentOffset or 0 if finished with frame
@@ -30,7 +30,7 @@ private:
     IPPORT m_RtpServerPort;      // RTP sender port on server
     IPPORT m_RtcpServerPort;     // RTCP sender port on server
 
-    uint16_t m_SequenceNumber;
+    unsigned int m_SequenceNumber;
     uint32_t m_Timestamp;
     int m_SendIdx;
     bool m_TCPTransport;

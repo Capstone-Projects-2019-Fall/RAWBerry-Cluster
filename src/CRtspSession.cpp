@@ -406,7 +406,7 @@ bool CRtspSession::handleRequests(uint32_t readTimeoutMs)
 void CRtspSession::broadcastCurrentFrame(uint32_t curMsec) {
     // Send a frame
     if (m_streaming && !m_stopped) {
-        // printf("serving a frame\n");
+        printf("serving a frame\n");
         m_Streamer->streamImage(curMsec);
     }
 }

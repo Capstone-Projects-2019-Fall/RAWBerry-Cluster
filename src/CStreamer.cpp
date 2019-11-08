@@ -1,8 +1,7 @@
 #include "CStreamer.h"
-
+#include <assert.h>
 #include <stdio.h>
-#include <string>
-#include <iostream>
+
 CStreamer::CStreamer(SOCKET aClient, u_short width, u_short height) : m_Client(aClient)
 {
     printf("Creating TSP streamer\n");
@@ -60,7 +59,7 @@ int CStreamer::SendRtpPacket(unsigned const char * jpeg, int jpegLen, int fragme
     bool includeQuantTbl = quant0tbl && quant1tbl && fragmentOffset == 0;
     uint8_t q = includeQuantTbl ? 128 : 0x5e;
 
-    static unsigned char RtpBuf[2048]; // Note: we assume single threaded, this large buf we keep off of the tiny stack
+    static char RtpBuf[2048]; // Note: we assume single threaded, this large buf we keep off of the tiny stack
     int RtpPacketSize = (fragmentLen + KRtpHeaderSize);
 
     memset(RtpBuf,0x00,sizeof(RtpBuf));
@@ -68,18 +67,14 @@ int CStreamer::SendRtpPacket(unsigned const char * jpeg, int jpegLen, int fragme
     RtpBuf[0]  = '$';        // magic number
     RtpBuf[1]  = 0;          // number of multiplexed subchannel on RTPS connection - here the RTP channel
     RtpBuf[2]  = (RtpPacketSize & 0x0000FF00) >> 8;
-    RtpBuf[3]  = (RtpPacketSize & 0x0FF);
+    RtpBuf[3]  = (RtpPacketSize & 0x000000FF);
     // Prepare the 12 byte RTP header
     RtpBuf[4]  = 0x80;                               // RTP version
     RtpBuf[5]  = 0x60 | (isLastFragment ? 0x80 : 0x00);   // Dynamic payload (96) and marker bit
-    RtpBuf[9]  = m_SequenceNumber & 0x0FF;           // each packet is counted with a sequence counter
-    std::cout << "PACKET 9 = " << (uint)RtpBuf[9] << "\n"; 
-    RtpBuf[8]  = (m_SequenceNumber >> 8) & 0x0FF;
-    std::cout << "PACKET 8 = " << (uint)RtpBuf[8] << "\n"; 
-    RtpBuf[7]  = 0;// ((m_SequenceNumber >> 16) & 0x0FF);
-    std::cout << "PACKET 7 = " << (uint)RtpBuf[7] << "\n"; 
-    RtpBuf[6]  = 0;//((m_SequenceNumber >> 24) & 0x0FF);
-    std::cout << "PACKET 6 = " << RtpBuf[6] << "\n"; 
+    RtpBuf[6]  = m_SequenceNumber & 0x0FF;           // each packet is counted with a sequence counter
+    RtpBuf[7]  = (m_SequenceNumber >> 8) & 0x0FF;
+    RtpBuf[8]  = (m_SequenceNumber >> 16) & 0x0FF;
+    RtpBuf[9]  = (m_SequenceNumber >> 24) & 0x0FF;
     RtpBuf[10]  = (m_Timestamp & 0xFF000000) >> 24;   // each image gets a timestamp
     RtpBuf[11]  = (m_Timestamp & 0x00FF0000) >> 16;
     RtpBuf[12] = (m_Timestamp & 0x0000FF00) >> 8;
@@ -88,44 +83,6 @@ int CStreamer::SendRtpPacket(unsigned const char * jpeg, int jpegLen, int fragme
     RtpBuf[15] = 0xf9;                               // we just an arbitrary number here to keep it simple
     RtpBuf[16] = 0x7e;
     RtpBuf[17] = 0x67;
-
-
-    //Removed to allow other formats
-    #ifdef JPEG
-    // Prepare the 8 byte payload JPEG header
-    RtpBuf[16] = 0x00;                               // type specific
-    RtpBuf[17] = (fragmentOffset & 0x00FF0000) >> 16;                               // 3 byte fragmentation offset for fragmented images
-    RtpBuf[18] = (fragmentOffset & 0x0000FF00) >> 8;
-    RtpBuf[19] = (fragmentOffset & 0x000000FF);
-
-    /*    These sampling factors indicate that the chrominance components of
-       type 0 video is downsampled horizontally by 2 (often called 4:2:2)
-       while the chrominance components of type 1 video are downsampled both
-       horizontally and vertically by 2 (often called 4:2:0). */
-    RtpBuf[20] = 0x00;                               // type (fixme might be wrong for camera data) https://tools.ietf.org/html/rfc2435
-    RtpBuf[21] = q;                               // quality scale factor was 0x5e
-    RtpBuf[22] = m_width / 8;                           // width  / 8
-    RtpBuf[23] = m_height / 8;                           // height / 8
-
-    int headerLen = 24; // Inlcuding jpeg header but not qant table header
-    if(includeQuantTbl) { // we need a quant header - but only in first packet of the frame
-        //printf("inserting quanttbl\n");
-        RtpBuf[24] = 0; // MBZ
-        RtpBuf[25] = 0; // 8 bit precision
-        RtpBuf[26] = 0; // MSB of lentgh
-
-        int numQantBytes = 64; // Two 64 byte tables
-        RtpBuf[27] = 2 * numQantBytes; // LSB of length
-
-        headerLen += 4;
-
-        memcpy(RtpBuf + headerLen, quant0tbl, numQantBytes);
-        headerLen += numQantBytes;
-
-        memcpy(RtpBuf + headerLen, quant1tbl, numQantBytes);
-        headerLen += numQantBytes;
-    }
-    #endif
 
     int headerLen = 18;
     printf("Sending timestamp %d, seq %d, fragoff %d, fraglen %d, jpegLen %d\n", m_Timestamp, m_SequenceNumber, fragmentOffset, fragmentLen, jpegLen);
@@ -192,7 +149,7 @@ u_short CStreamer::GetRtcpServerPort()
     return m_RtcpServerPort;
 };
 
-void CStreamer::streamFrame(unsigned const char *data, int dataLen, uint32_t curMsec)
+void CStreamer::streamFrame(unsigned const char *data, uint32_t dataLen, uint32_t curMsec)
 {
     if(m_prevMsec == 0) // first frame init our timestamp
         m_prevMsec = curMsec;
@@ -211,7 +168,9 @@ void CStreamer::streamFrame(unsigned const char *data, int dataLen, uint32_t cur
 
     int offset = 0;
     do {
+        printf("Data Length:%d\n", dataLen);
         offset = SendRtpPacket(data, dataLen, offset, qtable0, qtable1);
+        printf("offset:%d\n", offset);
     } while(offset != 0);
 
     // Increment ONLY after a full frame
@@ -222,8 +181,7 @@ void CStreamer::streamFrame(unsigned const char *data, int dataLen, uint32_t cur
     if (m_SendIdx > 1) m_SendIdx = 0;
 };
 
-#include <assert.h>
-
+#ifdef JPEG
 // search for a particular JPEG marker, moves *start to just after that marker
 // This function fixes up the provided start ptr to point to the
 // actual JPEG stream data and returns the number of bytes skipped
@@ -239,6 +197,7 @@ void CStreamer::streamFrame(unsigned const char *data, int dataLen, uint32_t cur
 // therefore 4:2:2, with two separate quant tables (0 and 1)
 // SOS da
 // EOI d9 (no need to strip data after this RFC says client will discard)
+
 bool findJPEGheader(BufPtr *start, uint32_t *len, uint8_t marker) {
     return false;
     // per https://en.wikipedia.org/wiki/JPEG_File_Interchange_Format
@@ -248,7 +207,7 @@ bool findJPEGheader(BufPtr *start, uint32_t *len, uint8_t marker) {
     // might fall off array if jpeg is invalid
     // FIXME - return false instead
     while(bytes - *start < *len) {
-        uint8_t framing = *bytes++; // better be 0xff
+1        uint8_t framing = *bytes++; // better be 0xff
         if(framing != 0xff) {
             printf("malformed jpeg, framing=%x\n", framing);
             return false;
@@ -371,3 +330,4 @@ bool decodeJPEGfile(BufPtr *start, uint32_t *len, BufPtr *qtable0, BufPtr *qtabl
 
     return true;
 }
+#endif
