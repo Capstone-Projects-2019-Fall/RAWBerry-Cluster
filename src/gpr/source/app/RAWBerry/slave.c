@@ -76,6 +76,7 @@ static void _recv_frame(struct slave_m *s, void *frame)
 static void _send_cframe(struct slave_m *s, void *cframe, int sz)
 {
 	int errc = 0;
+	fprintf(stderr, "Sending frame\n");
 	errc = MPI_Isend(cframe, sz, MPI_BYTE, NODE_COLLECTOR, TAG_S_TO, 
 		MPI_COMM_WORLD, &(s->send));
 	

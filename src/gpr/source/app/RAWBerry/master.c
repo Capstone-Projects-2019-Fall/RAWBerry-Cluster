@@ -81,6 +81,9 @@ int _wait_status(struct status_m *s, int *errc)
 	int i; 
 	MPI_Status stat;
 	*errc = MPI_Waitany(s->mvals, s->reqs, &i,  &stat);
+	if(i < 0){
+		return -1;
+	}
 	*(s->reqs + i) = MPI_REQUEST_NULL;
 	return i;
 }
@@ -109,7 +112,15 @@ void _irecv_reply(struct status_m *s, int action, int node)
 
 static int _master_get_frame(void **frame)
 {
-	get_frame(frame);
+	int i = get_frame(frame);
+	if(i == 1){
+		struct reply *r = sopool_get_new(&reply_pool);
+		r->message = REPLY_MSG_LFRAME;
+		r->payload = _fn - 1;
+		c_bcast_send(r);
+		c_bcast_wait_exit();
+		return 1;
+	}
 	*frame = realloc(*frame, FRAME_RAW_SIZEB);
 	printf("Getting frame %d\n", _fn);
 	*(int *)(*frame)  = _fn++;
@@ -119,6 +130,7 @@ static int _master_get_frame(void **frame)
 int master(struct cluster_args *params, int slaves)
 {
 	int si = 0, i = 0, c = 0;
+	int j = 0;
 	int errorc = 0;
 	struct status_m statm;
 	void *frame = NULL, *tmp;
@@ -138,12 +150,15 @@ int master(struct cluster_args *params, int slaves)
 		if(errorc != MPI_SUCCESS){
 			//TODO:ERROR HANDLER
 		}
+		if(i == -1){
+			return 0;
+		}
 		switch(statm.actions[i]){
 			case ACTION_SLAVE_AVALIBLE:
 				sopool_return(&reply_pool, statm.data[i]);
 				_send_frame(&statm, statm.nodes[i], frame); 
-				/*frame = sopool_get_new(&frame_pool);*/
 				_master_get_frame(&frame);
+				/*frame = sopool_get_new(&frame_pool);*/
 				break;
 			case ACTION_SLAVE_SENT:
 				tmp = statm.data[i];
@@ -156,6 +171,10 @@ int master(struct cluster_args *params, int slaves)
 					/*i + 2, TAG_S_RET, MPI_COMM_WORLD, */
 					/*&(statm.reqs[c]));*/
 				break;
+			default:
+				fprintf(stderr, "Bad action code %d, on %d\n",
+						statm.actions[i], i);
+				exit(-1);
 		}
 	}
 	return 0;

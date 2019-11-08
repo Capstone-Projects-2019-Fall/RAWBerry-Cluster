@@ -32,7 +32,7 @@ char hostname[256];
 void exit_mpi(void)
 {
 	MPI_Finalize();
-	exit(-1);
+	exit(0);
 }
 
 int init_mpi(int argc, char **argv)
@@ -94,16 +94,31 @@ void c_bcast_send(struct reply *r)
 	int i = 0, j = 0;
 	for(; i < num_nodes; i++){
 		if(i != this_node_rank){
+			*(rp + j) = MPI_REQUEST_NULL;
 			MPI_Isend(r, sizeof(struct reply), MPI_BYTE, i, TAG_B_ALRT, 
 				MPI_COMM_WORLD,  rp + j);
 			j++;
 		}
 	}
-	MPI_Waitall(j, rp, MPI_STATUS_IGNORE);
+	i = MPI_Waitall(j, rp, MPI_STATUS_IGNORE);
+	if(i != MPI_SUCCESS){
+		exit(-3);
+	}
 }
 
 void c_bcast_irecv(struct reply *msg, MPI_Request *r)
 {
 	MPI_Irecv(msg, sizeof(struct reply), MPI_BYTE, MPI_ANY_SOURCE, TAG_B_ALRT, 
 			MPI_COMM_WORLD, r);
+}
+
+void c_bcast_wait_exit(void)
+{
+	MPI_Request r;
+	struct reply rp;
+	do{
+		c_bcast_irecv(&rp, &r);
+		MPI_Wait(&r, MPI_STATUS_IGNORE);
+	}while(rp.message != REPLY_MSG_EXIT);
+	exit_mpi();
 }

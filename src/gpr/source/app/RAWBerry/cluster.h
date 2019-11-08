@@ -48,6 +48,8 @@ struct reply{
 };
 
 #define REPLY_MSG_SUCCESS  0x01
+#define REPLY_MSG_LFRAME     0x02
+#define REPLY_MSG_EXIT	    0x03
 
 extern int this_node_rank;
 extern int num_nodes;
@@ -100,6 +102,7 @@ int nb_probe(int source, int tag, MPI_Comm comm, MPI_Status *stat);
 int nb_waitany(int len, MPI_Request *reqs, int *i, MPI_Status *stat);
 void c_bcast_send(struct reply *r);
 void c_bcast_irecv(struct reply *msg, MPI_Request *r);
+void c_bcast_wait_exit(void);
 #endif
 
 #endif   /* ----- #ifndef cluster_INC  ----- */
