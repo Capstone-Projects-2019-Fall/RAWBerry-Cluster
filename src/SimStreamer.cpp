@@ -20,9 +20,14 @@ void SimStreamer::streamImage(uint32_t curMsec)
     
     //if buffer not NULL
     if (buffer != NULL){
+        BufPtr bytes = buffer;
+       //for(size_t length = 0; buffer[length] != '\0'; length++){
+        //    len = length;
+         //  printf("len: %lu\n", length);
+      // }
         //stream frame
         puts("Begin Frame");
-        streamFrame(buffer, len, curMsec);
+        streamFrame(bytes, (len -1), curMsec);
         puts("End Frame");
         //free the buffer
         free(buffer);
@@ -30,7 +35,7 @@ void SimStreamer::streamImage(uint32_t curMsec)
 
 }
 
-
+//
 unsigned char * SimStreamer::readPipe(int &len){
     unsigned char *buffer;
     unsigned char *buff_pointer = buffer; 
