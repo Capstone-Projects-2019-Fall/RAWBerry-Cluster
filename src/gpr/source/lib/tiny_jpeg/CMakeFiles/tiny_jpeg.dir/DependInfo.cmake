@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/tiny_jpeg/jpeg.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/jpeg.c.o"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/tiny_jpeg/jpeg.c" "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/jpeg.c.o"
   )
-set(CMAKE_C_COMPILER_ID "AppleClang")
+set(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C

@@ -9,8 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/vc5_encoder.dir/syntax.c.o"
   "CMakeFiles/vc5_encoder.dir/vc5_encoder.c.o"
   "CMakeFiles/vc5_encoder.dir/vlc.c.o"
-  "libvc5_encoder.a"
   "libvc5_encoder.pdb"
+  "libvc5_encoder.a"
 )
 
 # Per-language clean rules from dependency scanning.

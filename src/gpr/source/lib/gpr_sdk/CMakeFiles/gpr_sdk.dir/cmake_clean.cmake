@@ -6,8 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/gpr_sdk.dir/private/gpr_read_image.cpp.o"
   "CMakeFiles/gpr_sdk.dir/private/gpr_tuning_info.cpp.o"
   "CMakeFiles/gpr_sdk.dir/private/gpr_utils.cpp.o"
-  "libgpr_sdk.a"
   "libgpr_sdk.pdb"
+  "libgpr_sdk.a"
 )
 
 # Per-language clean rules from dependency scanning.

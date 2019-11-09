@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr.cpp.o"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr_exif_info.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_exif_info.cpp.o"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr_image_writer.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_image_writer.cpp.o"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr_profile_info.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_profile_info.cpp.o"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr_read_image.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_read_image.cpp.o"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr_tuning_info.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_tuning_info.cpp.o"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/private/gpr_utils.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_utils.cpp.o"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/gpr_sdk/private/gpr.cpp" "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr.cpp.o"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/gpr_sdk/private/gpr_exif_info.cpp" "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_exif_info.cpp.o"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/gpr_sdk/private/gpr_image_writer.cpp" "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_image_writer.cpp.o"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/gpr_sdk/private/gpr_profile_info.cpp" "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_profile_info.cpp.o"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/gpr_sdk/private/gpr_read_image.cpp" "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_read_image.cpp.o"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/gpr_sdk/private/gpr_tuning_info.cpp" "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_tuning_info.cpp.o"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/gpr_sdk/private/gpr_utils.cpp" "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_utils.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX

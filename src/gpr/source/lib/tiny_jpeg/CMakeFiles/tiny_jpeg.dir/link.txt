@@ -1,2 +1,2 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libtiny_jpeg.a  CMakeFiles/tiny_jpeg.dir/jpeg.c.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib libtiny_jpeg.a
+/usr/bin/ar qc libtiny_jpeg.a  CMakeFiles/tiny_jpeg.dir/jpeg.c.o
+/usr/bin/ranlib libtiny_jpeg.a

@@ -49,20 +49,20 @@ bool CRtspSession::ParseRtspRequest(char const * aRequest, unsigned aRequestSize
     char * pCP;
 
     ClientPortPtr = strstr(CurRequest,"client_port");
-    if (ClientPortPtr != 0)
+    if (ClientPortPtr != nullptr)
     {
         TmpPtr = strstr(ClientPortPtr,"\r\n");
-        if (TmpPtr != 0)
+        if (TmpPtr != nullptr)
         {
             TmpPtr[0] = 0x00;
             strcpy(CP,ClientPortPtr);
             pCP = strstr(CP,"=");
-            if (pCP != 0)
+            if (pCP != nullptr)
             {
                 pCP++;
                 strcpy(CP,pCP);
                 pCP = strstr(CP,"-");
-                if (pCP != 0)
+                if (pCP != nullptr)
                 {
                     pCP[0] = 0x00;
                     m_ClientRTPPort  = atoi(CP);
@@ -94,17 +94,17 @@ bool CRtspSession::ParseRtspRequest(char const * aRequest, unsigned aRequestSize
     printf("RTSP received %s\n", CmdName);
 
     // find out the command type
-    if (strstr(CmdName,"OPTIONS")   != 0) m_RtspCmdType = RTSP_OPTIONS; else
-    if (strstr(CmdName,"DESCRIBE")  != 0) m_RtspCmdType = RTSP_DESCRIBE; else
-    if (strstr(CmdName,"SETUP")     != 0) m_RtspCmdType = RTSP_SETUP; else
-    if (strstr(CmdName,"PLAY")      != 0) m_RtspCmdType = RTSP_PLAY; else
-    if (strstr(CmdName,"TEARDOWN")  != 0) m_RtspCmdType = RTSP_TEARDOWN;
+    if (strstr(CmdName,"OPTIONS")   != nullptr) m_RtspCmdType = RTSP_OPTIONS; else
+    if (strstr(CmdName,"DESCRIBE")  != nullptr) m_RtspCmdType = RTSP_DESCRIBE; else
+    if (strstr(CmdName,"SETUP")     != nullptr) m_RtspCmdType = RTSP_SETUP; else
+    if (strstr(CmdName,"PLAY")      != nullptr) m_RtspCmdType = RTSP_PLAY; else
+    if (strstr(CmdName,"TEARDOWN")  != nullptr) m_RtspCmdType = RTSP_TEARDOWN;
 
     // check whether the request contains transport information (UDP or TCP)
     if (m_RtspCmdType == RTSP_SETUP)
     {
         TmpPtr = strstr(CurRequest,"RTP/AVP/TCP");
-        if (TmpPtr != 0) m_TcpTransport = true; else m_TcpTransport = false;
+        if (TmpPtr != nullptr) m_TcpTransport = true; else m_TcpTransport = false;
     };
 
     // Skip over the prefix of any "rtsp://" or "rtsp:/" URL that follows:
@@ -265,7 +265,7 @@ void CRtspSession::Handle_RtspDESCRIBE()
     char * ColonPtr;
     strcpy(OBuf,m_URLHostPort);
     ColonPtr = strstr(OBuf,":");
-    if (ColonPtr != 0) ColonPtr[0] = 0x00;
+    if (ColonPtr != nullptr) ColonPtr[0] = 0x00;
 
     snprintf(SDPBuf,sizeof(SDPBuf),
              "v=0\r\n"

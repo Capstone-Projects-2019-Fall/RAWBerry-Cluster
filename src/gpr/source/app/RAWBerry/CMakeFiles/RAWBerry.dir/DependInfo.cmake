@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/buffer.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/CMakeFiles/RAWBerry.dir/buffer.c.o"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/cluster.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/CMakeFiles/RAWBerry.dir/cluster.c.o"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/collector.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/CMakeFiles/RAWBerry.dir/collector.c.o"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/input.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/main.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/CMakeFiles/RAWBerry.dir/main.c.o"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/master.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/CMakeFiles/RAWBerry.dir/master.c.o"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/slave.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/RAWBerry/CMakeFiles/RAWBerry.dir/slave.c.o"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/buffer.c" "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/CMakeFiles/RAWBerry.dir/buffer.c.o"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/cluster.c" "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/CMakeFiles/RAWBerry.dir/cluster.c.o"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/collector.c" "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/CMakeFiles/RAWBerry.dir/collector.c.o"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/input.c" "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/main.c" "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/CMakeFiles/RAWBerry.dir/main.c.o"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/master.c" "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/CMakeFiles/RAWBerry.dir/master.c.o"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/slave.c" "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/CMakeFiles/RAWBerry.dir/slave.c.o"
   )
-set(CMAKE_C_COMPILER_ID "AppleClang")
+set(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
@@ -33,7 +33,8 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "source/app/RAWBerry/../../lib/common/public"
   "source/app/RAWBerry/../../lib/vc5_common"
   "source/app/RAWBerry/../../lib/common/private"
-  "/usr/local/Cellar/mpich/3.3.1/include"
+  "/usr/lib/arm-linux-gnueabihf/openmpi/include/openmpi"
+  "/usr/lib/arm-linux-gnueabihf/openmpi/include"
   "source/app/RAWBerry/../../lib/vc5_decoder"
   "source/app/RAWBerry/../../lib/vc5_encoder"
   "source/app/RAWBerry/../../lib/md5_lib"
@@ -44,18 +45,18 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/DependInfo.cmake"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/DependInfo.cmake"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/DependInfo.cmake"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/DependInfo.cmake"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_decoder/CMakeFiles/vc5_decoder.dir/DependInfo.cmake"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/DependInfo.cmake"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/DependInfo.cmake"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/CMakeFiles/common.dir/DependInfo.cmake"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/md5_lib/CMakeFiles/md5_lib.dir/DependInfo.cmake"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/expat_lib/CMakeFiles/expat_lib.dir/DependInfo.cmake"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/common/cJSON/CMakeFiles/cJSON.dir/DependInfo.cmake"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/app/common/argument_parser/CMakeFiles/argument_parser.dir/DependInfo.cmake"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/DependInfo.cmake"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/DependInfo.cmake"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/dng_sdk/CMakeFiles/dng_sdk.dir/DependInfo.cmake"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/xmp_core/CMakeFiles/xmp_core.dir/DependInfo.cmake"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/vc5_decoder/CMakeFiles/vc5_decoder.dir/DependInfo.cmake"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/vc5_encoder/CMakeFiles/vc5_encoder.dir/DependInfo.cmake"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/vc5_common/CMakeFiles/vc5_common.dir/DependInfo.cmake"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/CMakeFiles/common.dir/DependInfo.cmake"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib/CMakeFiles/md5_lib.dir/DependInfo.cmake"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/expat_lib/CMakeFiles/expat_lib.dir/DependInfo.cmake"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON/CMakeFiles/cJSON.dir/DependInfo.cmake"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/argument_parser/CMakeFiles/argument_parser.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

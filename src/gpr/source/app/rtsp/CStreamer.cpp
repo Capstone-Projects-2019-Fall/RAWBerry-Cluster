@@ -44,7 +44,7 @@ CStreamer::~CStreamer()
 
 int CStreamer::SendRtpPacket(unsigned const char * jpeg, int jpegLen, int fragmentOffset, BufPtr quant0tbl, BufPtr quant1tbl)
 {
-#define KRtpHeaderSize 12           // size of the RTP header
+#define KRtpHeaderSize 14           // size of the RTP header
 #define KJpegHeaderSize 8           // size of the special JPEG payload header
 
 #define MAX_FRAGMENT_SIZE 1100 // FIXME, pick more carefully

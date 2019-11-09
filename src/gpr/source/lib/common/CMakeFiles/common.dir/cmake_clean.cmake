@@ -4,8 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/common.dir/private/gpr_buffer_auto.cpp.o"
   "CMakeFiles/common.dir/private/log.c.o"
   "CMakeFiles/common.dir/private/timer.c.o"
-  "libcommon.a"
   "libcommon.pdb"
+  "libcommon.a"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/vc5_decoder_app.dir/main.cpp.o"
-  "vc5_decoder_app"
   "vc5_decoder_app.pdb"
+  "vc5_decoder_app"
 )
 
 # Per-language clean rules from dependency scanning.

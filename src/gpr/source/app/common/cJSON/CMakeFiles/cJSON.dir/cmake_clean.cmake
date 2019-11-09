@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/cJSON.dir/cJSON.c.o"
   "CMakeFiles/cJSON.dir/cJSON_Utils.c.o"
-  "libcJSON.a"
   "libcJSON.pdb"
+  "libcJSON.a"
 )
 
 # Per-language clean rules from dependency scanning.

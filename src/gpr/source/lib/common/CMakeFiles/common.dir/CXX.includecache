@@ -6,25 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer_auto.cpp
+/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/private/gpr_buffer_auto.cpp
 gpr_buffer.h
-/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer.h
+/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/private/gpr_buffer.h
 gpr_buffer_auto.h
-/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer_auto.h
+/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/private/gpr_buffer_auto.h
 stdlib.h
 -
 
-/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer_auto.h
+/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/private/gpr_buffer_auto.h
 gpr_allocator.h
-/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_allocator.h
+/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/private/gpr_allocator.h
 gpr_buffer.h
-/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer.h
+/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/private/gpr_buffer.h
 gpr_platform.h
-/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_platform.h
+/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/private/gpr_platform.h
 stdc_includes.h
-/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/private/stdc_includes.h
+/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/private/stdc_includes.h
 
-/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/private/stdc_includes.h
+/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/private/stdc_includes.h
 ctype.h
 -
 assert.h
@@ -48,21 +48,21 @@ string.h
 time.h
 -
 
-source/lib/common/public/gpr_allocator.h
+source/lib/common/./public/gpr_allocator.h
 gpr_platform.h
-source/lib/common/public/gpr_platform.h
+source/lib/common/./public/gpr_platform.h
 
-source/lib/common/public/gpr_buffer.h
+source/lib/common/./public/gpr_buffer.h
 gpr_allocator.h
-source/lib/common/public/gpr_allocator.h
+source/lib/common/./public/gpr_allocator.h
 gpr_platform.h
-source/lib/common/public/gpr_platform.h
+source/lib/common/./public/gpr_platform.h
 
-source/lib/common/public/gpr_platform.h
+source/lib/common/./public/gpr_platform.h
 stdlib.h
 -
 stdint.h
 -
 TargetConditionals.h
-source/lib/common/public/TargetConditionals.h
+source/lib/common/./public/TargetConditionals.h
 

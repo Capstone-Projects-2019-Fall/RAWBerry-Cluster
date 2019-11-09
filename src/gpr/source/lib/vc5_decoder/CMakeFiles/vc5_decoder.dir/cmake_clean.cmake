@@ -10,8 +10,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/vc5_decoder.dir/vc5_decoder.c.o"
   "CMakeFiles/vc5_decoder.dir/vlc.c.o"
   "CMakeFiles/vc5_decoder.dir/wavelet.c.o"
-  "libvc5_decoder.a"
   "libvc5_decoder.pdb"
+  "libvc5_decoder.a"
 )
 
 # Per-language clean rules from dependency scanning.

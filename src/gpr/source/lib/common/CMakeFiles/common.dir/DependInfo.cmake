@@ -5,12 +5,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_allocator.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/CMakeFiles/common.dir/private/gpr_allocator.c.o"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/CMakeFiles/common.dir/private/gpr_buffer.c.o"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/private/log.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/CMakeFiles/common.dir/private/log.c.o"
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/private/timer.c" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/CMakeFiles/common.dir/private/timer.c.o"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/private/gpr_allocator.c" "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/CMakeFiles/common.dir/private/gpr_allocator.c.o"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/private/gpr_buffer.c" "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/CMakeFiles/common.dir/private/gpr_buffer.c.o"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/private/log.c" "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/CMakeFiles/common.dir/private/log.c.o"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/private/timer.c" "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/CMakeFiles/common.dir/private/timer.c.o"
   )
-set(CMAKE_C_COMPILER_ID "AppleClang")
+set(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
@@ -23,9 +23,9 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "source/lib/common/./public"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/private/gpr_buffer_auto.cpp" "/Users/user/Documents/GitHub/RAWBerry-Cluster/src/gpr/source/lib/common/CMakeFiles/common.dir/private/gpr_buffer_auto.cpp.o"
+  "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/private/gpr_buffer_auto.cpp" "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/CMakeFiles/common.dir/private/gpr_buffer_auto.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX

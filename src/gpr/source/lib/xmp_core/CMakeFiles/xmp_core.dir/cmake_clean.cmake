@@ -15,8 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/xmp_core.dir/XMPUtils-FileInfo.cpp.o"
   "CMakeFiles/xmp_core.dir/XMPUtils.cpp.o"
   "CMakeFiles/xmp_core.dir/XMP_LibUtils.cpp.o"
-  "libxmp_core.a"
   "libxmp_core.pdb"
+  "libxmp_core.a"
 )
 
 # Per-language clean rules from dependency scanning.
