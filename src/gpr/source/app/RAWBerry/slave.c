@@ -20,7 +20,9 @@
 #include <mpi.h>
 
 #include "cluster.h"
+#include "util.h"
 #include "sopool.h"
+#include "gpr.h"
 
 #define ACTION_FRAME_GET 	1
 #define ACTION_REPLY_DONE 	2
@@ -45,9 +47,11 @@ static void *datas[4] = {NULL, NULL, NULL, NULL};
 
 static struct sopool reply_pool;
 
+static struct reply rmaster;
+
 void _slave_reply_scs(struct slave_m *s, int32_t framenum)
 {
-	struct reply *r = sopool_get_new(&reply_pool);
+	struct reply *r = &rmaster;
 	r->message = REPLY_MSG_SUCCESS;
 	r->payload = framenum;
 	MPI_Isend(r, sizeof(struct reply), MPI_BYTE, NODE_MASTER,  TAG_S_RET,
@@ -64,42 +68,91 @@ int _slave_wait(struct slave_m *s, int *errc)
 	return actions[i];
 }
 
-static void _recv_frame(struct slave_m *s, void *frame)
+static void _recv_frame(struct slave_m *s, void **frame, gpr_parameters *p)
 {
-	MPI_Irecv(frame, FRAME_RAW_SIZEB, MPI_BYTE, NODE_MASTER, TAG_S_TO, 
+	MPI_Recv(p, sizeof(gpr_parameters), MPI_BYTE, NODE_MASTER, TAG_S_TO, MPI_COMM_WORLD,
+			MPI_STATUS_IGNORE);
+	*frame = malloc(p->preview_image.preview_width);
+	MPI_Irecv(*frame, p->preview_image.preview_width, MPI_BYTE, NODE_MASTER, TAG_S_TO, 
 		MPI_COMM_WORLD, &(s->in));
+}
+
+static void _send_cframe(struct slave_m *s, void *cframe, int sz)
+{
+	int errc = 0;
+	fprintf(stderr, "Sending frame\n");
+	errc = MPI_Isend(cframe, sz, MPI_BYTE, NODE_COLLECTOR, TAG_S_TO, 
+		MPI_COMM_WORLD, &(s->send));
+	
+	if(errc != MPI_SUCCESS){
+		//TODO:Error handle
+	}
+}
+
+void _s_compress(void *in, gpr_parameters *p, void **out, int *sz)
+{
+	/* TODO: Hook this up right somehow
+	vc5_encoder_parameters params;
+	vc5_encoder_process(&params, in, NULL, out);
+	 */
+	int fnum = p->preview_image.preview_height;
+	printf("Compressing frame %d\n", fnum);
+	encode(in, p, out, sz);
+	free(in);
+	*out = realloc(*out, *sz + 4);
+	memcpy((uint8_t *)*out + 4, *out, *sz);
+	*(int *)*out = fnum;
+	*sz += 4;
 }
 
 int slave(struct cluster_args *params)
 {
 	int i = 0, errc = 0, frnum = 0;
-	void *frame_in = malloc(FRAME_RAW_SIZEB);
+	int v = 0, sz = 0;
+	void *frame_in = NULL;
+	void *frame_out = NULL;
+	gpr_parameters p;
 	struct slave_m ctl = { .arr = { MPI_REQUEST_NULL, MPI_REQUEST_NULL, 
 		MPI_REQUEST_NULL, MPI_REQUEST_NULL } };
+	init_engine(params);
 	sopool_init(&reply_pool, sizeof(struct reply), 3, 0);
 	_slave_reply_scs(&ctl, 0);
-	_recv_frame(&ctl, frame_in);
+	_recv_frame(&ctl, &frame_in, &p);
 	while(!slave_done()){
 		i = _slave_wait(&ctl, &errc);
 		if(errc != MPI_SUCCESS){
 			//TODO:Handle error
 		}
+		/*tprintf("Slave action: %d\n", i);*/
 		switch(i){
-			case ACTION_FRAME_GET:
-				//Send to griff
+		case ACTION_FRAME_GET:
+			if(frame_out == NULL){ 
+				_s_compress(frame_in, &p, &frame_out, &sz);
+				_send_cframe(&ctl, frame_out, sz);
 				_slave_reply_scs(&ctl, frnum);
-				break;
-			case ACTION_REPLY_DONE:
-				sopool_return(&reply_pool, datas[1]);
-				break;
-			case ACTION_SEND_DONE:
-				break;
-			case ACTION_BCAST_ALRT:
-				break;
-
-			default:
-				//ERROR
-				break;
+				_recv_frame(&ctl, &frame_in, &p);
+			}else{
+				v = 1;
+			}
+			break;
+		case ACTION_REPLY_DONE:
+			break;
+		case ACTION_SEND_DONE:
+			free(frame_out);
+			frame_out = NULL;
+			if(v){
+				v = 0;
+				_s_compress(frame_in, &p, &frame_out, &sz);
+				_slave_reply_scs(&ctl, frnum);
+				_recv_frame(&ctl, &frame_in, &p);
+			}
+			break;
+		case ACTION_BCAST_ALRT:
+			break;
+		
+		default:
+			//ERROR
+			break;
 		}
 	}
 	return 0;
