@@ -7,11 +7,11 @@ C_FLAGS = -std=c99
 
 C_DEFINES = -DGIT_BRANCH=\"\" -DGIT_COMMIT_HASH=\"\"
 
-C_INCLUDES = -I/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/./public 
+C_INCLUDES = -I/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/./public 
 
 CXX_FLAGS =  
 
 CXX_DEFINES = -DGIT_BRANCH=\"\" -DGIT_COMMIT_HASH=\"\"
 
-CXX_INCLUDES = -I/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/./public 
+CXX_INCLUDES = -I/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/./public 
 

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr
+CMAKE_SOURCE_DIR = /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr
+CMAKE_BINARY_DIR = /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all:
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

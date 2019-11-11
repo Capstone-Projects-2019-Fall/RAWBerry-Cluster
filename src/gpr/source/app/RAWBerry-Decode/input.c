@@ -4,7 +4,7 @@
  * 
  */
 
-
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -18,6 +18,10 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+
+#include <opencv2/core/core_c.h>
+
+#include <opencv2/highgui/highgui_c.h>
 
 
 #include "gpr.h"
@@ -39,14 +43,14 @@ int fd;
 
 
 int readFiles(char* directory);
-int openImage(char* filePath);
+int openImage(char* filePath, CvMat * image );
 
 
 int main(int argc, char **argv)
 {
     
     
-    char dir[] = "/home/pi/Documents/VC5";
+    char dir[] = "/input";
     int status = readFiles(dir);
     
 
@@ -56,37 +60,65 @@ int main(int argc, char **argv)
 int readFiles(char* directory){
 	
 DIR *dir;
-struct dirent *ent;
+struct dirent **ent;
+int i,n;
 
+CvMat * image;
 
+cvNamedWindow( "Display window", CV_WINDOW_AUTOSIZE ); 
 
+            gpr_buffer input_buffer  = { NULL, 0 };
+            
+            
+            _read_pipe(&input_buffer);
+            
+            int success = openImage(&input_buffer);
+            image = cvLoadImageM(fullpath, CV_LOAD_IMAGE_COLOR);
+            if(success ==0){
+                cvShowImage( "Display window", image );            
+                cvWaitKey(42); 
+            }
+            free(ent[i]);
+            }
+        }
+    free(ent);
 
-if ((dir = opendir (directory)) != NULL) {
+//if ((dir = opendir (directory)) != NULL) {
   /* print all the files and directories within directory */
-  while ((ent = readdir (dir)) != NULL) {
+ // while ((ent = readdir (dir)) != NULL) {
+ //   if(strcmp(ent->d_name, ".") == 0 || strcmp(ent->d_name, "..") == 0)
+ //     continue;
     puts("die");
     //Get us a string with the full path so we can open file
-	char *fullpath = malloc(strlen(directory)+ strlen(ent->d_name) + 2);
-	if (fullpath == NULL) { /* Uh We Might be F****d here? Whatever */  return -1; }
-	sprintf(fullpath, "%s/%s", directory, ent->d_name);
-	openImage(fullpath);
-    
+//	char *fullpath = malloc(strlen(directory)+ strlen(ent->d_name) + 2);
+//	if (fullpath == NULL) { /* Uh We Might be F****d here? Whatever */  return -1; }
+//	sprintf(fullpath, "%s/%s", directory, ent->d_name);
+	//int success = openImage(fullpath, &image);
+   // if(success ==0){
+   
+
+ //  printf("Reading: %s\n", fullpath);
+ //  image = cvLoadImageM(fullpath, CV_LOAD_IMAGE_COLOR);
+ //  cvShowImage( "Display window", image );            
+ //  cvWaitKey(42); 
+//}
 	/* use fullpath */
-	free(fullpath);
+//	free(fullpath);
 
     
-}
+//}
   
- closedir (dir);
-} else {
+ //closedir (dir);
+
+//} else {
   /* could not open directory */
-  perror ("");
- return EXIT_FAILURE;
-}
+  //perror ("");
+ //return EXIT_FAILURE;
+//}
 	return 0;
 }
 
-int openImage(char* filePath){
+int openImage(gpr_buffer * input_buffer){
     
     gpr_allocator allocator;
     allocator.Alloc = malloc;
@@ -95,15 +127,8 @@ int openImage(char* filePath){
     gpr_parameters params;
     gpr_parameters_set_defaults(&params);
     
-    gpr_buffer input_buffer  = { NULL, 0 };
     gpr_buffer output_buffer = { NULL, 0 };
-    printf("Reading: %s\n", filePath);
-    if( read_from_file( &input_buffer, filePath, allocator.Alloc, allocator.Free ) != 0 )
-    {
-        return 0;
-    }
   
-    
 
     printf("Read:%d Bytes\n", input_buffer.size);
     puts("Reading Metadata\n");
@@ -134,7 +159,7 @@ int openImage(char* filePath){
         
         
     printf("Decompressed Size\n", rgb_buffer.size);
-    
+   
 
 
 
@@ -152,8 +177,27 @@ int openImage(char* filePath){
             return -1;
         }
     printf("Wrote %d Bytes\n",rgb_buffer.size);
+    
 
     return 0;
+}
+void _read_pipe(gpr_buffer * input){
+int bytes_read = 0;
+    
+    int pipe_fd = open(INPUT_PIPE, O_RDONLY);
+    if (pipe){
+        //get size of frame
+        read(pipe_fd, input.size, sizeof(int));
+        printf("Expected frame size: %d \n", len);
+        //malloc mem for buffer
+        buffer = (unsigned char *)malloc(len);
+
+        while (bytes_read != len){
+            bytes_read += read(pipe_fd, (input.buffer+bytes_read), (len - bytes_read));
+            printf("Bytes Read: %d \nFrame Size: %d\n", bytes_read, len);
+        }
+        
+    }
 }
 
 

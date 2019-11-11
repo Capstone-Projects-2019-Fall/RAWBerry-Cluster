@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr
+CMAKE_SOURCE_DIR = /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr
+CMAKE_BINARY_DIR = /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry-Decode/CMakeFiles/progress.marks
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/app/RAWBerry-Decode/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles 0
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry-Decode/CMakeFiles/progress.marks
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/app/RAWBerry-Decode/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/app/RAWBerry-Decode/clean
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/app/RAWBerry-Decode/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,17 +97,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/app/RAWBerry-Decode/preinstall
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/app/RAWBerry-Decode/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/app/RAWBerry-Decode/preinstall
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/app/RAWBerry-Decode/preinstall
 .PHONY : preinstall/fast
 
 # Convenience name for target.
 source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/rule:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/rule
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/rule
 .PHONY : source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/rule
 
 # Convenience name for target.
@@ -117,7 +117,7 @@ RAWBerry-Decode: source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/rule
 
 # fast build rule for target.
 RAWBerry-Decode/fast:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/build.make source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/build
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/build.make source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/build
 .PHONY : RAWBerry-Decode/fast
 
 gpr_parse_utils.o: gpr_parse_utils.cpp.o
@@ -126,7 +126,7 @@ gpr_parse_utils.o: gpr_parse_utils.cpp.o
 
 # target to build an object file
 gpr_parse_utils.cpp.o:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/build.make source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/gpr_parse_utils.cpp.o
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/build.make source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/gpr_parse_utils.cpp.o
 .PHONY : gpr_parse_utils.cpp.o
 
 gpr_parse_utils.i: gpr_parse_utils.cpp.i
@@ -135,7 +135,7 @@ gpr_parse_utils.i: gpr_parse_utils.cpp.i
 
 # target to preprocess a source file
 gpr_parse_utils.cpp.i:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/build.make source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/gpr_parse_utils.cpp.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/build.make source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/gpr_parse_utils.cpp.i
 .PHONY : gpr_parse_utils.cpp.i
 
 gpr_parse_utils.s: gpr_parse_utils.cpp.s
@@ -144,7 +144,7 @@ gpr_parse_utils.s: gpr_parse_utils.cpp.s
 
 # target to generate assembly for a file
 gpr_parse_utils.cpp.s:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/build.make source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/gpr_parse_utils.cpp.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/build.make source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/gpr_parse_utils.cpp.s
 .PHONY : gpr_parse_utils.cpp.s
 
 input.o: input.c.o
@@ -153,7 +153,7 @@ input.o: input.c.o
 
 # target to build an object file
 input.c.o:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/build.make source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/input.c.o
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/build.make source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/input.c.o
 .PHONY : input.c.o
 
 input.i: input.c.i
@@ -162,7 +162,7 @@ input.i: input.c.i
 
 # target to preprocess a source file
 input.c.i:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/build.make source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/input.c.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/build.make source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/input.c.i
 .PHONY : input.c.i
 
 input.s: input.c.s
@@ -171,7 +171,7 @@ input.s: input.c.s
 
 # target to generate assembly for a file
 input.c.s:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/build.make source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/input.c.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/build.make source/app/RAWBerry-Decode/CMakeFiles/RAWBerry-Decode.dir/input.c.s
 .PHONY : input.c.s
 
 # Help Target

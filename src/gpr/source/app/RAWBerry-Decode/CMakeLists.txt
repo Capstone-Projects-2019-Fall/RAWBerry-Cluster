@@ -3,6 +3,7 @@ set( EXE_NAME RAWBerry-Decode )
 
 find_package(MPI REQUIRED)
 find_package( OpenCV REQUIRED )
+add_definitions(-O4 -g)
 
 # get source and include files
 file( GLOB GPRTOOLS_SRC_FILES "*.c" "*.cpp" )

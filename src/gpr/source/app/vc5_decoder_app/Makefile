@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr
+CMAKE_SOURCE_DIR = /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr
+CMAKE_BINARY_DIR = /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/vc5_decoder_app/CMakeFiles/progress.marks
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/app/vc5_decoder_app/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles 0
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/vc5_decoder_app/CMakeFiles/progress.marks
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/app/vc5_decoder_app/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/app/vc5_decoder_app/clean
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/app/vc5_decoder_app/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,17 +97,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/app/vc5_decoder_app/preinstall
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/app/vc5_decoder_app/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/app/vc5_decoder_app/preinstall
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/app/vc5_decoder_app/preinstall
 .PHONY : preinstall/fast
 
 # Convenience name for target.
 source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/rule:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/rule
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/rule
 .PHONY : source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/rule
 
 # Convenience name for target.
@@ -117,7 +117,7 @@ vc5_decoder_app: source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/rule
 
 # fast build rule for target.
 vc5_decoder_app/fast:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/build.make source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/build
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/build.make source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/build
 .PHONY : vc5_decoder_app/fast
 
 main.o: main.cpp.o
@@ -126,7 +126,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/build.make source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/main.cpp.o
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/build.make source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -135,7 +135,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/build.make source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/main.cpp.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/build.make source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -144,7 +144,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/build.make source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/main.cpp.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/build.make source/app/vc5_decoder_app/CMakeFiles/vc5_decoder_app.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target

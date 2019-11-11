@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr
+CMAKE_SOURCE_DIR = /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr
+CMAKE_BINARY_DIR = /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr
 
 # Include any dependencies generated for this target.
 include source/app/common/cJSON/CMakeFiles/cJSON.dir/depend.make
@@ -59,29 +59,29 @@ include source/app/common/cJSON/CMakeFiles/cJSON.dir/flags.make
 
 source/app/common/cJSON/CMakeFiles/cJSON.dir/cJSON.c.o: source/app/common/cJSON/CMakeFiles/cJSON.dir/flags.make
 source/app/common/cJSON/CMakeFiles/cJSON.dir/cJSON.c.o: source/app/common/cJSON/cJSON.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object source/app/common/cJSON/CMakeFiles/cJSON.dir/cJSON.c.o"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cJSON.dir/cJSON.c.o   -c /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON/cJSON.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object source/app/common/cJSON/CMakeFiles/cJSON.dir/cJSON.c.o"
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cJSON.dir/cJSON.c.o   -c /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON/cJSON.c
 
 source/app/common/cJSON/CMakeFiles/cJSON.dir/cJSON.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cJSON.dir/cJSON.c.i"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON/cJSON.c > CMakeFiles/cJSON.dir/cJSON.c.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON/cJSON.c > CMakeFiles/cJSON.dir/cJSON.c.i
 
 source/app/common/cJSON/CMakeFiles/cJSON.dir/cJSON.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cJSON.dir/cJSON.c.s"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON/cJSON.c -o CMakeFiles/cJSON.dir/cJSON.c.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON/cJSON.c -o CMakeFiles/cJSON.dir/cJSON.c.s
 
 source/app/common/cJSON/CMakeFiles/cJSON.dir/cJSON_Utils.c.o: source/app/common/cJSON/CMakeFiles/cJSON.dir/flags.make
 source/app/common/cJSON/CMakeFiles/cJSON.dir/cJSON_Utils.c.o: source/app/common/cJSON/cJSON_Utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object source/app/common/cJSON/CMakeFiles/cJSON.dir/cJSON_Utils.c.o"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cJSON.dir/cJSON_Utils.c.o   -c /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON/cJSON_Utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object source/app/common/cJSON/CMakeFiles/cJSON.dir/cJSON_Utils.c.o"
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cJSON.dir/cJSON_Utils.c.o   -c /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON/cJSON_Utils.c
 
 source/app/common/cJSON/CMakeFiles/cJSON.dir/cJSON_Utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cJSON.dir/cJSON_Utils.c.i"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON/cJSON_Utils.c > CMakeFiles/cJSON.dir/cJSON_Utils.c.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON/cJSON_Utils.c > CMakeFiles/cJSON.dir/cJSON_Utils.c.i
 
 source/app/common/cJSON/CMakeFiles/cJSON.dir/cJSON_Utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cJSON.dir/cJSON_Utils.c.s"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON/cJSON_Utils.c -o CMakeFiles/cJSON.dir/cJSON_Utils.c.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON/cJSON_Utils.c -o CMakeFiles/cJSON.dir/cJSON_Utils.c.s
 
 # Object files for target cJSON
 cJSON_OBJECTS = \
@@ -95,9 +95,9 @@ source/app/common/cJSON/libcJSON.a: source/app/common/cJSON/CMakeFiles/cJSON.dir
 source/app/common/cJSON/libcJSON.a: source/app/common/cJSON/CMakeFiles/cJSON.dir/cJSON_Utils.c.o
 source/app/common/cJSON/libcJSON.a: source/app/common/cJSON/CMakeFiles/cJSON.dir/build.make
 source/app/common/cJSON/libcJSON.a: source/app/common/cJSON/CMakeFiles/cJSON.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libcJSON.a"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON && $(CMAKE_COMMAND) -P CMakeFiles/cJSON.dir/cmake_clean_target.cmake
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cJSON.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libcJSON.a"
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON && $(CMAKE_COMMAND) -P CMakeFiles/cJSON.dir/cmake_clean_target.cmake
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cJSON.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 source/app/common/cJSON/CMakeFiles/cJSON.dir/build: source/app/common/cJSON/libcJSON.a
@@ -105,10 +105,10 @@ source/app/common/cJSON/CMakeFiles/cJSON.dir/build: source/app/common/cJSON/libc
 .PHONY : source/app/common/cJSON/CMakeFiles/cJSON.dir/build
 
 source/app/common/cJSON/CMakeFiles/cJSON.dir/clean:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON && $(CMAKE_COMMAND) -P CMakeFiles/cJSON.dir/cmake_clean.cmake
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON && $(CMAKE_COMMAND) -P CMakeFiles/cJSON.dir/cmake_clean.cmake
 .PHONY : source/app/common/cJSON/CMakeFiles/cJSON.dir/clean
 
 source/app/common/cJSON/CMakeFiles/cJSON.dir/depend:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON/CMakeFiles/cJSON.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON/CMakeFiles/cJSON.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : source/app/common/cJSON/CMakeFiles/cJSON.dir/depend
 

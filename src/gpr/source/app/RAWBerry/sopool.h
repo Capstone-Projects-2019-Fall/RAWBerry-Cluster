@@ -19,6 +19,7 @@
 #define  sopool_INC
 
 #include <stdlib.h>
+#include <sys/types.h>
 
 struct sopool{
 	void **data;
@@ -40,7 +41,6 @@ static int sopool_init(struct sopool *s, ssize_t osize, int initial_hint, int gr
 	s->refs = calloc(sizeof(uint16_t), s->sz);
 	while(i < s->sz){
 		*(s->data + i) = malloc(osize);
-		i++;
 	}
 	i = 0;
 	s->osz = osize;
@@ -63,34 +63,27 @@ static void *sopool_get_new(struct sopool *s)
 			sz2 = sz2 * 3 / 2;
 		}
 		s->fo = s->sz;
-		s->data = realloc(s->data, sz2 * sizeof(void *));
-		s->refs = realloc(s->refs, sz2 * sizeof(uint16_t));
+		s->data = realloc(s->data, sz2);
+		s->refs = realloc(s->refs, sz2);
 		while(s->sz < sz2){
 			*(s->data + s->sz) = malloc(s->osz);
 			*(s->refs + s->sz) = 0;
 			s->sz++;
 		}
 	}
-	void *r = s->data[s->fo];
-	(*(s->refs + s->fo)) = 1;
+	void *r = *(s->data + s->fo);
+	(*(s->refs + s->fo))++;
 	int itr = 0;
-	s->fo = (s->fo + 1) % s->sz;
-	while(*(s->refs + s->fo) && itr < s->sz){
-		itr++;
-		s->fo = (s->fo + 1) % s->sz;
-	}
-	if(*(s->refs + s->fo)) s->fo = -1;
+	while(*(s->refs + s->fo++) && itr < s->sz) itr++;
+	if(!(*(s->refs + s->fo))) s->fo = -1;
 	return r;
 }
 
 static void sopool_return(struct sopool *s, void *p)
 {
 	int i = 0;
-	while((i < s->sz) && (s->data[i] != p)) i++;
-	(*(s->refs + i)) = 0;
-	if(s->fo == -1){
-		s->fo = i;
-	}
+	while((i < s->sz) && (*(s->data + i) != p)) i++;
+	(*(s->refs + i))--;
 }
 
 #endif   /* ----- #ifndef sopool_INC  ----- */

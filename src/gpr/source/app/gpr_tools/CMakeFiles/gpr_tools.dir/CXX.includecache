@@ -6,27 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr_parse_utils.cpp
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr_parse_utils.cpp
 gpr_parse_utils.h
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr_parse_utils.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr_parse_utils.h
 stdcpp_utils.h
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/stdcpp_utils.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/stdcpp_utils.h
 cJSON.h
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/cJSON.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/cJSON.h
 dng_stream.h
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/dng_stream.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/dng_stream.h
 dng_misc_opcodes.h
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/dng_misc_opcodes.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/dng_misc_opcodes.h
 dng_gain_map.h
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/dng_gain_map.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/dng_gain_map.h
 
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr_parse_utils.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr_parse_utils.h
 gpr.h
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr.h
 
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr_print_utils.cpp
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr_print_utils.cpp
 gpr_print_utils.h
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr_print_utils.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr_print_utils.h
 iostream
 -
 fstream
@@ -34,37 +34,37 @@ fstream
 algorithm
 -
 dng_stream.h
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/dng_stream.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/dng_stream.h
 dng_misc_opcodes.h
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/dng_misc_opcodes.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/dng_misc_opcodes.h
 dng_gain_map.h
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/dng_gain_map.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/dng_gain_map.h
 
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr_print_utils.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr_print_utils.h
 gpr.h
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr.h
 
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/main.cpp
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/main.cpp
 stdio.h
 -
 string.h
 -
 argument_parser.h
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/argument_parser.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/argument_parser.h
 gpr.h
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr.h
 gpr_buffer.h
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr_buffer.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr_buffer.h
 gpr_print_utils.h
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr_print_utils.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/gpr_print_utils.h
 main_c.h
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/main_c.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/main_c.h
 common_app_def.h
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/common_app_def.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/common_app_def.h
 
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/main_c.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/main_c.h
 
-/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/stdcpp_utils.h
+/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/stdcpp_utils.h
 iostream
 -
 fstream

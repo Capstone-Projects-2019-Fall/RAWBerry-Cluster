@@ -1,4 +1,4 @@
-# Install script for directory: /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr
+# Install script for directory: /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,24 +39,24 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/cmake_install.cmake")
-  include("/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/vc5_common/cmake_install.cmake")
-  include("/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/vc5_decoder/cmake_install.cmake")
-  include("/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/vc5_decoder_app/cmake_install.cmake")
-  include("/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/vc5_encoder/cmake_install.cmake")
-  include("/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/vc5_encoder_app/cmake_install.cmake")
-  include("/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/dng_sdk/cmake_install.cmake")
-  include("/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/gpr_sdk/cmake_install.cmake")
-  include("/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/xmp_core/cmake_install.cmake")
-  include("/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/expat_lib/cmake_install.cmake")
-  include("/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib/cmake_install.cmake")
-  include("/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/tiny_jpeg/cmake_install.cmake")
-  include("/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON/cmake_install.cmake")
-  include("/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/argument_parser/cmake_install.cmake")
-  include("/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/cmake_install.cmake")
-  include("/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/cmake_install.cmake")
-  include("/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry-Decode/cmake_install.cmake")
-  include("/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/rtsp/cmake_install.cmake")
+  include("/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/common/cmake_install.cmake")
+  include("/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/vc5_common/cmake_install.cmake")
+  include("/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/vc5_decoder/cmake_install.cmake")
+  include("/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/vc5_decoder_app/cmake_install.cmake")
+  include("/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/vc5_encoder/cmake_install.cmake")
+  include("/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/vc5_encoder_app/cmake_install.cmake")
+  include("/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/dng_sdk/cmake_install.cmake")
+  include("/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/gpr_sdk/cmake_install.cmake")
+  include("/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/xmp_core/cmake_install.cmake")
+  include("/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/expat_lib/cmake_install.cmake")
+  include("/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib/cmake_install.cmake")
+  include("/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/tiny_jpeg/cmake_install.cmake")
+  include("/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/cJSON/cmake_install.cmake")
+  include("/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/common/argument_parser/cmake_install.cmake")
+  include("/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/gpr_tools/cmake_install.cmake")
+  include("/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/cmake_install.cmake")
+  include("/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry-Decode/cmake_install.cmake")
+  include("/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/rtsp/cmake_install.cmake")
 
 endif()
 
@@ -68,5 +68,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

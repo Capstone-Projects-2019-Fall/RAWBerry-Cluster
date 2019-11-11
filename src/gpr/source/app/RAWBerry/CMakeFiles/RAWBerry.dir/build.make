@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr
+CMAKE_SOURCE_DIR = /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr
+CMAKE_BINARY_DIR = /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr
 
 # Include any dependencies generated for this target.
 include source/app/RAWBerry/CMakeFiles/RAWBerry.dir/depend.make
@@ -59,94 +59,94 @@ include source/app/RAWBerry/CMakeFiles/RAWBerry.dir/flags.make
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/buffer.c.o: source/app/RAWBerry/CMakeFiles/RAWBerry.dir/flags.make
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/buffer.c.o: source/app/RAWBerry/buffer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object source/app/RAWBerry/CMakeFiles/RAWBerry.dir/buffer.c.o"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RAWBerry.dir/buffer.c.o   -c /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/buffer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object source/app/RAWBerry/CMakeFiles/RAWBerry.dir/buffer.c.o"
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RAWBerry.dir/buffer.c.o   -c /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/buffer.c
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/buffer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RAWBerry.dir/buffer.c.i"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/buffer.c > CMakeFiles/RAWBerry.dir/buffer.c.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/buffer.c > CMakeFiles/RAWBerry.dir/buffer.c.i
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/buffer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RAWBerry.dir/buffer.c.s"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/buffer.c -o CMakeFiles/RAWBerry.dir/buffer.c.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/buffer.c -o CMakeFiles/RAWBerry.dir/buffer.c.s
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/cluster.c.o: source/app/RAWBerry/CMakeFiles/RAWBerry.dir/flags.make
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/cluster.c.o: source/app/RAWBerry/cluster.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object source/app/RAWBerry/CMakeFiles/RAWBerry.dir/cluster.c.o"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RAWBerry.dir/cluster.c.o   -c /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/cluster.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object source/app/RAWBerry/CMakeFiles/RAWBerry.dir/cluster.c.o"
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RAWBerry.dir/cluster.c.o   -c /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/cluster.c
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/cluster.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RAWBerry.dir/cluster.c.i"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/cluster.c > CMakeFiles/RAWBerry.dir/cluster.c.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/cluster.c > CMakeFiles/RAWBerry.dir/cluster.c.i
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/cluster.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RAWBerry.dir/cluster.c.s"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/cluster.c -o CMakeFiles/RAWBerry.dir/cluster.c.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/cluster.c -o CMakeFiles/RAWBerry.dir/cluster.c.s
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/collector.c.o: source/app/RAWBerry/CMakeFiles/RAWBerry.dir/flags.make
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/collector.c.o: source/app/RAWBerry/collector.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object source/app/RAWBerry/CMakeFiles/RAWBerry.dir/collector.c.o"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RAWBerry.dir/collector.c.o   -c /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/collector.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object source/app/RAWBerry/CMakeFiles/RAWBerry.dir/collector.c.o"
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RAWBerry.dir/collector.c.o   -c /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/collector.c
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/collector.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RAWBerry.dir/collector.c.i"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/collector.c > CMakeFiles/RAWBerry.dir/collector.c.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/collector.c > CMakeFiles/RAWBerry.dir/collector.c.i
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/collector.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RAWBerry.dir/collector.c.s"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/collector.c -o CMakeFiles/RAWBerry.dir/collector.c.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/collector.c -o CMakeFiles/RAWBerry.dir/collector.c.s
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o: source/app/RAWBerry/CMakeFiles/RAWBerry.dir/flags.make
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o: source/app/RAWBerry/input.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RAWBerry.dir/input.c.o   -c /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/input.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.o"
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RAWBerry.dir/input.c.o   -c /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/input.c
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RAWBerry.dir/input.c.i"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/input.c > CMakeFiles/RAWBerry.dir/input.c.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/input.c > CMakeFiles/RAWBerry.dir/input.c.i
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/input.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RAWBerry.dir/input.c.s"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/input.c -o CMakeFiles/RAWBerry.dir/input.c.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/input.c -o CMakeFiles/RAWBerry.dir/input.c.s
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/main.c.o: source/app/RAWBerry/CMakeFiles/RAWBerry.dir/flags.make
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/main.c.o: source/app/RAWBerry/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object source/app/RAWBerry/CMakeFiles/RAWBerry.dir/main.c.o"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RAWBerry.dir/main.c.o   -c /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object source/app/RAWBerry/CMakeFiles/RAWBerry.dir/main.c.o"
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RAWBerry.dir/main.c.o   -c /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/main.c
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RAWBerry.dir/main.c.i"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/main.c > CMakeFiles/RAWBerry.dir/main.c.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/main.c > CMakeFiles/RAWBerry.dir/main.c.i
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RAWBerry.dir/main.c.s"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/main.c -o CMakeFiles/RAWBerry.dir/main.c.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/main.c -o CMakeFiles/RAWBerry.dir/main.c.s
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/master.c.o: source/app/RAWBerry/CMakeFiles/RAWBerry.dir/flags.make
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/master.c.o: source/app/RAWBerry/master.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object source/app/RAWBerry/CMakeFiles/RAWBerry.dir/master.c.o"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RAWBerry.dir/master.c.o   -c /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/master.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object source/app/RAWBerry/CMakeFiles/RAWBerry.dir/master.c.o"
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RAWBerry.dir/master.c.o   -c /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/master.c
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/master.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RAWBerry.dir/master.c.i"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/master.c > CMakeFiles/RAWBerry.dir/master.c.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/master.c > CMakeFiles/RAWBerry.dir/master.c.i
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/master.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RAWBerry.dir/master.c.s"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/master.c -o CMakeFiles/RAWBerry.dir/master.c.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/master.c -o CMakeFiles/RAWBerry.dir/master.c.s
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/slave.c.o: source/app/RAWBerry/CMakeFiles/RAWBerry.dir/flags.make
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/slave.c.o: source/app/RAWBerry/slave.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object source/app/RAWBerry/CMakeFiles/RAWBerry.dir/slave.c.o"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RAWBerry.dir/slave.c.o   -c /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/slave.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object source/app/RAWBerry/CMakeFiles/RAWBerry.dir/slave.c.o"
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RAWBerry.dir/slave.c.o   -c /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/slave.c
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/slave.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RAWBerry.dir/slave.c.i"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/slave.c > CMakeFiles/RAWBerry.dir/slave.c.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/slave.c > CMakeFiles/RAWBerry.dir/slave.c.i
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/slave.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RAWBerry.dir/slave.c.s"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/slave.c -o CMakeFiles/RAWBerry.dir/slave.c.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/slave.c -o CMakeFiles/RAWBerry.dir/slave.c.s
 
 # Object files for target RAWBerry
 RAWBerry_OBJECTS = \
@@ -184,8 +184,8 @@ source/app/RAWBerry/RAWBerry: source/lib/expat_lib/libexpat_lib.a
 source/app/RAWBerry/RAWBerry: source/app/common/cJSON/libcJSON.a
 source/app/RAWBerry/RAWBerry: source/app/common/argument_parser/libargument_parser.a
 source/app/RAWBerry/RAWBerry: source/app/RAWBerry/CMakeFiles/RAWBerry.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable RAWBerry"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RAWBerry.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable RAWBerry"
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RAWBerry.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/build: source/app/RAWBerry/RAWBerry
@@ -193,10 +193,10 @@ source/app/RAWBerry/CMakeFiles/RAWBerry.dir/build: source/app/RAWBerry/RAWBerry
 .PHONY : source/app/RAWBerry/CMakeFiles/RAWBerry.dir/build
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/clean:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && $(CMAKE_COMMAND) -P CMakeFiles/RAWBerry.dir/cmake_clean.cmake
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry && $(CMAKE_COMMAND) -P CMakeFiles/RAWBerry.dir/cmake_clean.cmake
 .PHONY : source/app/RAWBerry/CMakeFiles/RAWBerry.dir/clean
 
 source/app/RAWBerry/CMakeFiles/RAWBerry.dir/depend:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/CMakeFiles/RAWBerry.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/RAWBerry/CMakeFiles/RAWBerry.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : source/app/RAWBerry/CMakeFiles/RAWBerry.dir/depend
 

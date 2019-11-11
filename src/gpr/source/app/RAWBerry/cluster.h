@@ -20,7 +20,6 @@
 #define  cluster_INC
 
 #include "buffer.h"
-#include "gpr.h"
 
 #define NODE_MASTER 0
 #define NODE_COLLECTOR 1
@@ -29,10 +28,8 @@
 #define TAG_S_TO  2
 #define TAG_B_ALRT 3
 
-#ifndef TEST
-#define FRAME_RAW_SIZEB _frame_size
-#else 
-#define FRAME_RAW_SIZEB 40
+#ifndef FRAME_RAW_SIZEB 
+#define FRAME_RAW_SIZEB (3840 * 2160 * 3 + 8)
 #endif
 
 
@@ -49,15 +46,11 @@ struct reply{
 };
 
 #define REPLY_MSG_SUCCESS  0x01
-#define REPLY_MSG_LFRAME     0x02
-#define REPLY_MSG_EXIT	    0x03
 
 extern int this_node_rank;
 extern int num_nodes;
-extern int _frame_size;
 
-int init_mpi(int argc, char **argv);
-void exit_mpi(void);
+int init_mpi(void);
 
 /* 
  * ===  FUNCTION  =============================================================
@@ -80,31 +73,20 @@ int cluster(struct cluster_args *params);
 
 int master(struct cluster_args *params, int slaves);
 int init_input(struct cluster_args *params, buf_handle_t *buf);
-int get_frame(void **frame, void **params);
+int get_frame(void **frame);
 int master_done(void);
 
 //Slave node funcs
 
 int slave(struct cluster_args *params);
-int init_engine(struct cluster_args *params);
-int encode(void *in, gpr_parameters *p, void **out, int *sz);
 int slave_done(void);
 
 //collector node funcs
 
 int collector(struct cluster_args *args);
 int collector_done(void);
-void stream_frame(void *frame, int sz, int frnum);
 int init_stream_server(struct cluster_args *args);
 
-#ifndef NMPI
-#include <mpi.h>
-int nb_probe(int source, int tag, MPI_Comm comm, MPI_Status *stat);
-int nb_waitany(int len, MPI_Request *reqs, int *i, MPI_Status *stat);
-void c_bcast_send(struct reply *r);
-void c_bcast_irecv(struct reply *msg, MPI_Request *r);
-void c_bcast_wait_exit(void);
-#endif
 
 #endif   /* ----- #ifndef cluster_INC  ----- */
 

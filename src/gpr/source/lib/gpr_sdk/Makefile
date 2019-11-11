@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr
+CMAKE_SOURCE_DIR = /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr
+CMAKE_BINARY_DIR = /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/gpr_sdk/CMakeFiles/progress.marks
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/lib/gpr_sdk/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles 0
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/gpr_sdk/CMakeFiles/progress.marks
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/lib/gpr_sdk/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/lib/gpr_sdk/clean
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/lib/gpr_sdk/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,17 +97,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/lib/gpr_sdk/preinstall
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/lib/gpr_sdk/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/lib/gpr_sdk/preinstall
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/lib/gpr_sdk/preinstall
 .PHONY : preinstall/fast
 
 # Convenience name for target.
 source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/rule:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/rule
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/rule
 .PHONY : source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/rule
 
 # Convenience name for target.
@@ -117,7 +117,7 @@ gpr_sdk: source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/rule
 
 # fast build rule for target.
 gpr_sdk/fast:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build
 .PHONY : gpr_sdk/fast
 
 private/gpr.o: private/gpr.cpp.o
@@ -126,7 +126,7 @@ private/gpr.o: private/gpr.cpp.o
 
 # target to build an object file
 private/gpr.cpp.o:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr.cpp.o
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr.cpp.o
 .PHONY : private/gpr.cpp.o
 
 private/gpr.i: private/gpr.cpp.i
@@ -135,7 +135,7 @@ private/gpr.i: private/gpr.cpp.i
 
 # target to preprocess a source file
 private/gpr.cpp.i:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr.cpp.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr.cpp.i
 .PHONY : private/gpr.cpp.i
 
 private/gpr.s: private/gpr.cpp.s
@@ -144,7 +144,7 @@ private/gpr.s: private/gpr.cpp.s
 
 # target to generate assembly for a file
 private/gpr.cpp.s:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr.cpp.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr.cpp.s
 .PHONY : private/gpr.cpp.s
 
 private/gpr_exif_info.o: private/gpr_exif_info.cpp.o
@@ -153,7 +153,7 @@ private/gpr_exif_info.o: private/gpr_exif_info.cpp.o
 
 # target to build an object file
 private/gpr_exif_info.cpp.o:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_exif_info.cpp.o
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_exif_info.cpp.o
 .PHONY : private/gpr_exif_info.cpp.o
 
 private/gpr_exif_info.i: private/gpr_exif_info.cpp.i
@@ -162,7 +162,7 @@ private/gpr_exif_info.i: private/gpr_exif_info.cpp.i
 
 # target to preprocess a source file
 private/gpr_exif_info.cpp.i:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_exif_info.cpp.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_exif_info.cpp.i
 .PHONY : private/gpr_exif_info.cpp.i
 
 private/gpr_exif_info.s: private/gpr_exif_info.cpp.s
@@ -171,7 +171,7 @@ private/gpr_exif_info.s: private/gpr_exif_info.cpp.s
 
 # target to generate assembly for a file
 private/gpr_exif_info.cpp.s:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_exif_info.cpp.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_exif_info.cpp.s
 .PHONY : private/gpr_exif_info.cpp.s
 
 private/gpr_image_writer.o: private/gpr_image_writer.cpp.o
@@ -180,7 +180,7 @@ private/gpr_image_writer.o: private/gpr_image_writer.cpp.o
 
 # target to build an object file
 private/gpr_image_writer.cpp.o:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_image_writer.cpp.o
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_image_writer.cpp.o
 .PHONY : private/gpr_image_writer.cpp.o
 
 private/gpr_image_writer.i: private/gpr_image_writer.cpp.i
@@ -189,7 +189,7 @@ private/gpr_image_writer.i: private/gpr_image_writer.cpp.i
 
 # target to preprocess a source file
 private/gpr_image_writer.cpp.i:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_image_writer.cpp.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_image_writer.cpp.i
 .PHONY : private/gpr_image_writer.cpp.i
 
 private/gpr_image_writer.s: private/gpr_image_writer.cpp.s
@@ -198,7 +198,7 @@ private/gpr_image_writer.s: private/gpr_image_writer.cpp.s
 
 # target to generate assembly for a file
 private/gpr_image_writer.cpp.s:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_image_writer.cpp.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_image_writer.cpp.s
 .PHONY : private/gpr_image_writer.cpp.s
 
 private/gpr_profile_info.o: private/gpr_profile_info.cpp.o
@@ -207,7 +207,7 @@ private/gpr_profile_info.o: private/gpr_profile_info.cpp.o
 
 # target to build an object file
 private/gpr_profile_info.cpp.o:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_profile_info.cpp.o
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_profile_info.cpp.o
 .PHONY : private/gpr_profile_info.cpp.o
 
 private/gpr_profile_info.i: private/gpr_profile_info.cpp.i
@@ -216,7 +216,7 @@ private/gpr_profile_info.i: private/gpr_profile_info.cpp.i
 
 # target to preprocess a source file
 private/gpr_profile_info.cpp.i:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_profile_info.cpp.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_profile_info.cpp.i
 .PHONY : private/gpr_profile_info.cpp.i
 
 private/gpr_profile_info.s: private/gpr_profile_info.cpp.s
@@ -225,7 +225,7 @@ private/gpr_profile_info.s: private/gpr_profile_info.cpp.s
 
 # target to generate assembly for a file
 private/gpr_profile_info.cpp.s:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_profile_info.cpp.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_profile_info.cpp.s
 .PHONY : private/gpr_profile_info.cpp.s
 
 private/gpr_read_image.o: private/gpr_read_image.cpp.o
@@ -234,7 +234,7 @@ private/gpr_read_image.o: private/gpr_read_image.cpp.o
 
 # target to build an object file
 private/gpr_read_image.cpp.o:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_read_image.cpp.o
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_read_image.cpp.o
 .PHONY : private/gpr_read_image.cpp.o
 
 private/gpr_read_image.i: private/gpr_read_image.cpp.i
@@ -243,7 +243,7 @@ private/gpr_read_image.i: private/gpr_read_image.cpp.i
 
 # target to preprocess a source file
 private/gpr_read_image.cpp.i:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_read_image.cpp.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_read_image.cpp.i
 .PHONY : private/gpr_read_image.cpp.i
 
 private/gpr_read_image.s: private/gpr_read_image.cpp.s
@@ -252,7 +252,7 @@ private/gpr_read_image.s: private/gpr_read_image.cpp.s
 
 # target to generate assembly for a file
 private/gpr_read_image.cpp.s:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_read_image.cpp.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_read_image.cpp.s
 .PHONY : private/gpr_read_image.cpp.s
 
 private/gpr_tuning_info.o: private/gpr_tuning_info.cpp.o
@@ -261,7 +261,7 @@ private/gpr_tuning_info.o: private/gpr_tuning_info.cpp.o
 
 # target to build an object file
 private/gpr_tuning_info.cpp.o:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_tuning_info.cpp.o
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_tuning_info.cpp.o
 .PHONY : private/gpr_tuning_info.cpp.o
 
 private/gpr_tuning_info.i: private/gpr_tuning_info.cpp.i
@@ -270,7 +270,7 @@ private/gpr_tuning_info.i: private/gpr_tuning_info.cpp.i
 
 # target to preprocess a source file
 private/gpr_tuning_info.cpp.i:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_tuning_info.cpp.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_tuning_info.cpp.i
 .PHONY : private/gpr_tuning_info.cpp.i
 
 private/gpr_tuning_info.s: private/gpr_tuning_info.cpp.s
@@ -279,7 +279,7 @@ private/gpr_tuning_info.s: private/gpr_tuning_info.cpp.s
 
 # target to generate assembly for a file
 private/gpr_tuning_info.cpp.s:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_tuning_info.cpp.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_tuning_info.cpp.s
 .PHONY : private/gpr_tuning_info.cpp.s
 
 private/gpr_utils.o: private/gpr_utils.cpp.o
@@ -288,7 +288,7 @@ private/gpr_utils.o: private/gpr_utils.cpp.o
 
 # target to build an object file
 private/gpr_utils.cpp.o:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_utils.cpp.o
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_utils.cpp.o
 .PHONY : private/gpr_utils.cpp.o
 
 private/gpr_utils.i: private/gpr_utils.cpp.i
@@ -297,7 +297,7 @@ private/gpr_utils.i: private/gpr_utils.cpp.i
 
 # target to preprocess a source file
 private/gpr_utils.cpp.i:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_utils.cpp.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_utils.cpp.i
 .PHONY : private/gpr_utils.cpp.i
 
 private/gpr_utils.s: private/gpr_utils.cpp.s
@@ -306,7 +306,7 @@ private/gpr_utils.s: private/gpr_utils.cpp.s
 
 # target to generate assembly for a file
 private/gpr_utils.cpp.s:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_utils.cpp.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/build.make source/lib/gpr_sdk/CMakeFiles/gpr_sdk.dir/private/gpr_utils.cpp.s
 .PHONY : private/gpr_utils.cpp.s
 
 # Help Target

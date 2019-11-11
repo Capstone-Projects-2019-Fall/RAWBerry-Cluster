@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr
+CMAKE_SOURCE_DIR = /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr
+CMAKE_BINARY_DIR = /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/tiny_jpeg/CMakeFiles/progress.marks
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/lib/tiny_jpeg/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles 0
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/tiny_jpeg/CMakeFiles/progress.marks
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/lib/tiny_jpeg/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/lib/tiny_jpeg/clean
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/lib/tiny_jpeg/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,17 +97,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/lib/tiny_jpeg/preinstall
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/lib/tiny_jpeg/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/lib/tiny_jpeg/preinstall
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/lib/tiny_jpeg/preinstall
 .PHONY : preinstall/fast
 
 # Convenience name for target.
 source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/rule:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/rule
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f CMakeFiles/Makefile2 source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/rule
 .PHONY : source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/rule
 
 # Convenience name for target.
@@ -117,7 +117,7 @@ tiny_jpeg: source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/rule
 
 # fast build rule for target.
 tiny_jpeg/fast:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/build.make source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/build
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/build.make source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/build
 .PHONY : tiny_jpeg/fast
 
 jpeg.o: jpeg.c.o
@@ -126,7 +126,7 @@ jpeg.o: jpeg.c.o
 
 # target to build an object file
 jpeg.c.o:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/build.make source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/jpeg.c.o
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/build.make source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/jpeg.c.o
 .PHONY : jpeg.c.o
 
 jpeg.i: jpeg.c.i
@@ -135,7 +135,7 @@ jpeg.i: jpeg.c.i
 
 # target to preprocess a source file
 jpeg.c.i:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/build.make source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/jpeg.c.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/build.make source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/jpeg.c.i
 .PHONY : jpeg.c.i
 
 jpeg.s: jpeg.c.s
@@ -144,7 +144,7 @@ jpeg.s: jpeg.c.s
 
 # target to generate assembly for a file
 jpeg.c.s:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/build.make source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/jpeg.c.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(MAKE) -f source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/build.make source/lib/tiny_jpeg/CMakeFiles/tiny_jpeg.dir/jpeg.c.s
 .PHONY : jpeg.c.s
 
 # Help Target

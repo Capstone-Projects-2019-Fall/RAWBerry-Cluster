@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr
+CMAKE_SOURCE_DIR = /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr
+CMAKE_BINARY_DIR = /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr
 
 # Include any dependencies generated for this target.
 include source/lib/md5_lib/CMakeFiles/md5_lib.dir/depend.make
@@ -59,16 +59,16 @@ include source/lib/md5_lib/CMakeFiles/md5_lib.dir/flags.make
 
 source/lib/md5_lib/CMakeFiles/md5_lib.dir/md5.c.o: source/lib/md5_lib/CMakeFiles/md5_lib.dir/flags.make
 source/lib/md5_lib/CMakeFiles/md5_lib.dir/md5.c.o: source/lib/md5_lib/md5.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object source/lib/md5_lib/CMakeFiles/md5_lib.dir/md5.c.o"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/md5_lib.dir/md5.c.o   -c /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib/md5.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object source/lib/md5_lib/CMakeFiles/md5_lib.dir/md5.c.o"
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/md5_lib.dir/md5.c.o   -c /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib/md5.c
 
 source/lib/md5_lib/CMakeFiles/md5_lib.dir/md5.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/md5_lib.dir/md5.c.i"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib/md5.c > CMakeFiles/md5_lib.dir/md5.c.i
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib/md5.c > CMakeFiles/md5_lib.dir/md5.c.i
 
 source/lib/md5_lib/CMakeFiles/md5_lib.dir/md5.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/md5_lib.dir/md5.c.s"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib/md5.c -o CMakeFiles/md5_lib.dir/md5.c.s
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib/md5.c -o CMakeFiles/md5_lib.dir/md5.c.s
 
 # Object files for target md5_lib
 md5_lib_OBJECTS = \
@@ -80,9 +80,9 @@ md5_lib_EXTERNAL_OBJECTS =
 source/lib/md5_lib/libmd5_lib.a: source/lib/md5_lib/CMakeFiles/md5_lib.dir/md5.c.o
 source/lib/md5_lib/libmd5_lib.a: source/lib/md5_lib/CMakeFiles/md5_lib.dir/build.make
 source/lib/md5_lib/libmd5_lib.a: source/lib/md5_lib/CMakeFiles/md5_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libmd5_lib.a"
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib && $(CMAKE_COMMAND) -P CMakeFiles/md5_lib.dir/cmake_clean_target.cmake
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/md5_lib.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libmd5_lib.a"
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib && $(CMAKE_COMMAND) -P CMakeFiles/md5_lib.dir/cmake_clean_target.cmake
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/md5_lib.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 source/lib/md5_lib/CMakeFiles/md5_lib.dir/build: source/lib/md5_lib/libmd5_lib.a
@@ -90,10 +90,10 @@ source/lib/md5_lib/CMakeFiles/md5_lib.dir/build: source/lib/md5_lib/libmd5_lib.a
 .PHONY : source/lib/md5_lib/CMakeFiles/md5_lib.dir/build
 
 source/lib/md5_lib/CMakeFiles/md5_lib.dir/clean:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib && $(CMAKE_COMMAND) -P CMakeFiles/md5_lib.dir/cmake_clean.cmake
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib && $(CMAKE_COMMAND) -P CMakeFiles/md5_lib.dir/cmake_clean.cmake
 .PHONY : source/lib/md5_lib/CMakeFiles/md5_lib.dir/clean
 
 source/lib/md5_lib/CMakeFiles/md5_lib.dir/depend:
-	cd /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib/CMakeFiles/md5_lib.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/md5_lib/CMakeFiles/md5_lib.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : source/lib/md5_lib/CMakeFiles/md5_lib.dir/depend
 

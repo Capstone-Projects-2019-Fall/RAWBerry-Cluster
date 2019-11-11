@@ -6,5 +6,5 @@ C_FLAGS = -std=c99
 
 C_DEFINES = -DGIT_BRANCH=\"\" -DGIT_COMMIT_HASH=\"\"
 
-C_INCLUDES = -I/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/vc5_common/../common/private -I/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/vc5_common/../common/public 
+C_INCLUDES = -I/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/vc5_common/../common/private -I/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/vc5_common/../common/public 
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/rtsp
+# Install script for directory: /home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/app/rtsp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

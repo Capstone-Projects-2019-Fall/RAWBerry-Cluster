@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = -DGIT_BRANCH=\"\" -DGIT_COMMIT_HASH=\"\"
 
-CXX_INCLUDES = -I/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/dng_sdk/../common/private -I/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/dng_sdk/../common/public -I/home/pi/Desktop/Working/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/dng_sdk/../xmp_core/public/include 
+CXX_INCLUDES = -I/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/dng_sdk/../common/private -I/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/dng_sdk/../common/public -I/home/pi/Desktop/Working/Good/RAWBerry-Cluster-milestone-2-demo/src/gpr/source/lib/dng_sdk/../xmp_core/public/include 
 
