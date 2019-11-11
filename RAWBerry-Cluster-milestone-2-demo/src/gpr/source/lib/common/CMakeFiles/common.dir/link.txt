@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcommon.a  CMakeFiles/common.dir/private/gpr_allocator.c.o CMakeFiles/common.dir/private/gpr_buffer.c.o CMakeFiles/common.dir/private/gpr_buffer_auto.cpp.o CMakeFiles/common.dir/private/log.c.o CMakeFiles/common.dir/private/timer.c.o
+/usr/bin/ranlib libcommon.a
