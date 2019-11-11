@@ -1,2 +1,0 @@
-/usr/bin/ar qc libvc5_common.a  CMakeFiles/vc5_common.dir/bitstream.c.o CMakeFiles/vc5_common.dir/codec.c.o CMakeFiles/vc5_common.dir/companding.c.o CMakeFiles/vc5_common.dir/image.c.o CMakeFiles/vc5_common.dir/logcurve.c.o CMakeFiles/vc5_common.dir/stream.c.o CMakeFiles/vc5_common.dir/syntax.c.o CMakeFiles/vc5_common.dir/utilities.c.o CMakeFiles/vc5_common.dir/wavelet.c.o
-/usr/bin/ranlib libvc5_common.a

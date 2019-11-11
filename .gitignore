@@ -1,0 +1,58 @@
+.DS_Store
+build/
+scripts/*.pyc
+
+CMakeCache.txt
+CMakeFiles/
+Makefile
+
+#execs
+RAWBerry
+input
+RAWBerry-Decode
+rtsp
+testserver
+vc5_decoder_app
+vc5_encoder_app
+gpr_tools
+
+!RAWBerry/
+!RAWBerry-Decode/
+!rtsp/
+!testserver/
+!vc5_decoder_app/
+!vc5_encoder_app/
+!gpr_tools/
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app

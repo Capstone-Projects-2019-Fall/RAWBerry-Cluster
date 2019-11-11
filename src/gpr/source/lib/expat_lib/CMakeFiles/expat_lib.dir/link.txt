@@ -1,2 +1,0 @@
-/usr/bin/ar qc libexpat_lib.a  CMakeFiles/expat_lib.dir/xmlparse.c.o CMakeFiles/expat_lib.dir/xmlrole.c.o CMakeFiles/expat_lib.dir/xmltok.c.o CMakeFiles/expat_lib.dir/xmltok_impl.c.o CMakeFiles/expat_lib.dir/xmltok_ns.c.o
-/usr/bin/ranlib libexpat_lib.a
