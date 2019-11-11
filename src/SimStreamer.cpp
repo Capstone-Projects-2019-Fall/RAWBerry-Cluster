@@ -27,7 +27,7 @@ void SimStreamer::streamImage(uint32_t curMsec)
       // }
         //stream frame
         puts("Begin Frame");
-        streamFrame(bytes, (len -1), curMsec);
+        streamFrame(bytes, len, curMsec);
         puts("End Frame");
         //free the buffer
         free(buffer);

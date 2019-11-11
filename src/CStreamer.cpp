@@ -44,7 +44,7 @@ CStreamer::~CStreamer()
 
 int CStreamer::SendRtpPacket(unsigned const char * jpeg, int jpegLen, int fragmentOffset, BufPtr quant0tbl, BufPtr quant1tbl)
 {
-#define KRtpHeaderSize 12           // size of the RTP header
+#define KRtpHeaderSize 14           // size of the RTP header
 #define KJpegHeaderSize 8           // size of the special JPEG payload header
 
 #define MAX_FRAGMENT_SIZE 1100 // FIXME, pick more carefully
@@ -124,7 +124,6 @@ int CStreamer::SendRtpPacket(unsigned const char * jpeg, int jpegLen, int fragme
 
     int headerLen = 18;
     printf("Sending timestamp %d, seq %d, fragoff %d, fraglen %d, jpegLen %d\n", m_Timestamp, m_SequenceNumber, fragmentOffset, fragmentLen, jpegLen);
-
     // append the JPEG scan data to the RTP buffer
     memcpy(RtpBuf + headerLen,jpeg + fragmentOffset, fragmentLen);
     fragmentOffset += fragmentLen;
@@ -210,7 +209,7 @@ void CStreamer::streamFrame(unsigned const char *data, uint32_t dataLen, uint32_
         offset = SendRtpPacket(data, dataLen, offset, qtable0, qtable1);
         printf("offset:%d\n", offset);
     } while(offset != 0);
-
+    m_SequenceNumber = 0;
     // Increment ONLY after a full frame
     uint32_t units = 90000; // Hz per RFC 2435
     m_Timestamp += (units * deltams / 1000);                             // fixed timestamp increment for a frame rate of 25fps
