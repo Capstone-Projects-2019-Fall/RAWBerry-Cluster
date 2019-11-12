@@ -86,7 +86,8 @@ void _get_raw_image(char *path, void **frame, void **pout)
 	//Use routine in gpr libraries to make this easy
 	if( read_from_file( &input_buffer, path, allocator.Alloc, allocator.Free ) != 0 )
 	{
-	    return NULL;
+		*frame = NULL;
+		*pout = NULL;
 	}
 
 	//Now we have an image open, read parameters into struct
@@ -111,6 +112,7 @@ start:	if((ent = readdir(_dir))) {
 			exit(5);
 			/* Uh We Might be F****d here? Whatever */ }
 		sprintf(fullpath, "%s/%s", _dirname, ent->d_name);
+		printf("Reading file: %s\n", fullpath);
 		_get_raw_image(fullpath, frame, params);
 		free(fullpath);
 	}else{

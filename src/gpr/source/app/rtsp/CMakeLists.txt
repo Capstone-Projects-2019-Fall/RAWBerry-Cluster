@@ -3,6 +3,9 @@ set( EXE_NAME rtsp )
 
 find_package(MPI REQUIRED)
 
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 # get source and include files
 file( GLOB RTSP_SRC_FILES "*.c" "*.cpp")
 file( GLOB RTSP_INC_FILES "*.h" "*.h")

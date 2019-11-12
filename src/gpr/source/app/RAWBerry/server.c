@@ -66,24 +66,24 @@ int init_stream_server(struct cluster_args *params)
 void stream_frame(void *frame, int sz, int frnum)
 {
 	/* Temp output */
-	/*char fname[50];*/
-	/*snprintf(fname, 50, "%s/fr%d.vc5", OUT_DIR, frnum);*/
-	/*int fd = open(fname, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP);*/
-	/*int wrote = write(fd, frame, sz);*/
-	/*printf("Wrote %d bytes to %s\n", wrote, fname);*/
-	/*if(wrote == -1){*/
-		/*perror("Write error");*/
-	/*}*/
-	int bytes_written = 0;
-
-	int pipe_fd = open("/tmp/pipe", O_WRONLY);
-	write(pipe_fd, &sz, sizeof(int));
-
-	while (bytes_written != sz){
-		puts("Write");
-		bytes_written += write(pipe_fd, frame, (sz - bytes_written));
+	char fname[50];
+	snprintf(fname, 50, "%s/fr%d.vc5", OUT_DIR, frnum);
+	int fd = open(fname, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP);
+	int wrote = write(fd, frame, sz);
+	printf("Wrote %d bytes to %s\n", wrote, fname);
+	if(wrote == -1){
+		perror("Write error");
 	}
-	close(pipe_fd);
-	printf("Wrote: %d Bytes\n", bytes_written);
+	/*int bytes_written = 0;*/
+
+	/*int pipe_fd = open("/tmp/pipe", O_WRONLY);*/
+	/*write(pipe_fd, &sz, sizeof(int));*/
+
+	/*while (bytes_written != sz){*/
+		/*puts("Write");*/
+		/*bytes_written += write(pipe_fd, frame, (sz - bytes_written));*/
+	/*}*/
+	/*close(pipe_fd);*/
+	/*printf("Wrote: %d Bytes\n", bytes_written);*/
 
 }

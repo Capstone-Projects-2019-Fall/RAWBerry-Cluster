@@ -70,10 +70,11 @@ void _coll_stream_frame(void *frame, int sz)
 {
 	uint32_t fnum = *(uint32_t *)(frame);
 	printf("Streaming frame %d\n", fnum);
-	/*stream_frame((uint8_t *)frame + 4, sz - 4, fnum);*/
+	stream_frame((uint8_t *)frame + 4, sz - 4, fnum);
 	if(fnum == _lframe){
-		struct reply r = { .message = REPLY_MSG_EXIT, .payload = 0 };
+		struct reply r = { .message = REPLY_MSG_EXIT, .payload = 0};
 		c_bcast_send(&r);
+		exit_mpi();
 		exit(0);
 	}
 	
@@ -85,19 +86,10 @@ static struct reply *_coll_bcast_recv(MPI_Status *st)
 	MPI_Recv(r, sizeof(*r), MPI_BYTE, st->MPI_SOURCE, TAG_B_ALRT, MPI_COMM_WORLD, st);
 	if(r->message == REPLY_MSG_LFRAME){
 		_lframe = r->payload;
+		printf("_lastframe %d\n", _lframe);
 	}
 	return r;
 }
-
-/*void _coll_stream_frame(void *frame, int sz)*/
-/*{*/
-	/*[> write frame to streaming server's input pipe <]*/
-	/*int pipe_fd = open(STREAM_PIPE, O_WRONLY);*/
-	/*write(pipe_fd, &sz, sizeof(int));*/
-	/*write(pipe_fd, frame, sz);*/
-	/*close(pipe_fd);*/
-	/*tprintf("%s: %d\n", ((char*)frame)+4, *(int*)frame);*/
-/*}*/
 
 int collector_done(void)
 {
@@ -118,6 +110,7 @@ int collector(struct cluster_args *args)
 	
 	while(!collector_done()){
 		errc = _coll_select(&stat, &i);
+		printf("Coll action %d\n", i);
 		if(errc != MPI_SUCCESS){
 			//TODO:Error handle
 		}
