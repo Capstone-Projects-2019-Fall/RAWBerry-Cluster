@@ -37,8 +37,10 @@
 
 
 struct cluster_args{
-	char *source;
-	long compopts;
+	char *in_dir;
+	char *out_dir;
+	char *rtsp_loc;
+	int use_rtsp;
 	//TODO: add additional ops as needed 
 };
 

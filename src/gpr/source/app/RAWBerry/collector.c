@@ -110,11 +110,9 @@ int collector(struct cluster_args *args)
 	
 	while(!collector_done()){
 		errc = _coll_select(&stat, &i);
-		printf("Coll action %d\n", i);
 		if(errc != MPI_SUCCESS){
 			//TODO:Error handle
 		}
-		/*tprintf("Collector action: %d\n", i);*/
 		switch(i){
 			case A_FRAME_AVALIBLE:
 				_coll_recv_frame(&stat, &cframe, &sz);

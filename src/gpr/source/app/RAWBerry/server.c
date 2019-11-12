@@ -42,6 +42,13 @@
 
 int pipe_fd;
 
+static char *rtsp_loc;
+static char *out_dir;
+static int use_rtsp;
+
+static int _pblen;
+static char *_pbuff;
+
 int init_engine(struct cluster_args *params)
 {
 
@@ -50,14 +57,21 @@ int init_engine(struct cluster_args *params)
 
 int init_stream_server(struct cluster_args *params)
 {
-	printf("Opening Pipe\n");
-	mkfifo(INPUT_PIPE, 0666);
-	printf("Pipe Open");
-	
-	int pid = fork();
+	use_rtsp = params->use_rtsp;
+	rtsp_loc = params->rtsp_loc;
+	out_dir = params->out_dir;
+	if(use_rtsp){
+		mkfifo(INPUT_PIPE, 0666);
+		int pid = fork();
 
-	if ( pid == 0 ) {
-		execlp( "./source/app/rtsp/rtsp", "", NULL);
+		if ( pid == 0 ) {
+			execlp(rtsp_loc, "", NULL);
+			fprintf(stderr, "Failed to open rtsp at %s\n", rtsp_loc);
+			exit(-1);
+		}
+	}else{
+		_pblen = strlen(out_dir) + 50;
+		_pbuff = malloc(_pblen);
 	}
 
 	return 0;
@@ -66,24 +80,26 @@ int init_stream_server(struct cluster_args *params)
 void stream_frame(void *frame, int sz, int frnum)
 {
 	/* Temp output */
-	char fname[50];
-	snprintf(fname, 50, "%s/fr%d.vc5", OUT_DIR, frnum);
-	int fd = open(fname, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP);
-	int wrote = write(fd, frame, sz);
-	printf("Wrote %d bytes to %s\n", wrote, fname);
-	if(wrote == -1){
-		perror("Write error");
+	if(!use_rtsp){ 
+		snprintf(_pbuff, _pblen, "%s/fr%d.vc5", OUT_DIR, frnum);
+		int fd = open(_pbuff, O_WRONLY | O_CREAT, 
+			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP);
+		int wrote = write(fd, frame, sz);
+		printf("Wrote %d bytes to %s\n", wrote, _pbuff);
+		if(wrote == -1){
+			perror("Write error");
+		}
+	}else{
+		int bytes_written = 0;
+
+		int pipe_fd = open("/tmp/pipe", O_WRONLY);
+		write(pipe_fd, &sz, sizeof(int));
+
+		while (bytes_written != sz){
+			bytes_written += write(pipe_fd, frame, 
+					(sz - bytes_written));
+		}
+		close(pipe_fd);
+		printf("Wrote: %d Bytes\n", bytes_written);
 	}
-	/*int bytes_written = 0;*/
-
-	/*int pipe_fd = open("/tmp/pipe", O_WRONLY);*/
-	/*write(pipe_fd, &sz, sizeof(int));*/
-
-	/*while (bytes_written != sz){*/
-		/*puts("Write");*/
-		/*bytes_written += write(pipe_fd, frame, (sz - bytes_written));*/
-	/*}*/
-	/*close(pipe_fd);*/
-	/*printf("Wrote: %d Bytes\n", bytes_written);*/
-
 }
