@@ -15,6 +15,7 @@ testserver
 vc5_decoder_app
 vc5_encoder_app
 gpr_tools
+cmake_install.cmake
 
 !RAWBerry/
 !RAWBerry-Decode/
