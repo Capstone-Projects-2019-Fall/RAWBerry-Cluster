@@ -19,6 +19,8 @@
 #ifndef  cluster_INC
 #define  cluster_INC
 
+#include <stdbool.h>
+
 #include "buffer.h"
 #include "gpr.h"
 
@@ -40,7 +42,8 @@ struct cluster_args{
 	char *in_dir;
 	char *out_dir;
 	char *rtsp_loc;
-	int use_rtsp;
+	bool verbose;
+	bool use_rtsp;
 	//TODO: add additional ops as needed 
 };
 
@@ -98,6 +101,10 @@ int collector(struct cluster_args *args);
 int collector_done(void);
 void stream_frame(void *frame, int sz, int frnum);
 int init_stream_server(struct cluster_args *args);
+
+extern bool verbose;
+
+#define VLOGF(A, ...) if(verbose) { fprintf(stderr, A, ##__VA_ARGS__); }
 
 #ifndef NMPI
 #include <mpi.h>

@@ -37,17 +37,9 @@
 #define INPUT_PIPE "/tmp/pipe"
 #define BUFF_SIZE 400000000
 
-int fd;
-
-
-int readFiles(char* directory, buf_handle_t buf);
-int openImage(char* filePath, buf_handle_t buf);
 void print_buffer_status(buf_handle_t buf);
-int encodeImage(gpr_buffer * output_buffer, vc5_encoder_parameters * vc5_encoder_params, gpr_buffer * vc5_image);
-void _coll_stream_frame(void *frame, int sz);
 
 static DIR *_dir;
-static buf_handle_t _buf;
 static char *_dirname;
 
 int init_input(struct cluster_args *args, buf_handle_t *buf)
@@ -108,11 +100,11 @@ start:	if((ent = readdir(_dir))) {
 			exit(5);
 			/* Uh We Might be F****d here? Whatever */ }
 		sprintf(fullpath, "%s/%s", _dirname, ent->d_name);
-		printf("Reading file: %s\n", fullpath);
+		VLOGF("Reading file: %s\n", fullpath);
 		_get_raw_image(fullpath, frame, params);
 		free(fullpath);
 	}else{
-		fprintf(stderr, "could not read");
+		VLOGF("End of input\n");
 		return 1;
 	}
 	return 0;

@@ -51,7 +51,7 @@ int init_mpi(int argc, char **argv)
 		/*return -2;*/
 	/*}*/
 	MPI_Comm_rank(MPI_COMM_WORLD, &this_node_rank);
-	printf("Proc %d, rank %d, on %s\n", getpid(), this_node_rank, hostname);
+	VLOGF("Proc %d, rank %d, on %s\n", getpid(), this_node_rank, hostname);
 	return 0;
 }
 

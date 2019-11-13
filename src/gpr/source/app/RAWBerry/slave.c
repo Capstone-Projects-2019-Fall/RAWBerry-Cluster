@@ -24,29 +24,6 @@
 #include "sopool.h"
 #include "gpr.h"
 
-#define ACTION_FRAME_GET 	1
-#define ACTION_REPLY_DONE 	2
-#define ACTION_SEND_DONE 	3
-#define ACTION_BCAST_ALRT 	4
-
-struct slave_m{
-	union{ 
-		struct{ 
-			MPI_Request in;
-			MPI_Request reply;
-			MPI_Request send;
-			MPI_Request bcast;
-		};
-		MPI_Request arr[4];
-	};
-};
-
-static int actions[] = { ACTION_FRAME_GET, ACTION_REPLY_DONE, ACTION_SEND_DONE,
-	ACTION_BCAST_ALRT };
-static void *datas[4] = {NULL, NULL, NULL, NULL};
-
-static struct sopool reply_pool;
-
 static struct reply _rcur, _rbcast;
 
 static struct{
@@ -112,7 +89,7 @@ static void _recv_frame(void **frame, gpr_parameters *p)
 static void _send_cframe(void *cframe, int sz)
 {
 	int errc = 0;
-	fprintf(stderr, "Sending frame\n");
+	VLOGF("Sending frame\n");
 	errc = MPI_Isend(cframe, sz, MPI_BYTE, NODE_COLLECTOR, TAG_S_TO, 
 		MPI_COMM_WORLD, SCREQ);
 	_slave_bwait();
@@ -124,7 +101,7 @@ static void _send_cframe(void *cframe, int sz)
 static int _s_compress(void *in, gpr_parameters *p, void **out, int *sz)
 {
 	int fnum = p->preview_image.preview_height;
-	printf("Compressing frame %d\n", fnum);
+	VLOGF("Compressing frame %d\n", fnum);
 	encode(in, p, out, sz);
 	free(in);
 	*out = realloc(*out, *sz + 4);

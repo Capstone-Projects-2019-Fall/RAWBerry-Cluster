@@ -14,6 +14,8 @@ Desc: file containing main function, as well as functions to initialize componen
 
 #define DIR_LENGTH 64
 
+bool verbose;
+
 
 //argp argument parser documentation
 //*************************************************************************
@@ -27,6 +29,7 @@ static struct argp_option options[] = {
 	{"no-rtsp", 'R', 0, 0, "Forces write to output-dir instead of streaming"},
 	{"rstp-path", 'r', "FILE", 0, "path to rtsp binary"},
 	{"verbose", 'v', 0, 0, "Be verbose"},
+	{"quiet", 'q', 0, 0, "disable verbose"},
 	{ 0 },
 };
 struct cluster_args cargs = {
@@ -34,6 +37,7 @@ struct cluster_args cargs = {
 	.out_dir = "./out",
 	.rtsp_loc = "../rtsp/rtsp",
 	.use_rtsp = 1,
+	.verbose = true,
 };
 
 
@@ -54,6 +58,10 @@ static error_t parse_opt(int key, char *arg, struct argp_state *state)
 			cargs.out_dir = arg;
 			break;
 		case 'v':
+			cargs.verbose = true;
+			break;
+		case 'q':
+			cargs.verbose = false;
 			break;
 		case ARGP_KEY_END:
 			break;

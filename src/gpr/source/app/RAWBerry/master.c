@@ -131,14 +131,14 @@ static int _master_get_frame(void **frame, void **params)
 {
 	int i = get_frame(frame, params);
 	if(i == 1){
-		printf("Exiting on frame %d\n", _fn - 1);
+		VLOGF("Exiting on frame %d\n", _fn - 1);
 		struct reply *r = sopool_get_new(&reply_pool);
 		r->message = REPLY_MSG_LFRAME;
 		r->payload = _fn - 1;
 		c_bcast_send(r);
 		return 1;
 	}
-	printf("Getting frame %d\n", _fn);
+	VLOGF("Getting frame %d\n", _fn);
 	_fn++;
 	return 0;
 }
@@ -160,9 +160,6 @@ int master(struct cluster_args *params_, int slaves)
 
 	for(i = 0; i < slaves; i++){
 		_irecv_reply(&statm, ACTION_SLAVE_AVALIBLE, 2 + i);
-		/*c = _create_resp(&statm, ACTION_SLAVE_AVALIBLE, 2 + i);*/
-		/*errorc =	MPI_Irecv(&(statm.data[c]), 2, MPI_INT, i + 2, TAG_S_RET,*/
-			/*MPI_COMM_WORLD, &(statm.reqs[c]));*/
 	}
 	while(!master_done()){
 		i = _wait_status(&statm, &errorc);	
@@ -179,24 +176,17 @@ int master(struct cluster_args *params_, int slaves)
 				tx_in_progress++;
 				if(!exit_req)
 					exit_req = _master_get_frame(&frame, &params);
-				/*frame = sopool_get_new(&frame_pool);*/
 				break;
 			case ACTION_SLAVE_SENT:
 				tmp = statm.data[i];
-				/*sopool_return(&frame_pool, tmp);*/
 				free(tmp);
 				_irecv_reply(&statm, ACTION_SLAVE_AVALIBLE, statm.nodes[i] );
 				tx_in_progress--;
 				if(exit_req && !tx_in_progress){
-					printf("master waiting for exit\n");
+					VLOGF("master waiting for exit\n");
 					c_bcast_wait_exit();
 					exit(0);
 				}
-				/*c = _create_resp(&statm, ACTION_SLAVE_AVALIBLE,*/
-					/*2 + i);*/
-				/*MPI_Irecv(&(statm.data[c]), 2, MPI_INT, */
-					/*i + 2, TAG_S_RET, MPI_COMM_WORLD, */
-					/*&(statm.reqs[c]));*/
 				break;
 			case ACTION_SLAVE_SENTP:
 				ptmp = statm.data[i];

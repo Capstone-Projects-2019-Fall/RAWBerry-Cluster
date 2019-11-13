@@ -85,7 +85,7 @@ void stream_frame(void *frame, int sz, int frnum)
 		int fd = open(_pbuff, O_WRONLY | O_CREAT, 
 			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP);
 		int wrote = write(fd, frame, sz);
-		printf("Wrote %d bytes to %s\n", wrote, _pbuff);
+		VLOGF("Wrote %d bytes to %s\n", wrote, _pbuff);
 		if(wrote == -1){
 			perror("Write error");
 		}
@@ -100,6 +100,6 @@ void stream_frame(void *frame, int sz, int frnum)
 					(sz - bytes_written));
 		}
 		close(pipe_fd);
-		printf("Wrote: %d Bytes\n", bytes_written);
+		VLOGF("Wrote: %d Bytes\n", bytes_written);
 	}
 }
