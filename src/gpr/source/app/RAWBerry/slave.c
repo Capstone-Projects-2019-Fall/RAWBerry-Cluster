@@ -75,13 +75,13 @@ void _slave_reply_scs(int32_t framenum)
 }
 
 
-static void _recv_frame(void **frame, gpr_parameters *p)
+static void _recv_frame(void **frame, struct raw_prefix *p)
 {
-	MPI_Irecv(p, sizeof(gpr_parameters), MPI_BYTE, NODE_MASTER, TAG_S_TO, MPI_COMM_WORLD,
+	MPI_Irecv(p, sizeof(struct raw_prefix), MPI_BYTE, NODE_MASTER, TAG_S_TO, MPI_COMM_WORLD,
 			SCREQ);
 	_slave_bwait();
-	*frame = malloc(p->preview_image.preview_width);
-	MPI_Irecv(*frame, p->preview_image.preview_width, MPI_BYTE, NODE_MASTER, TAG_S_TO, 
+	*frame = malloc(p->size);
+	MPI_Irecv(*frame, p->size, MPI_BYTE, NODE_MASTER, TAG_S_TO, 
 		MPI_COMM_WORLD, SCREQ);
 	_slave_bwait();
 }
@@ -98,11 +98,11 @@ static void _send_cframe(void *cframe, int sz)
 	}
 }
 
-static int _s_compress(void *in, gpr_parameters *p, void **out, int *sz)
+static int _s_compress(void *in, struct raw_prefix *p, void **out, int *sz)
 {
-	int fnum = p->preview_image.preview_height;
+	int fnum = p->framenum;
 	VLOGF("Compressing frame %d\n", fnum);
-	encode(in, p, out, sz);
+	encode(in, &(p->params), p->size, out, sz);
 	free(in);
 	*out = realloc(*out, *sz + 4);
 	memcpy((uint8_t *)*out + 4, *out, *sz);
@@ -116,7 +116,7 @@ int slave(struct cluster_args *params)
 	int sz = 0, fnum = 0;
 	void *frame_in = NULL;
 	void *frame_out = NULL;
-	gpr_parameters p;
+	struct raw_prefix p;
 	init_engine(params);
 	MPI_Irecv(&_rbcast, sizeof(struct reply), MPI_BYTE, MPI_ANY_SOURCE, 
 				TAG_B_ALRT, MPI_COMM_WORLD, &_slave_ctl.bcast);

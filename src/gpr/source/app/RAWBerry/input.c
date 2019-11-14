@@ -55,7 +55,7 @@ int init_input(struct cluster_args *args, buf_handle_t *buf)
 
 static int _fnum = 0;
 
-void _get_raw_image(char *path, void **frame, void **pout)
+void _get_raw_image(char *path, void **frame, struct raw_prefix **pout)
 {
 
 	//Allocate a buffer to read this shiz into
@@ -65,8 +65,8 @@ void _get_raw_image(char *path, void **frame, void **pout)
 	allocator.Free = free;
 
 	//Struct for image parameters
-	gpr_parameters params;
-	gpr_parameters_set_defaults(&params);
+	*pout = malloc(sizeof(struct raw_prefix));
+	gpr_parameters_set_defaults(&(*pout)->params);
 
 	//create gpr_buffer struct
 	gpr_buffer input_buffer  = { NULL, 0 };
@@ -79,15 +79,13 @@ void _get_raw_image(char *path, void **frame, void **pout)
 	}
 
 	//Now we have an image open, read parameters into struct
-	gpr_parse_metadata( &allocator, &input_buffer, &params );
-	params.preview_image.preview_height = _fnum++; //cheap hack
-	params.preview_image.preview_width = input_buffer.size;
-	*pout = malloc(sizeof(gpr_parameters));
-	memcpy(*pout, &params, sizeof(gpr_parameters));
+	gpr_parse_metadata( &allocator, &input_buffer, &(*pout)->params);
+	(*pout)->framenum = _fnum++;
+	(*pout)->size = input_buffer.size;
 	*frame = input_buffer.buffer;
 }
 
-int get_frame(void **frame, void **params)
+int get_frame(void **frame, struct raw_prefix **params)
 {
 	struct dirent *ent;
 start:	if((ent = readdir(_dir))) {

@@ -59,14 +59,12 @@ int encodeImage(gpr_buffer * output_buffer, vc5_encoder_parameters * vc5_encoder
 
 }
 
-int encode(void *in, gpr_parameters *p, void **out, int *sz)
+int encode(void *in, gpr_parameters *p, int insize, void **out, int *sz)
 {
 	gpr_allocator a;
 	a.Alloc = malloc;
 	a.Free = free;
-	gpr_buffer input = { in, p->preview_image.preview_width };
-	p->preview_image.preview_height = 0;
-	p->preview_image.preview_width = 0;
+	gpr_buffer input = { in, insize};
 	gpr_buffer outb = { NULL, 0 };
 
 	gpr_convert_dng_to_gpr(&a, p, &input, &outb);

@@ -93,11 +93,11 @@ int _wait_status(struct status_m *s, int *errc)
 	return i;
 }
 
-void _send_params(struct status_m *s, int to, gpr_parameters *out, void *fr)
+void _send_params(struct status_m *s, int to, struct raw_prefix *out, void *fr)
 {
 	int c, err;
 	c = _create_resp(s, ACTION_SLAVE_SENTP, to);
-	err = MPI_Isend(out, sizeof(gpr_parameters), MPI_BYTE, to, TAG_S_TO, 
+	err = MPI_Isend(out, sizeof(struct raw_prefix), MPI_BYTE, to, TAG_S_TO, 
 			MPI_COMM_WORLD, s->reqs + c);
 	*(s->data + c) = out;
 	*(s->d2 + c) = fr;
@@ -127,7 +127,7 @@ void _irecv_reply(struct status_m *s, int action, int node)
 }
 
 
-static int _master_get_frame(void **frame, void **params)
+static int _master_get_frame(void **frame, struct raw_params **params)
 {
 	int i = get_frame(frame, params);
 	if(i == 1){
@@ -151,7 +151,7 @@ int master(struct cluster_args *params_, int slaves)
 	int exit_req = 0;
 	int tx_in_progress = 0;
 	struct status_m statm;
-	gpr_parameters *params, *ptmp;
+	struct raw_prefix *params, *ptmp;
 	void *frame = NULL, *tmp;
 	sopool_init(&reply_pool, sizeof(struct reply), slaves, 0);
 	_init_status(&statm, slaves * 2 + 2);
@@ -191,7 +191,7 @@ int master(struct cluster_args *params_, int slaves)
 			case ACTION_SLAVE_SENTP:
 				ptmp = statm.data[i];
 				_send_frame(&statm, statm.nodes[i], statm.d2[i],
-					ptmp->preview_image.preview_width);
+					ptmp->size);
 				free(ptmp);
 				break;
 			default:

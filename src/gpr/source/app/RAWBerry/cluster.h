@@ -47,6 +47,12 @@ struct cluster_args{
 	//TODO: add additional ops as needed 
 };
 
+struct raw_prefix{
+	gpr_parameters params;
+	int size;
+	int framenum;
+};
+
 struct reply{
 	uint8_t  message;
 	uint8_t  padding[3];
@@ -85,14 +91,14 @@ int cluster(struct cluster_args *params);
 
 int master(struct cluster_args *params, int slaves);
 int init_input(struct cluster_args *params, buf_handle_t *buf);
-int get_frame(void **frame, void **params);
+int get_frame(void **frame, struct raw_prefix **params);
 int master_done(void);
 
 //Slave node funcs
 
 int slave(struct cluster_args *params);
 int init_engine(struct cluster_args *params);
-int encode(void *in, gpr_parameters *p, void **out, int *sz);
+int encode(void *in, gpr_parameters *p, int insize, void **out, int *sz);
 int slave_done(void);
 
 //collector node funcs
