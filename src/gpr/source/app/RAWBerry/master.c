@@ -25,6 +25,7 @@
 #define ACTION_SLAVE_AVALIBLE 1
 #define ACTION_SLAVE_SENT 2
 #define ACTION_SLAVE_SENTP 3
+#define ACTION_BCAST_RECV 4
 
 struct status_m{
 	MPI_Request *reqs;
@@ -122,7 +123,16 @@ void _irecv_reply(struct status_m *s, int action, int node)
 	int c = _create_resp(s, action, node);
 	struct reply *r = sopool_get_new(&reply_pool);
 	s->data[c] = r;
-	MPI_Irecv(r, sizeof(struct reply), MPI_INT, node, TAG_S_RET,
+	MPI_Irecv(r, sizeof(struct reply), MPI_BYTE, node, TAG_S_RET,
+			MPI_COMM_WORLD, &(s->reqs[c]));
+}
+
+static void _master_bcast_recv(struct status_m *s)
+{
+	int c = _create_resp(s, ACTION_BCAST_RECV, 0);
+	struct reply *r = sopool_get_new(&reply_pool);
+	s->data[c] = r;
+	MPI_Irecv(r, sizeof(struct reply), MPI_BYTE, MPI_ANY_SOURCE, TAG_B_ALRT,
 			MPI_COMM_WORLD, &(s->reqs[c]));
 }
 
@@ -185,7 +195,7 @@ int master(struct cluster_args *params_, int slaves)
 				if(exit_req && !tx_in_progress){
 					VLOGF("master waiting for exit\n");
 					c_bcast_wait_exit();
-					exit(0);
+					exit_mpi();
 				}
 				break;
 			case ACTION_SLAVE_SENTP:
@@ -193,6 +203,9 @@ int master(struct cluster_args *params_, int slaves)
 				_send_frame(&statm, statm.nodes[i], statm.d2[i],
 					ptmp->size);
 				free(ptmp);
+				break;
+			case ACTION_BCAST_RECV:
+
 				break;
 			default:
 				fprintf(stderr, "Bad action code %d, on %d\n",

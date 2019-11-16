@@ -40,7 +40,7 @@ static struct{
 static void _slave_h_bcast()
 {
 	if(_rbcast.message == REPLY_MSG_EXIT){
-		exit(0);
+		exit_mpi();
 	}else{
 		MPI_Irecv(&_rbcast, sizeof(struct reply), MPI_BYTE, MPI_ANY_SOURCE, 
 				TAG_B_ALRT, MPI_COMM_WORLD, &_slave_ctl.bcast);

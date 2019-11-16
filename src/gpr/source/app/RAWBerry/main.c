@@ -74,10 +74,11 @@ static error_t parse_opt(int key, char *arg, struct argp_state *state)
 static struct argp argp = { options, parse_opt, args_doc, doc};
 void fire(struct cluster_args * payload);
 
-int main(int argc, char **argv){
-
+int main(int argc, char **argv)
+{
 	init_mpi(argc, argv);
 	argp_parse(&argp, argc, argv, 0, 0, NULL);
+	verbose =cargs.verbose;
 	fire(&cargs);
 	
 	exit_mpi();
