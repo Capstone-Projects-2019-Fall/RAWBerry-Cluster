@@ -137,7 +137,7 @@ static void _master_bcast_recv(struct status_m *s)
 }
 
 
-static int _master_get_frame(void **frame, struct raw_params **params)
+static int _master_get_frame(void **frame, struct raw_prefix **params)
 {
 	int i = get_frame(frame, params);
 	if(i == 1){
@@ -171,7 +171,7 @@ int master(struct cluster_args *params_, int slaves)
 	for(i = 0; i < slaves; i++){
 		_irecv_reply(&statm, ACTION_SLAVE_AVALIBLE, 2 + i);
 	}
-	while(!master_done()){
+	while(1){
 		i = _wait_status(&statm, &errorc);	
 		if(errorc != MPI_SUCCESS){
 			//TODO:ERROR HANDLER
@@ -216,11 +216,4 @@ int master(struct cluster_args *params_, int slaves)
 	return 0;
 }
 
-
-
-int master_done(void)
-{
-	//TODO: query input, etc
-	return 0;
-}
 

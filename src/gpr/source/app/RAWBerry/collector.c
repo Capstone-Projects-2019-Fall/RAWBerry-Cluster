@@ -31,7 +31,6 @@
 #define A_FRAME_AVALIBLE 1
 #define A_FRAMETX_DONE   2
 #define A_BCAST_RECV 	 3
-#define STREAM_PIPE "/tmp/pipe"
 
 static int nslaves;
 static MPI_Request *reqs;
@@ -41,11 +40,6 @@ static uint32_t _lframe = UINT32_MAX;
 static int _coll_select(MPI_Status *s, int *action)
 {
 	int er = 0, idx, flag;
-       /* er = MPI_Testany(nslaves, reqs, &idx, &flag, s);*/
-	/*if(flag){*/
-		/**action = A_FRAMETX_DONE;*/
-		/*return er;*/
-	/*}*/
 	er = MPI_Probe(MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, s);
 	if(s->MPI_TAG == TAG_S_TO){
 		*action = A_FRAME_AVALIBLE;
@@ -83,17 +77,13 @@ void _coll_stream_frame(void *frame, int sz)
 static struct reply *_coll_bcast_recv(MPI_Status *st)
 {
 	struct reply *r = malloc(sizeof(*r));
-	MPI_Recv(r, sizeof(*r), MPI_BYTE, st->MPI_SOURCE, TAG_B_ALRT, MPI_COMM_WORLD, st);
+	MPI_Recv(r, sizeof(*r), MPI_BYTE, st->MPI_SOURCE, TAG_B_ALRT, 
+			MPI_COMM_WORLD, st);
 	if(r->message == REPLY_MSG_LFRAME){
 		_lframe = r->payload;
 		VLOGF("_lastframe %d\n", _lframe);
 	}
 	return r;
-}
-
-int collector_done(void)
-{
-	return 0;
 }
 
 int collector(struct cluster_args *args)
@@ -108,7 +98,7 @@ int collector(struct cluster_args *args)
 	}
 	errc = init_stream_server(args);
 	
-	while(!collector_done()){
+	while(1){
 		errc = _coll_select(&stat, &i);
 		if(errc != MPI_SUCCESS){
 			//TODO:Error handle

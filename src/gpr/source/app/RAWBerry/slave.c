@@ -121,7 +121,7 @@ int slave(struct cluster_args *params)
 	MPI_Irecv(&_rbcast, sizeof(struct reply), MPI_BYTE, MPI_ANY_SOURCE, 
 				TAG_B_ALRT, MPI_COMM_WORLD, &_slave_ctl.bcast);
 	_slave_reply_scs(0);
-	while(!slave_done()){
+	while(1){
 		_recv_frame(&frame_in, &p);
 		fnum = _s_compress(frame_in, &p, &frame_out, &sz);
 		_send_cframe(frame_out, sz);
@@ -130,7 +130,3 @@ int slave(struct cluster_args *params)
 	return 0;
 }
 
-int slave_done(void)
-{
-	return 0;
-}
