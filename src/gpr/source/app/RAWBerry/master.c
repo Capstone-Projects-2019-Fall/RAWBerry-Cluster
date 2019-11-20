@@ -27,113 +27,96 @@
 #define ACTION_SLAVE_SENTP 3
 #define ACTION_BCAST_RECV 4
 
-struct status_m{
+static struct{
 	MPI_Request *reqs;
 	int *actions;
 	int *nodes;
 	void **data;
 	void **d2;
 	int mvals;
-};
+} mstat;
 
 static buf_handle_t _in;
 static int _fn = 0;
-static int sz = sizeof(gpr_parameters);
 
-static struct sopool frame_pool;
 static struct sopool reply_pool;
 
-#ifndef TEST
-
-
-# ifdef UNUSED
-int get_frame(void **frame)
-{
-	int res = 0;
-	if(!buf_empty(_in)){
-		res = buf_get(_in, *frame);
-	}
-	return res;
-}
-# endif 
-#endif  // NDEF TEST 
-
-void _init_status(struct status_m *s, int mvals)
+static void _init_status(int mvals)
 {
 	int i = 0;
-	s->mvals = mvals;
-	s->reqs = calloc(sizeof(MPI_Request), s->mvals);
+	mstat.mvals = mvals;
+	mstat.reqs = calloc(sizeof(MPI_Request), mstat.mvals);
 	for(; i < mvals; i++){
-		*(s->reqs + i) = MPI_REQUEST_NULL;
+		*(mstat.reqs + i) = MPI_REQUEST_NULL;
 	}
-	s->actions = calloc(sizeof(int), s->mvals);
-	s->nodes = calloc(sizeof(int), s->mvals);
-	s->data = malloc(sizeof(void *) * s->mvals);
-	s->d2 = malloc(sizeof(void *) * s->mvals);
+	mstat.actions = calloc(sizeof(int), mstat.mvals);
+	mstat.nodes = calloc(sizeof(int), mstat.mvals);
+	mstat.data = malloc(sizeof(void *) * mstat.mvals);
+	mstat.d2 = malloc(sizeof(void *) * mstat.mvals);
 }
 
-int _create_resp(struct status_m *s, int action, int node)
+static int _create_resp(int action, int node)
 {
 	int i = 0;
-	while((*(s->reqs + i) != MPI_REQUEST_NULL) && i < s->mvals)
+	while((*(mstat.reqs + i) != MPI_REQUEST_NULL) && i < mstat.mvals)
 		i++;
-	*(s->actions + i) = action;
-	*(s->nodes + i) = node;
+	*(mstat.actions + i) = action;
+	*(mstat.nodes + i) = node;
 	return i;
 }
 
-int _wait_status(struct status_m *s, int *errc)
+static int _wait_status(int *errc)
 {
 	int i; 
 	MPI_Status stat;
-	*errc = MPI_Waitany(s->mvals, s->reqs, &i,  &stat);
+	*errc = MPI_Waitany(mstat.mvals, mstat.reqs, &i,  &stat);
 	if(i < 0){
 		return -1;
 	}
-	*(s->reqs + i) = MPI_REQUEST_NULL;
+	*(mstat.reqs + i) = MPI_REQUEST_NULL;
 	return i;
 }
 
-void _send_params(struct status_m *s, int to, struct raw_prefix *out, void *fr)
+static void _send_params(int to, struct raw_prefix *out, void *fr)
 {
 	int c, err;
-	c = _create_resp(s, ACTION_SLAVE_SENTP, to);
+	c = _create_resp(ACTION_SLAVE_SENTP, to);
 	err = MPI_Isend(out, sizeof(struct raw_prefix), MPI_BYTE, to, TAG_S_TO, 
-			MPI_COMM_WORLD, s->reqs + c);
-	*(s->data + c) = out;
-	*(s->d2 + c) = fr;
+			MPI_COMM_WORLD, mstat.reqs + c);
+	*(mstat.data + c) = out;
+	*(mstat.d2 + c) = fr;
 	if(err != MPI_SUCCESS){
 
 	}
 }
-void _send_frame(struct status_m *s, int to, void *frame, int size)
+static void _send_frame(int to, void *frame, int size)
 {
 	int c, err;
-	c = _create_resp(s, ACTION_SLAVE_SENT, to);
+	c = _create_resp(ACTION_SLAVE_SENT, to);
 	err = MPI_Isend(frame, size, MPI_BYTE, to, TAG_S_TO, 
-			MPI_COMM_WORLD, s->reqs + c);
-	*(s->data + c) = frame;
+			MPI_COMM_WORLD, mstat.reqs + c);
+	*(mstat.data + c) = frame;
 	if(err != MPI_SUCCESS){
 
 	}
 }
 
-void _irecv_reply(struct status_m *s, int action, int node)
+static void _irecv_reply(int action, int node)
 {
-	int c = _create_resp(s, action, node);
+	int c = _create_resp(action, node);
 	struct reply *r = sopool_get_new(&reply_pool);
-	s->data[c] = r;
+	mstat.data[c] = r;
 	MPI_Irecv(r, sizeof(struct reply), MPI_BYTE, node, TAG_S_RET,
-			MPI_COMM_WORLD, &(s->reqs[c]));
+			MPI_COMM_WORLD, &(mstat.reqs[c]));
 }
 
-static void _master_bcast_recv(struct status_m *s)
+static void _master_bcast_recv()
 {
-	int c = _create_resp(s, ACTION_BCAST_RECV, 0);
+	int c = _create_resp(ACTION_BCAST_RECV, 0);
 	struct reply *r = sopool_get_new(&reply_pool);
-	s->data[c] = r;
+	mstat.data[c] = r;
 	MPI_Irecv(r, sizeof(struct reply), MPI_BYTE, MPI_ANY_SOURCE, TAG_B_ALRT,
-			MPI_COMM_WORLD, &(s->reqs[c]));
+			MPI_COMM_WORLD, &(mstat.reqs[c]));
 }
 
 
@@ -160,37 +143,36 @@ int master(struct cluster_args *params_, int slaves)
 	int errorc = 0;
 	int exit_req = 0;
 	int tx_in_progress = 0;
-	struct status_m statm;
 	struct raw_prefix *params, *ptmp;
 	void *frame = NULL, *tmp;
 	sopool_init(&reply_pool, sizeof(struct reply), slaves, 0);
-	_init_status(&statm, slaves * 2 + 2);
+	_init_status(slaves * 2 + 2);
 	si = init_input(params_, &_in);
 	_master_get_frame(&frame, &params);
 
 	for(i = 0; i < slaves; i++){
-		_irecv_reply(&statm, ACTION_SLAVE_AVALIBLE, 2 + i);
+		_irecv_reply(ACTION_SLAVE_AVALIBLE, 2 + i);
 	}
 	while(1){
-		i = _wait_status(&statm, &errorc);	
+		i = _wait_status(&errorc);	
 		if(errorc != MPI_SUCCESS){
 			//TODO:ERROR HANDLER
 		}
 		if(i == -1){
 			return 0;
 		}
-		switch(statm.actions[i]){
+		switch(mstat.actions[i]){
 			case ACTION_SLAVE_AVALIBLE:
-				sopool_return(&reply_pool, statm.data[i]);
-				_send_params(&statm, statm.nodes[i], params, frame); 
+				sopool_return(&reply_pool, mstat.data[i]);
+				_send_params(mstat.nodes[i], params, frame); 
 				tx_in_progress++;
 				if(!exit_req)
 					exit_req = _master_get_frame(&frame, &params);
 				break;
 			case ACTION_SLAVE_SENT:
-				tmp = statm.data[i];
+				tmp = mstat.data[i];
 				free(tmp);
-				_irecv_reply(&statm, ACTION_SLAVE_AVALIBLE, statm.nodes[i] );
+				_irecv_reply(ACTION_SLAVE_AVALIBLE, mstat.nodes[i]);
 				tx_in_progress--;
 				if(exit_req && !tx_in_progress){
 					VLOGF("master waiting for exit\n");
@@ -199,8 +181,8 @@ int master(struct cluster_args *params_, int slaves)
 				}
 				break;
 			case ACTION_SLAVE_SENTP:
-				ptmp = statm.data[i];
-				_send_frame(&statm, statm.nodes[i], statm.d2[i],
+				ptmp = mstat.data[i];
+				_send_frame(mstat.nodes[i], mstat.d2[i],
 					ptmp->size);
 				free(ptmp);
 				break;
@@ -209,7 +191,7 @@ int master(struct cluster_args *params_, int slaves)
 				break;
 			default:
 				fprintf(stderr, "Bad action code %d, on %d\n",
-						statm.actions[i], i);
+						mstat.actions[i], i);
 				exit(-1);
 		}
 	}

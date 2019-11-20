@@ -14,11 +14,10 @@
  *
  * ============================================================================
  */
+#define _BSD_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
-#define _BSD_SOURCE
 #include <unistd.h>
-#undef _BSD_SOURCE
 #include <mpi.h>
 
 #include "cluster.h"
@@ -26,7 +25,6 @@
 
 int this_node_rank;
 int num_nodes;
-int _frame_size = 4341248 + 4; //black magic number, very cursed 0w0
 char hostname[256];
 
 void exit_mpi(void)
