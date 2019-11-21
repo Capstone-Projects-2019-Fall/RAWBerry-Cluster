@@ -17,6 +17,7 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include <mpi.h>
 
 #include "cluster.h"
@@ -102,8 +103,12 @@ static int _s_compress(void *in, struct raw_prefix *p, void **out, int *sz)
 {
 	int fnum = p->framenum;
 	VLOGF("Compressing frame %d\n", fnum);
+	long utime = clock();
 	encode(in, &(p->params), p->size, out, sz);
+	utime = clock() - utime;
 	free(in);
+	MTR_LOG("Compressed frame in %ld going from %dbytes to %dbytes",
+			utime, p->size, *sz);
 	*out = realloc(*out, *sz + 4);
 	memcpy((uint8_t *)*out + 4, *out, *sz);
 	*(int *)*out = fnum;

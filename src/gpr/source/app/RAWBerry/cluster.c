@@ -15,6 +15,7 @@
  * ============================================================================
  */
 #define _BSD_SOURCE
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -27,8 +28,12 @@ int this_node_rank;
 int num_nodes;
 char hostname[256];
 
+FILE* _mtrf;
+
 void exit_mpi(void)
 {
+	fflush(_mtrf);
+	fclose(_mtrf);
 	MPI_Finalize();
 	exit(0);
 }
@@ -43,11 +48,10 @@ int init_mpi(int argc, char **argv)
 		return -1;
 	}
 	MPI_Comm_size(MPI_COMM_WORLD, &num_nodes);
-	/*if(num_nodes <= 2){*/
-		/*fprintf(stderr, */
-			/*"This program must be run with at least 3 nodes.");*/
-		/*return -2;*/
-	/*}*/
+	if(num_nodes <= 2){
+		fprintf(stderr, "RAWBerry must be run with at least 3 nodes\n");
+		return -2;
+	}
 	MPI_Comm_rank(MPI_COMM_WORLD, &this_node_rank);
 	VLOGF("Proc %d, rank %d, on %s\n", getpid(), this_node_rank, hostname);
 	return 0;
@@ -56,11 +60,18 @@ int init_mpi(int argc, char **argv)
 int cluster(struct cluster_args *params)
 {
 	int  ret;
+	char *mfname;
 	if(this_node_rank == NODE_MASTER){
+		asprintf(&mfname, "%s/master.log", params->log_dir);
+		_mtrf = fopen(mfname, "w+");
 		ret = master(params, num_nodes - 2);
 	}else if(this_node_rank == NODE_COLLECTOR){
+		asprintf(&mfname, "%s/collector.log", params->log_dir);
+		_mtrf = fopen(mfname, "w+");
 		ret = collector(params);
 	}else{
+		asprintf(&mfname, "%s/slave-%d.log", params->log_dir, this_node_rank - 2);
+		_mtrf = fopen(mfname, "w+");
 		ret = slave(params);
 	}
 	return ret;

@@ -30,12 +30,14 @@ static struct argp_option options[] = {
 	{"rstp-path", 'r', "FILE", 0, "path to rtsp binary"},
 	{"verbose", 'v', 0, 0, "Be verbose"},
 	{"quiet", 'q', 0, 0, "disable verbose"},
+	{"log-dir", 'l', "DIR", 0, "Directory to write logs to"},
 	{ 0 },
 };
 struct cluster_args cargs = {
 	.in_dir = "./CDNG",
 	.out_dir = "./out",
 	.rtsp_loc = "../rtsp/rtsp",
+	.log_dir = "./log",
 	.use_rtsp = 1,
 	.verbose = true,
 };
@@ -63,6 +65,9 @@ static error_t parse_opt(int key, char *arg, struct argp_state *state)
 		case 'q':
 			cargs.verbose = false;
 			break;
+		case 'l':
+			cargs.log_dir = arg;
+			break;
 		case ARGP_KEY_END:
 			break;
 		default:
@@ -76,9 +81,9 @@ void fire(struct cluster_args * payload);
 
 int main(int argc, char **argv)
 {
-	init_mpi(argc, argv);
 	argp_parse(&argp, argc, argv, 0, 0, NULL);
 	verbose =cargs.verbose;
+	init_mpi(argc, argv);
 	fire(&cargs);
 	
 	exit_mpi();

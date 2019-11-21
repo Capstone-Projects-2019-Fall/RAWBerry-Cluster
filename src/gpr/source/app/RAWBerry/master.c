@@ -167,16 +167,16 @@ int master(struct cluster_args *params_, int slaves)
 				_send_params(mstat.nodes[i], params, frame); 
 				tx_in_progress++;
 				if(!exit_req)
-					exit_req = _master_get_frame(&frame, &params);
+					exit_req = _master_get_frame(&frame, 
+							&params);
 				break;
 			case ACTION_SLAVE_SENT:
 				tmp = mstat.data[i];
 				free(tmp);
-				_irecv_reply(ACTION_SLAVE_AVALIBLE, mstat.nodes[i]);
+				_irecv_reply(ACTION_SLAVE_AVALIBLE, 
+						mstat.nodes[i]);
 				tx_in_progress--;
 				if(exit_req && !tx_in_progress){
-					VLOGF("master waiting for exit\n");
-					c_bcast_wait_exit();
 					exit_mpi();
 				}
 				break;
