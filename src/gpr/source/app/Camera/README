@@ -1,0 +1,6 @@
+##HOW TO CAPTURE AND CONVERT IMAGES
+
+Setup  PyDNG:
+
+	python setup.py build
+	python camera.py <#frames, full path to destination directory>
