@@ -110,7 +110,7 @@ static int _s_compress(void *in, struct raw_prefix *p, void **out, int *sz)
 	MTR_LOG("Compressed frame in %ld going from %dbytes to %dbytes",
 			utime, p->size, *sz);
 	*out = realloc(*out, *sz + 4);
-	memcpy((uint8_t *)*out + 4, *out, *sz);
+	memmove((uint8_t *)*out + 4, *out, *sz);
 	*(int *)*out = fnum;
 	*sz += 4;
 	return fnum;
