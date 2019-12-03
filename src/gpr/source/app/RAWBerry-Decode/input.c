@@ -83,38 +83,38 @@ cvNamedWindow( "Display window", CV_WINDOW_AUTOSIZE );
         }
     free(ent);
 
-//if ((dir = opendir (directory)) != NULL) {
+if ((dir = opendir (directory)) != NULL) {
   /* print all the files and directories within directory */
- // while ((ent = readdir (dir)) != NULL) {
- //   if(strcmp(ent->d_name, ".") == 0 || strcmp(ent->d_name, "..") == 0)
- //     continue;
+  while ((ent = readdir (dir)) != NULL) {
+    if(strcmp(ent->d_name, ".") == 0 || strcmp(ent->d_name, "..") == 0)
+      continue;
     puts("die");
     //Get us a string with the full path so we can open file
-//	char *fullpath = malloc(strlen(directory)+ strlen(ent->d_name) + 2);
-//	if (fullpath == NULL) { /* Uh We Might be F****d here? Whatever */  return -1; }
-//	sprintf(fullpath, "%s/%s", directory, ent->d_name);
-	//int success = openImage(fullpath, &image);
-   // if(success ==0){
+	char *fullpath = malloc(strlen(directory)+ strlen(ent->d_name) + 2);
+	if (fullpath == NULL) { /* Uh We Might be F****d here? Whatever */  return -1; }
+	sprintf(fullpath, "%s/%s", directory, ent->d_name);
+	int success = openImage(fullpath, &image);
+    if(success ==0){
    
 
- //  printf("Reading: %s\n", fullpath);
- //  image = cvLoadImageM(fullpath, CV_LOAD_IMAGE_COLOR);
- //  cvShowImage( "Display window", image );            
- //  cvWaitKey(42); 
-//}
+   printf("Reading: %s\n", fullpath);
+   image = cvLoadImageM(fullpath, CV_LOAD_IMAGE_COLOR);
+   cvShowImage( "Display window", image );            
+   cvWaitKey(42); 
+}
 	/* use fullpath */
-//	free(fullpath);
+	free(fullpath);
 
     
-//}
+}
   
- //closedir (dir);
+ closedir (dir);
 
-//} else {
+} else {
   /* could not open directory */
-  //perror ("");
- //return EXIT_FAILURE;
-//}
+  perror ("");
+ return EXIT_FAILURE;
+}
 	return 0;
 }
 
