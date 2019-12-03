@@ -57,7 +57,7 @@ static error_t parse_opt(int key, char *arg, struct argp_state *state)
 			cargs.use_rtsp = 0;
 			break;
 		case 'r':
-			cargs.out_dir = arg;
+			cargs.rtsp_loc = arg;
 			break;
 		case 'v':
 			cargs.verbose = true;
