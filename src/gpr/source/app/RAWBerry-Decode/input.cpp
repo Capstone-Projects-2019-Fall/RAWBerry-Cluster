@@ -18,6 +18,7 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <argp.h>
 
 #include <opencv2/core/core_c.h>
 #include <opencv2/imgcodecs/imgcodecs_c.h>
@@ -39,17 +40,46 @@
 #define INPUT_PIPE "/tmp/pipe"
 #define BUFF_SIZE 400000000
 
+#define TMP_FILE "/tmp/decode_tmp.ppm"
+
 int fd;
 
 
 int readFiles(char* directory);
-int openImage(char* filePath);
+char *openImage(char* filePath);
 
+static int _use_tmpfile = 1;
+static char *_input_dir = "./input";
+
+static char *doc = "RAWBerry-Decode -- a compressed file viewer";
+static char *args_doc = "<OPTIONS>";
+static struct argp_option options[] = {
+	{"no-tempfile", 'n', 0, 0, "Do not use a tempfile, write out uncompressed images"},
+	{"input-dir", 'i', "DIR", 0, "Directory to read files from"},
+	{ 0 },
+};
+
+static error_t parse_opt(int key, char *arg, struct argp_state *state)
+{
+	switch(key){
+		case 'n': _use_tmpfile = 0;
+			  break;
+		case 'i': _input_dir = arg;
+			  break;
+		case ARGP_KEY_END:
+			  break;
+		default:
+			  return ARGP_ERR_UNKNOWN;
+	}
+	return 0;
+}
+
+static struct argp argp = { options, parse_opt, args_doc, doc };
 
 int main(int argc, char **argv)
 {
-	char dir[] = "./input";
-	int status = readFiles(dir);
+	argp_parse(&argp, argc, argv, 0, 0, NULL);
+	int status = readFiles(_input_dir);
 	return status;
 }
 
@@ -60,10 +90,10 @@ void read_file(char *directory, char *name)
 	char *fullpath = (char *) malloc(strlen(directory)+ strlen(name) + 2);
 	if (fullpath == NULL) { exit(-5); }
 	sprintf(fullpath, "%s/%s", directory, name);
-	int success = openImage(fullpath);
-	if(success ==0){
-		printf("Reading: %s\n", fullpath);
-		image = cvLoadImageM(fullpath, CV_LOAD_IMAGE_COLOR);
+	char *read  = openImage(fullpath);
+	if(read){
+		printf("Reading: %s\n", read);
+		image = cvLoadImageM(read, CV_LOAD_IMAGE_COLOR);
 		cvShowImage( "Display window", image );            
 		cvWaitKey(42); 
 	}
@@ -113,7 +143,7 @@ int readFiles(char* directory)
 	return 0;
 }
 
-int openImage(char * filePath)
+char *openImage(char * filePath)
 {
     
 	gpr_allocator allocator;
@@ -159,17 +189,20 @@ int openImage(char * filePath)
 
 	//LogPrint("Encoding %.3f secs per frame", encodeImage(&output_buffer, vc5_encoder_params, &vc5_image));
 	//Temp Write out file for giggles
-	char* output_file_path = filePath;
-	int len = strlen(filePath);
-	output_file_path[(len - 3)] = 'p';
-	output_file_path[(len - 2)] = 'p';
-	output_file_path[(len - 1)] = 'm';
+	char* output_file_path = TMP_FILE;
+	if(!_use_tmpfile){
+		output_file_path = filePath;
+		int len = strlen(filePath);
+		output_file_path[(len - 3)] = 'p';
+		output_file_path[(len - 2)] = 'p';
+		output_file_path[(len - 1)] = 'm';
+	}
 	if(write_to_file(&output_buffer, output_file_path)){
         	printf("Error writing bitstream to location %s",  output_file_path);
-        	return -1;
+        	return 0;
         }
    	printf("Wrote %d Bytes\n",rgb_buffer.size);
-    	return 0;
+    	return output_file_path;
 }
 
 /*  
