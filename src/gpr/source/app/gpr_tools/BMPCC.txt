@@ -1,0 +1,84 @@
+{
+  "input_width": 1952,
+  "input_height": 1112,
+  "input_pitch": 3904,
+  "fast_encoding": 0,
+  "gpmf_payload_size": 0,
+  "exif_info": {
+    "camera_make": "GoPro",
+    "camera_model": "HERO6 Black",
+    "camera_serial": "",
+    "software_version": "1.0.0",
+    "user_comment": "",
+    "image_description": "",
+    "exposure_time": [0,0],
+    "f_stop_number": [0,0],
+    "aperture": [0,0],
+    "exposure_program": -1,
+    "iso_speed_rating": 0,
+    "date_time_original": "0-0-0 0:0:0",
+    "date_time_digitized": "0-0-0 0:0:0",
+    "exposure_bias": [0,0],
+    "light_source": -1,
+    "flash": -1,
+    "focal_length": [0,0],
+    "sharpness": -1,
+    "saturation": 65535,
+    "gain_control": -1,
+    "contrast": -1,
+    "scene_capture_type": -1,
+    "exposure_mode": -1,
+    "focal_length_in_35mm_film": 0,
+    "digital_zoom": [0,0],
+    "white_balance": -1,
+    "scene_type": -1,
+    "file_source": -1,
+    "sensing_method": -1,
+    "gps_info": {
+      "gps_info_valid": 0
+    }
+  },
+  "profile_info": {
+    "compute_color_matrix": 0,
+    "matrix_weighting": 1,
+    "wb1": [0,0,0],
+    "wb2": [0,0,0],
+    "cam_to_srgb_1": [0,0,0,0,0,0,0,0,0],
+    "cam_to_srgb_2": [0,0,0,0,0,0,0,0,0],
+    "color_matrix_1": [1.2177,-0.4611,0.0107,-0.3873,1.3388,0.042,0.0624,0.2015,0.6743],
+    "color_matrix_2": [1.0464,-0.2837,-0.0857,-0.5082,1.3944,0.1159,-0.0664,0.3422,0.5592],
+    "illuminant1": 3,
+    "illuminant2": 23
+  },
+  "tuning_info": {
+    "orientation": 0,
+    "static_black_level": {
+      "r_black": 256,
+      "g_r_black": 0,
+      "g_b_black": 0,
+      "b_black": 0
+    },
+    "dgain_saturation_level": {
+      "level_red": 51080,
+      "level_green_even": 51080,
+      "level_green_odd": 51080,
+      "level_blue": 51080
+    },
+    "wb_gains": {
+      "r_gain": 1.58983,
+      "g_gain": 1,
+      "b_gain": 1.26518
+    },
+    "ae_info": {
+      "iso_value": 228,
+      "shutter_time": 34952
+    },
+    "noise_scale": 0,
+    "noise_offset": 0,
+    "warp_red_coefficient": 0,
+    "warp_blue_coefficient": 0,
+    "gain_map": {
+    },
+    "pixel_format": 2
+  }
+}
