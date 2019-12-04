@@ -4,7 +4,7 @@
  * 
  */
 
-
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -39,16 +39,23 @@
 
 void print_buffer_status(buf_handle_t buf);
 
-static DIR *_dir;
+static struct dirent **_list;
+static int    _len, _idx = 0;
 static char *_dirname;
+
+static int _filter(const struct dirent *d)
+{
+	return d->d_name[0] != '.';
+}
 
 int init_input(struct cluster_args *args, buf_handle_t *buf)
 {
-	_dirname = args->in_dir; //do something later
-	if(_dir = opendir(_dirname)) {
+	_dirname = args->in_dir;
+	_len = scandir(args->in_dir, &_list, _filter, versionsort);
+	if(_len != -1){
 		return 0;
 	}else{
-		//abort
+		fprintf(stderr, "Could not open dir: %s\n", args->in_dir);
 		exit(-1);
 	}
 }
@@ -88,10 +95,8 @@ void _get_raw_image(char *path, void **frame, struct raw_prefix **pout)
 int get_frame(void **frame, struct raw_prefix **params)
 {
 	struct dirent *ent;
-start:	if((ent = readdir(_dir))) {
-		if(*(ent->d_name) == '.'){
-			goto start;
-		}
+	if(_idx < _len){
+		ent = _list[_idx++];
 		char *fullpath = malloc(strlen(_dirname) 
 				+ strlen(ent->d_name) + 2);
 		if (fullpath == NULL) { 

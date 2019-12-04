@@ -53,13 +53,34 @@ int main(int argc, char **argv)
 	return status;
 }
 
+void read_file(char *directory, char *name)
+{
+	CvMat * image;
+	//Get us a string with the full path so we can open file
+	char *fullpath = (char *) malloc(strlen(directory)+ strlen(name) + 2);
+	if (fullpath == NULL) { exit(-5); }
+	sprintf(fullpath, "%s/%s", directory, name);
+	int success = openImage(fullpath);
+	if(success ==0){
+		printf("Reading: %s\n", fullpath);
+		image = cvLoadImageM(fullpath, CV_LOAD_IMAGE_COLOR);
+		cvShowImage( "Display window", image );            
+		cvWaitKey(42); 
+	}
+	/* use fullpath */
+	free(fullpath);
+}
+
+static int _filter(const struct dirent *d)
+{
+	return *d->d_name != '.';
+}
+
 int readFiles(char* directory)
 {
 	
 	DIR *dir;
 	struct dirent *ent;
-	int i,n;
-	CvMat * image;
 	cvNamedWindow( "Display window", CV_WINDOW_AUTOSIZE ); 
 /*  
 
@@ -75,27 +96,15 @@ int readFiles(char* directory)
 	free(ent[i]);
 }
 */
-	if ((dir = opendir (directory)) != NULL) {
+	struct dirent **list;
+	int len, i = 0;
+	len = scandir(directory, &list, _filter, versionsort);
+	if (len != -1){
 		/* print all the files and directories within directory */
-		while ((ent = readdir (dir)) != NULL) {
-			if(strcmp(ent->d_name, ".") == 0 || strcmp(ent->d_name, "..") == 0)
-				continue;
-			puts("die");
-			//Get us a string with the full path so we can open file
-			char *fullpath = (char *) malloc(strlen(directory)+ strlen(ent->d_name) + 2);
-			if (fullpath == NULL) { /* Uh We Might be F****d here? Whatever */  return -1; }
-			sprintf(fullpath, "%s/%s", directory, ent->d_name);
-			int success = openImage(fullpath);
-			if(success ==0){
-				printf("Reading: %s\n", fullpath);
-				image = cvLoadImageM(fullpath, CV_LOAD_IMAGE_COLOR);
-				cvShowImage( "Display window", image );            
-				cvWaitKey(42); 
-			}
-			/* use fullpath */
-			free(fullpath);
+		for(; i < len; i++){
+			read_file(directory, list[i]->d_name);
 		} 
-		closedir(dir);
+		free(list);
 	}else{
 		/* could not open directory */
 		perror ("");
