@@ -9,6 +9,7 @@
 SimStreamer::SimStreamer(SOCKET aClient, bool showBig) : CStreamer(aClient, showBig ? 800 : 640, showBig ? 600 : 480)
 {
     m_showBig = showBig;
+    pipe_fd = open(INPUT_PIPE, O_RDONLY);
 }
 
 //Gets an imaage/fram from the named input pipe and then sends it to be streamed
@@ -38,27 +39,21 @@ void SimStreamer::streamImage(uint32_t curMsec)
 //
 unsigned char * SimStreamer::readPipe(int &len){
     unsigned char *buffer;
-    unsigned char *buff_pointer = buffer; 
     
     int bytes_read = 0;
     
-    int pipe_fd = open(INPUT_PIPE, O_RDONLY);
-    if (pipe){
-        //get size of frame
-        read(pipe_fd, &len, sizeof(int));
-        printf("Expected frame size: %d \n", len);
-        //malloc mem for buffer
-        buffer = (unsigned char *)malloc(len);
+    //get size of frame
+    read(pipe_fd, &len, sizeof(int));
+    printf("Expected frame size: %d \n", len);
+    //malloc mem for buffer
+    buffer = (unsigned char *)malloc(len);
 
-        while (bytes_read != len){
-            bytes_read += read(pipe_fd, (buffer+bytes_read), (len - bytes_read));
-            printf("Bytes Read: %d \nFrame Size: %d\n", bytes_read, len);
-        }
-        
-        return buffer;
-        //return NULL;
-        
+    while (bytes_read != len){
+        bytes_read += read(pipe_fd, (buffer+bytes_read), (len - bytes_read));
+        printf("Bytes Read: %d \nFrame Size: %d\n", bytes_read, len);
     }
-    else return NULL;
+    
+    return buffer;
+        
 }
     
