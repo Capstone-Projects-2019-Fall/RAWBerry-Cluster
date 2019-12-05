@@ -43,6 +43,8 @@ void convert(char *path_in, char *path_out)
 	//Struct for image parameters
 	gpr_parameters params;
 	gpr_parameters_set_defaults(&params);
+	//SDK should be reading this from DNG input, but it doesnt hardcode for now
+	params.tuning_info.pixel_format = PIXEL_FORMAT_GBRG_12;
 
 	//create gpr_buffer struct
 	gpr_buffer input_buffer  = { NULL, 0 };
