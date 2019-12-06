@@ -42,6 +42,7 @@
 
 #define TMP_FILE "/tmp/decode_tmp.ppm"
 
+#define IN_PIPE "/tmp/ipipe"
 int fd;
 
 
@@ -50,12 +51,14 @@ char *openImage(char* filePath);
 
 static int _use_tmpfile = 1;
 static char *_input_dir = "./input";
+static int no_pipe = 0;
 
 static char *doc = "RAWBerry-Decode -- a compressed file viewer";
 static char *args_doc = "<OPTIONS>";
 static struct argp_option options[] = {
 	{"no-tempfile", 'n', 0, 0, "Do not use a tempfile, write out uncompressed images"},
 	{"input-dir", 'i', "DIR", 0, "Directory to read files from"},
+	{"no-pipe", 'p', 0, 0, "Do not use pipe"}, 
 	{ 0 },
 };
 
@@ -65,6 +68,8 @@ static error_t parse_opt(int key, char *arg, struct argp_state *state)
 		case 'n': _use_tmpfile = 0;
 			  break;
 		case 'i': _input_dir = arg;
+			  break;
+		case 'p': no_pipe = 1;
 			  break;
 		case ARGP_KEY_END:
 			  break;
@@ -86,10 +91,11 @@ int main(int argc, char **argv)
 void read_file(char *directory, char *name)
 {
 	CvMat * image;
-	//Get us a string with the full path so we can open file
-	char *fullpath = (char *) malloc(strlen(directory)+ strlen(name) + 2);
-	if (fullpath == NULL) { exit(-5); }
-	sprintf(fullpath, "%s/%s", directory, name);
+	char *fullpath = no_pipe ? (char *) malloc(strlen(directory)+ strlen(name) + 2) : NULL;
+	if(no_pipe){
+		if (fullpath == NULL) { exit(-5); }
+		sprintf(fullpath, "%s/%s", directory, name);
+	}
 	char *read  = openImage(fullpath);
 	if(read){
 		printf("Reading: %s\n", read);
@@ -97,8 +103,8 @@ void read_file(char *directory, char *name)
 		cvShowImage( "Display window", image );            
 		cvWaitKey(42); 
 	}
-	/* use fullpath */
-	free(fullpath);
+	if(no_pipe)
+		free(fullpath);
 }
 
 static int _filter(const struct dirent *d)
@@ -108,37 +114,30 @@ static int _filter(const struct dirent *d)
 
 int readFiles(char* directory)
 {
-	
-	DIR *dir;
-	struct dirent *ent;
-	cvNamedWindow( "Display window", CV_WINDOW_AUTOSIZE ); 
-/*  
-
-	gpr_buffer input_buffer  = { NULL, 0 };
-	_read_pipe(&input_buffer);
-
-	int success = openImage(&input_buffer);
-	image = cvLoadImageM(fullpath, CV_LOAD_IMAGE_COLOR);
-	if(success ==0){
-	    cvShowImage( "Display window", image );            
-	    cvWaitKey(42); 
-	}
-	free(ent[i]);
-}
-*/
-	struct dirent **list;
-	int len, i = 0;
-	len = scandir(directory, &list, _filter, versionsort);
-	if (len != -1){
-		/* print all the files and directories within directory */
-		for(; i < len; i++){
-			read_file(directory, list[i]->d_name);
-		} 
-		free(list);
+	if(!no_pipe){
+		cvNamedWindow( "Display window", CV_WINDOW_AUTOSIZE ); 
+		mkfifo(IN_PIPE, 0666);
+		fd = open(IN_PIPE, O_RDONLY);
+		while(1){
+			read_file(directory, "null");
+		}
 	}else{
-		/* could not open directory */
-		perror ("");
-		return EXIT_FAILURE;
+		DIR *dir;
+		struct dirent *ent;
+		cvNamedWindow( "Display window", CV_WINDOW_AUTOSIZE ); 
+		struct dirent **list;
+		int len, i = 0;
+		len = scandir(directory, &list, _filter, versionsort);
+		if (len != -1){
+			for(; i < len; i++){
+				read_file(directory, list[i]->d_name);
+			} 
+			free(list);
+		}else{
+			/* could not open directory */
+			perror ("");
+			return EXIT_FAILURE;
+		}
 	}
 	return 0;
 }
@@ -155,25 +154,38 @@ char *openImage(char * filePath)
 
 	gpr_buffer output_buffer = { NULL, 0 };
 	gpr_buffer input_buffer  = { NULL, 0 };
-	printf("Reading: %s\n", filePath);
-	if( read_from_file( &input_buffer, filePath, allocator.Alloc, allocator.Free ) != 0 )
-	{
-		return 0;
+	if(no_pipe){
+		printf("Reading: %s\n", filePath);
+		if( read_from_file( &input_buffer, filePath, allocator.Alloc, allocator.Free ) != 0 )
+		{
+			return 0;
+		}
+	}else{
+		int rd = 0;
+		int sz = 0;
+		if(read(fd, &sz, sizeof(int)) != 4){
+			exit(-1);	
+		}
+		if(sz == -1){
+			exit(-2);
+		}
+		char *f = (char *) malloc(sz * sizeof(char));
+		while(rd != sz){
+			rd += read(fd, f + rd, (sz - rd));
+		}
+		input_buffer.buffer = f;
+		input_buffer.size = sz;
 	}
 
 	printf("Read:%d Bytes\n", input_buffer.size);
-	puts("Reading Metadata\n");
 	    
 	gpr_parse_metadata( &allocator, &input_buffer, &params );
-	puts("Read Metadata\n");
 	gpr_rgb_buffer rgb_buffer = { NULL, 0, 0, 0 };
 	GPR_RGB_RESOLUTION rgb_resolution = GPR_RGB_RESOLUTION_HALF;
 
 	int rgb_file_bits = 16;
-	puts("Converting\n");
 	int success = gpr_convert_gpr_to_rgb( &allocator, rgb_resolution, rgb_file_bits,  &input_buffer, &rgb_buffer );
 
-	puts("Converted\n");
 	char header_text[100];
 
 	sprintf( header_text, "P6\n%ld %ld\n65535\n", rgb_buffer.width, rgb_buffer.height );
@@ -184,11 +196,7 @@ char *openImage(char * filePath)
 		
 	memcpy( buffer_c, header_text, strlen( header_text ) );
 	memcpy( buffer_c + strlen( header_text ), rgb_buffer.buffer, rgb_buffer.size );
-	    
-	printf("Decompressed Size\n", rgb_buffer.size);
 
-	//LogPrint("Encoding %.3f secs per frame", encodeImage(&output_buffer, vc5_encoder_params, &vc5_image));
-	//Temp Write out file for giggles
 	char* output_file_path = TMP_FILE;
 	if(!_use_tmpfile){
 		output_file_path = filePath;
@@ -204,30 +212,4 @@ char *openImage(char * filePath)
    	printf("Wrote %d Bytes\n",rgb_buffer.size);
     	return output_file_path;
 }
-
-/*  
-void _read_pipe(gpr_buffer * input){
-int bytes_read = 0;
-    
-    int pipe_fd = open(INPUT_PIPE, O_RDONLY);
-    if (pipe){
-        //get size of frame
-        read(pipe_fd, input.size, sizeof(int));
-        printf("Expected frame size: %d \n", len);
-        //malloc mem for buffer
-        buffer = (unsigned char *)malloc(len);
-
-        while (bytes_read != len){
-            bytes_read += read(pipe_fd, (input.buffer+bytes_read), (len - bytes_read));
-            printf("Bytes Read: %d \nFrame Size: %d\n", bytes_read, len);
-        }
-        
-    }
-}
-*/
-
-
-
-
-
 
