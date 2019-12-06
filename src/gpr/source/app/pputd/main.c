@@ -34,17 +34,12 @@ char *out_pipe;
 char *in_dir;
 int pipe_fd;
 
-int write_file(char *f, int sz)
+void write_file(char *f, int sz)
 {
 	int bytes_written = 0;
 
 	write(pipe_fd, &sz, sizeof(int));
-
-	while (bytes_written != sz){
-		bytes_written += write(pipe_fd, f + bytes_written, 
-				(sz - bytes_written));
-	}
-
+	write(pipe_fd, f, sz);
 }
 
 static int _filter(const struct dirent *d)
@@ -55,25 +50,25 @@ static int _filter(const struct dirent *d)
 void do_dir()
 {
 	mkfifo(out_pipe, 0666);
-	DIR *dir;
-	struct dirent *ent;
 	pipe_fd = open(out_pipe, O_WRONLY);
 
 	struct dirent **list;
 	int len, i = 0;
 	len = scandir(in_dir, &list, _filter, versionsort);
-	char *path = malloc(strlen(in_dir) + 50);
 	if (len != -1){
 		for(; i < len; i++){
-			sprintf(path, "%s/%s", in_dir, list[i]->d_name);
-			FILE *f = fopen(path, "rb");
-			fseek(f, 0l, SEEK_END);
-			int l = (int) ftell(f);
-			rewind(f);
-			char *file = malloc(l);
-			fread(file, 1, l, f);
-			fclose(f);
+			char *path = malloc(strlen(in_dir) + 50);
+			sprintf(path, "%s/%s\0", in_dir, list[i]->d_name);
+			int f = open(path, O_RDONLY);
+			int l = (int) lseek(f, 0l, SEEK_END);
+			lseek(f, 0l, SEEK_SET);
+			char *file = malloc(l * sizeof(char));
+			int re = read(f, file, l);
+			printf("Read %d bytes\n", re);
+			close(f);
 			write_file(file, l);
+			free(file);
+			free(path);
 		} 
 		free(list);
 		int w = -1;

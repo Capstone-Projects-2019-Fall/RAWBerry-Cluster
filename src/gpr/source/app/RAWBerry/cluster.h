@@ -52,8 +52,10 @@ struct cluster_args{
 	char *out_dir;
 	char *rtsp_loc;
 	char *log_dir;
+	char *cam_path;
 	bool verbose;
 	bool use_rtsp;
+	bool use_cam;
 	//TODO: add additional ops as needed 
 };
 

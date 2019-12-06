@@ -31,6 +31,7 @@ static struct argp_option options[] = {
 	{"verbose", 'v', 0, 0, "Be verbose"},
 	{"quiet", 'q', 0, 0, "disable verbose"},
 	{"log-dir", 'l', "DIR", 0, "Directory to write logs to"},
+	{"use-cam", 'c', 0, 0, "Use camera"},
 	{ 0 },
 };
 struct cluster_args cargs = {
@@ -40,6 +41,7 @@ struct cluster_args cargs = {
 	.log_dir = "./log",
 	.use_rtsp = 1,
 	.verbose = true,
+	.use_cam = false,
 };
 
 
@@ -67,6 +69,9 @@ static error_t parse_opt(int key, char *arg, struct argp_state *state)
 			break;
 		case 'l':
 			cargs.log_dir = arg;
+			break;
+		case 'c':
+			cargs.use_cam = true;
 			break;
 		case ARGP_KEY_END:
 			break;
