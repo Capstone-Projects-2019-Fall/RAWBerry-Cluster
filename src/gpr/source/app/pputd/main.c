@@ -54,11 +54,12 @@ void do_dir()
 
 	struct dirent **list;
 	int len, i = 0;
+	int plen = NAME_MAX;
+	char *path = malloc(strlen(in_dir) +  plen + 50);
 	len = scandir(in_dir, &list, _filter, versionsort);
 	if (len != -1){
 		for(; i < len; i++){
-			char *path = malloc(strlen(in_dir) + 50);
-			sprintf(path, "%s/%s\0", in_dir, list[i]->d_name);
+			sprintf(path, "%s/%s", in_dir, list[i]->d_name);
 			int f = open(path, O_RDONLY);
 			int l = (int) lseek(f, 0l, SEEK_END);
 			lseek(f, 0l, SEEK_SET);
@@ -68,7 +69,6 @@ void do_dir()
 			close(f);
 			write_file(file, l);
 			free(file);
-			free(path);
 		} 
 		free(list);
 		int w = -1;
