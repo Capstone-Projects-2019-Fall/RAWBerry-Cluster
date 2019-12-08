@@ -66,9 +66,17 @@ int get_file(char **f, uint32_t *sz2)
 void do_send()
 {
 	sock_fd = socket(AF_INET, SOCK_STREAM, 0);
+	if(sock_fd == -1){
+		perror("Cannot open socket");
+		exit(1);
+	}
 	socklen_t clen;
 	int p = 1;
-	setsockopt(sock_fd, SOL_SOCKET, SO_REUSEADDR, &p, sizeof(p));
+	p = setsockopt(sock_fd, SOL_SOCKET, SO_REUSEADDR, &p, sizeof(p));
+	if(p == -1){
+		perror("Cannot set reuseaddr");
+		exit(-1);
+	}
 	struct sockaddr_in saddr, caddr;
 	memset(&saddr, 0, sizeof(saddr));
 	memset(&caddr, 0, sizeof(struct sockaddr_in));
@@ -82,6 +90,10 @@ void do_send()
 
 	mkfifo(in_pipe, 0666);
 	pipe_fd = open(in_pipe, O_RDONLY);
+	if(pipe_fd == -1){
+		perror("Cannot open pipe");
+		exit(1);
+	}
 	while(!listen(sock_fd, 1)){
 		stream_fd = accept(sock_fd, &caddr, &clen);
 		printf("Bound to %s\n", inet_ntoa(caddr.sin_addr));
@@ -107,7 +119,7 @@ void do_send()
 
 int main(int argc, char *argv[])
 {
-	if(argc <= 2){
+	if(argc >= 2){
 		in_pipe = argv[1];
 		do_send();
 	}else{
