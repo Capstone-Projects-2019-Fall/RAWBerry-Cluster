@@ -318,6 +318,18 @@ typedef struct {
     int processing_yuv_thread_quit;
 } RASPIRAW_ISP_CALLBACK_T;
 
+char * out_pipe = "/tmp/CamPipe";
+int pipe_fd;
+
+void send_dng(char *data, int sz)
+{
+	int bytes_written = 0;
+	
+	write(pipe_fd, &sz, sizeof(int));
+	write(pipe_fd, data, sz);
+	printf("Sent %d Bytes\n", sz);
+		
+}
 //write to tif
 int write_to_tiff(char* filename, MMAL_BUFFER_HEADER_T *buffer)
 {
@@ -328,15 +340,15 @@ int write_to_tiff(char* filename, MMAL_BUFFER_HEADER_T *buffer)
 
 	static const float cam_xyz[] = {
 		// R 	G     	B
-		1.000,	0.000,	0.000,	// R
-		0.000,	1.000,	0.000,	// G
-		0.000,	0.000,	1.000	// B
+		1.9549,	-0.7877,	-0.2582,	// R
+		-0.5724,	1.0121,	0.1917,	// G
+		-0.1267,	-0.0110,	0.6621	// B
 	};
 
     static const double sRGB[] = {
-        3.6156, -0.8100, -0.0837,
-        -0.3094, 1.5500, -0.5439,
-        0.0967, -0.4700, 1.9805 }; // sRGB profile
+        1.3244, -0.5501, -0.1248,
+        -0.1508, 0.9858, 0.1935,
+        -0.0270, -0.1083, 0.4366 }; // sRGB profile
 
     static const float neutral[] = { 1.0, 1.0, 1.0 }; // TODO calibrate
 
@@ -379,9 +391,10 @@ int write_to_tiff(char* filename, MMAL_BUFFER_HEADER_T *buffer)
     TIFFSetField(tif, TIFFTAG_DNGBACKWARDVERSION, "\001\0\0\0");
     TIFFSetField(tif, TIFFTAG_UNIQUECAMERAMODEL, "RAWBerry");
     TIFFSetField(tif, TIFFTAG_COLORMATRIX1, 9, cam_xyz);
+	TIFFSetField(tif, TIFFTAG_COLORMATRIX2, 9, sRGB);
     TIFFSetField(tif, TIFFTAG_ASSHOTNEUTRAL, 3, neutral);
     TIFFSetField(tif, TIFFTAG_CALIBRATIONILLUMINANT1, 21);
-  //  TIFFSetField(tif, TIFFTAG_ORIGINALRAWFILENAME, fname);
+	//  TIFFSetField(tif, TIFFTAG_ORIGINALRAWFILENAME, fname);
 
     // All Black Thumbnail
     {
@@ -409,6 +422,18 @@ int write_to_tiff(char* filename, MMAL_BUFFER_HEADER_T *buffer)
 	TIFFSetField(tif, TIFFTAG_ROWSPERSTRIP, VPIXELS);
 	TIFFWriteEncodedStrip(tif, 0, buffer->user_data, buffer->length);
     TIFFClose(tif);
+	
+	//Wrote DNG to filesystem, now send to cluster
+	puts("Sending to Cluster");
+	int file = open(filename, O_RDONLY);
+	int length = (int)lseek(file, 0l, SEEK_END);
+	lseek(file, 0l, SEEK_SET);
+	char * data = malloc(length * sizeof(char));
+	int re = read(file, data, length);
+	close(file);
+	send_dng(data, length);
+	free(data);
+	puts("sent to cluster");
     return 0;
 
 
@@ -763,7 +788,6 @@ static void callback(MMAL_PORT_T *port, MMAL_BUFFER_HEADER_T *buffer)
 	mmal_buffer_header_release(buffer);
 
 	buffers_to_rawcam(dev);
-	fprintf(stderr, "Callback finished...\n");
 }
 
 static void buffers_to_isp_op(RASPIRAW_ISP_CALLBACK_T *dev)
@@ -1544,6 +1568,10 @@ static void vr_ip_cb(MMAL_PORT_T *port, MMAL_BUFFER_HEADER_T *buffer)
 }
 
 int main(int argc, char** argv) {
+	
+	mkfifo(out_pipe, 0666);
+	pipe_fd = open(out_pipe, O_WRONLY);
+	
 	RASPIRAW_PARAMS_T cfg = { 0 };
 	RASPIRAW_CALLBACK_T dev = {
 			.cfg = &cfg,
@@ -2412,7 +2440,9 @@ component_destroy:
 		}
 		free(cfg.ptso);
 	}
-
+	int w = -1;
+	write(pipe_fd, &w, sizeof(int));
+	close(pipe_fd);
 	return 0;
 }
 
