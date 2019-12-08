@@ -36,6 +36,7 @@
 
 char *out_pipe = "/tmp/ipipe";
 char *in_addr;
+char *dec_path = "../RAWBerry-Decode/RAWBerry-Decode";
 int pipe_fd;
 int stream_fd;
 
@@ -71,7 +72,14 @@ int get_file_t(char **f, uint32_t *sz)
 
 void do_get()
 {
+	int cpid = fork();
+	if(cpid == 0){
+		execlp(dec_path, dec_path, NULL);
+		printf("Cannot exec: %s\n", dec_path);
+		exit(1);
+	}
 	mkfifo(out_pipe, 0666);
+	printf("Connecting to %s\n", in_addr);
 	pipe_fd = open(out_pipe, O_WRONLY);
 	stream_fd = socket(AF_INET, SOCK_STREAM, 0);
 	struct sockaddr_in saddr;
@@ -100,12 +108,14 @@ void do_get()
 
 int main(int argc, char *argv[])
 {
-	if(argc == 2){
+	if(argc >= 3){
+		dec_path = argv[2];
+	}
+	if(argc >= 2){
 		in_addr = argv[1];
-		do_get();
 	}else{
 		in_addr = "127.0.0.1";
-		do_get();
 	}
+	do_get();
 	return 0;
 }
