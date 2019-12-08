@@ -53,6 +53,13 @@ int init_input(struct cluster_args *args, buf_handle_t *buf)
 {
 	use_cam = args->use_cam;
 	if(use_cam){
+		int pid = fork();
+		if(pid == 0){
+			execlp(args->cam_path, args->cam_path, PIPE_CAM, "./CDNG", NULL);
+			fprintf(stderr, "Failed to exec camera: %s\n", args->cam_path);
+			exit(1);
+		}
+		mkfifo(PIPE_CAM, 0666);
 		cfd = open(PIPE_CAM, O_RDONLY);
 		return 0;
 	}
@@ -130,6 +137,8 @@ int get_frame(void **frame, struct raw_prefix **params)
 		}
 		printf("Reading %d bytes\n", sz);
 		if(sz == -1){
+			*frame = NULL;
+			*params = NULL;
 			return 1;
 		}
 		f = malloc(sz * sizeof(char));
