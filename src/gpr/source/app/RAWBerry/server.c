@@ -55,6 +55,8 @@ int init_engine(struct cluster_args *params)
 	return 0;
 }
 
+int pipe_fd;
+
 int init_stream_server(struct cluster_args *params)
 {
 	use_rtsp = params->use_rtsp;
@@ -63,12 +65,14 @@ int init_stream_server(struct cluster_args *params)
 	if(use_rtsp){
 		mkfifo(INPUT_PIPE, 0666);
 		int pid = fork();
+		
 
 		if ( pid == 0 ) {
-			execlp(rtsp_loc, "", NULL);
+			execlp(rtsp_loc, rtsp_loc, INPUT_PIPE, "out", NULL);
 			fprintf(stderr, "Failed to open rtsp at %s\n", rtsp_loc);
 			exit(-1);
 		}
+		pipe_fd = open("/tmp/pipe", O_WRONLY);
 	}else{
 		_pblen = strlen(out_dir) + 50;
 		_pbuff = malloc(_pblen);
@@ -76,6 +80,7 @@ int init_stream_server(struct cluster_args *params)
 
 	return 0;
 }
+
 
 void stream_frame(void *frame, int sz, int frnum)
 {
@@ -92,14 +97,12 @@ void stream_frame(void *frame, int sz, int frnum)
 	}else{
 		int bytes_written = 0;
 
-		int pipe_fd = open("/tmp/pipe", O_WRONLY);
 		write(pipe_fd, &sz, sizeof(int));
 
 		while (bytes_written != sz){
 			bytes_written += write(pipe_fd, frame, 
 					(sz - bytes_written));
 		}
-		close(pipe_fd);
 		VLOGF("Wrote: %d Bytes\n", bytes_written);
 	}
 }

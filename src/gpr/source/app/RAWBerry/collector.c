@@ -15,7 +15,7 @@
  *
  * =============================================================================
  */
-
+#include <string.h>
 #include <stdlib.h>
 #include <mpi.h>
 #include <unistd.h>
@@ -60,9 +60,10 @@ int _coll_recv_frame(MPI_Status *s, void **frame, int *sz)
 	return errc;
 }
 
-void _coll_stream_frame(void *frame, int sz)
+static void _actual_stream(void *frame, int sz)
 {
 	uint32_t fnum = *(uint32_t *)(frame);
+
 	VLOGF("Streaming frame %d\n", fnum);
 	stream_frame((uint8_t *)frame + 4, sz - 4, fnum);
 	if(fnum == _lframe){
@@ -71,7 +72,50 @@ void _coll_stream_frame(void *frame, int sz)
 		exit_mpi();
 		exit(0);
 	}
-	
+	free(frame);
+}
+
+uint32_t wait_on = 0;
+static int *idxs = NULL;
+static int *szs = NULL;
+static void **frms = NULL;
+static int imx = 0, iac = 0;
+
+static void _clr_blog()
+{
+	int i;
+start:	i = 0;
+	for(; i < imx; i++){
+		if(idxs[i] == wait_on){
+			_actual_stream(frms[i], szs[i]);
+			wait_on++;
+			memmove(idxs + i, idxs + i + 1, sizeof(int) * (imx - i - 1));
+			memmove(szs + i, szs + i + 1, sizeof(int) * (imx - i - 1));
+			memmove(frms + i, frms + i + 1, sizeof(void *) * (imx - i - 1));
+			imx--;
+			goto start;
+		}
+	}
+
+}
+
+void _coll_stream_frame(void *frame, int sz)
+{
+	uint32_t fnum = *(uint32_t *)(frame);
+	if(fnum == wait_on){
+		wait_on++;
+		_actual_stream(frame, sz);
+		if(imx){ _clr_blog(); }
+	}else{
+		imx++;
+		idxs = realloc(idxs, sizeof(int) * imx);
+		frms = realloc(frms, sizeof(void *) *  imx);
+		szs = realloc(szs, sizeof(int) * imx);
+		idxs[imx - 1] = fnum;
+		frms[imx - 1] = frame;
+		szs[imx - 1] = sz;
+		return;
+	}
 }
 
 static struct reply *_coll_bcast_recv(MPI_Status *st)
@@ -107,7 +151,6 @@ int collector(struct cluster_args *args)
 			case A_FRAME_AVALIBLE:
 				_coll_recv_frame(&stat, &cframe, &sz);
 				_coll_stream_frame(cframe, sz);
-				free(cframe);
 				break;
 			case A_BCAST_RECV:
 				_coll_bcast_recv(&stat);
