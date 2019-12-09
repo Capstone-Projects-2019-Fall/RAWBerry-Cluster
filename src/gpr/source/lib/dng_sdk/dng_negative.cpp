@@ -3031,11 +3031,11 @@ void dng_negative::Parse (dng_host &host,
 				if (!profile->IsValid (shared.fCameraProfile.fColorPlanes))
 					{
 					
-					ThrowBadFormat ();
+					//ThrowBadFormat ();
 					
 					}
 				
-				profile->SetWasReadFromDNG ();
+				//profile->SetWasReadFromDNG ();
 				
 				AddProfile (profile);
 				
