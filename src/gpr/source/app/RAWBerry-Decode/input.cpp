@@ -183,12 +183,12 @@ char *openImage(char * filePath)
 	gpr_rgb_buffer rgb_buffer = { NULL, 0, 0, 0 };
 	GPR_RGB_RESOLUTION rgb_resolution = GPR_RGB_RESOLUTION_HALF;
 
-	int rgb_file_bits = 16;
+	int rgb_file_bits = 8;
 	int success = gpr_convert_gpr_to_rgb( &allocator, rgb_resolution, rgb_file_bits,  &input_buffer, &rgb_buffer );
 
 	char header_text[100];
 
-	sprintf( header_text, "P6\n%ld %ld\n65535\n", rgb_buffer.width, rgb_buffer.height );
+	sprintf( header_text, "P6\n%ld %ld\n255\n", rgb_buffer.width, rgb_buffer.height );
 		
 	output_buffer.size   = rgb_buffer.size + strlen( header_text );
 	output_buffer.buffer = allocator.Alloc( output_buffer.size );
