@@ -175,11 +175,11 @@ void gpr_parameters_set_defaults(gpr_parameters *x) {
     gpr_profile_info_set_defaults(&x->profile_info);
     gpr_tuning_info_set_defaults(&x->tuning_info);
 
-    x->enable_preview = true;
+    x->enable_preview = false;
 
     x->compute_md5sum = false;
 
-    x->fast_encoding = false;
+    x->fast_encoding = true;
 }
 
 void gpr_parameters_construct_copy(const gpr_parameters *y, gpr_parameters *x, gpr_malloc mem_alloc) {

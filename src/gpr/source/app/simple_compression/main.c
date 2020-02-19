@@ -46,8 +46,12 @@ void convert(char *path_in, char *path_out) {
     // defaults: enable preview - true, compute md5sum - false, fast encoding - false, etc.
     gpr_parameters_set_defaults(&params);
 
-    // SDK DOES read this from DNG input - tested with debugger. No need to hardcode
-//    params.tuning_info.pixel_format = PIXEL_FORMAT_GBRG_12; // GBRG 12bit pixels packed into 16bits
+    // disabling preview and enabling fast encoding reduces file size and compression time
+//    params.enable_preview = false;
+//    params.fast_encoding = true;
+
+    // SDK DOES read this from DNG input - tested with debugger - but there is another factor affecting the output
+    params.tuning_info.pixel_format = PIXEL_FORMAT_GBRG_12; // GBRG 12bit pixels packed into 16bits
 
     // create gpr_buffer struct
     gpr_buffer input_buffer = {NULL, 0};
@@ -63,7 +67,7 @@ void convert(char *path_in, char *path_out) {
     // make an output buffer
     gpr_buffer outb = {NULL, 0};
 
-    // Do the thing...
+    // Do the thing... - notice params are detected from picture input (set breakpoint)
     gpr_convert_dng_to_gpr(&a, &params, &input_buffer, &outb);
 
     FILE *f = fopen(path_out, "wb");
