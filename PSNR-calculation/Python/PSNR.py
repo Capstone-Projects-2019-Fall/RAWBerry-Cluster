@@ -2,6 +2,10 @@ import numpy
 import math
 import cv2
 
+"""
+This script was originally used on different proprietary camera 
+formats, such as Leica and DJI formats.
+"""
 
 def psnr(img1, img2):
     if (img1.shape[0] != img2.shape[0]) | (img1.shape[1] != img1.shape[1]):
@@ -23,5 +27,3 @@ for x in range(1, 3):
 
     print(psnr(original, compressed))
 
-# db = psnr(original, compressed)
-# print(db)
