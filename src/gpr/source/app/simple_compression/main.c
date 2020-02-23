@@ -47,9 +47,6 @@ void convert(char *path_in, char *path_out) {
     gpr_parameters_set_defaults(&params);
 
     // disabling preview and enabling fast encoding reduces file size and compression time
-//    params.enable_preview = false;
-//    params.fast_encoding = true;
-
     // SDK DOES read this from DNG input - tested with debugger - but there is another factor affecting the output
     params.tuning_info.pixel_format = PIXEL_FORMAT_GBRG_12; // GBRG 12bit pixels packed into 16bits
 

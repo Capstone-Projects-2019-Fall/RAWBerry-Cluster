@@ -71,7 +71,9 @@
         } gpr_parameters;
         
         void gpr_parameters_set_defaults(gpr_parameters* x);
-        
+
+        void gpr_parameters_set_optimal(gpr_parameters* x);
+
         void gpr_parameters_construct_copy(const gpr_parameters* y, gpr_parameters* x);
         
         void gpr_parameters_destroy(gpr_parameters* x, gpr_free mem_free);

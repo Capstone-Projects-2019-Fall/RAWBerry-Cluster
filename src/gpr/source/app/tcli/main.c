@@ -16,6 +16,7 @@
  */
 #define _DEFAULT_SOURCE
 #define _BSD_SOURCE
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -34,88 +35,86 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 
+/// tcli - CLIENT
+
 char *out_pipe = "/tmp/ipipe";
 char *in_addr;
 char *dec_path = "../RAWBerry-Decode/RAWBerry-Decode";
 int pipe_fd;
 int stream_fd;
 
-void write_file(char *f, int sz)
-{
-	int bw = 0;
-	
-	write(pipe_fd, &sz, sizeof(int));
-	while(bw < sz)
-		bw += write(pipe_fd, f, sz);
+void write_file(char *f, int sz) {
+    int bw = 0;
+
+    write(pipe_fd, &sz, sizeof(int));
+    while (bw < sz)
+        bw += write(pipe_fd, f, sz);
 }
 
 
-int get_file_t(char **f, uint32_t *sz)
-{
-	int rd = 0;
+int get_file_t(char **f, uint32_t *sz) {
+    int rd = 0;
 
-	if(recv(stream_fd, sz, sizeof(int), 0) != 4){
-		perror("Failed to get connection");
-		exit(-1);	
-	}
-	*sz = ntohl(*sz);
-	printf("Reading %u bytes\n", *sz);
-	if(*sz == 0){
-		return 0;
-	}
-	*f = malloc(*sz * sizeof(char));
-	while(rd != *sz){
-		rd += recv(stream_fd, *f + rd, (*sz - rd), 0);
-	}
-	return 1;
+    if (recv(stream_fd, sz, sizeof(int), 0) != 4) {
+        perror("Failed to get connection");
+        exit(-1);
+    }
+    *sz = ntohl(*sz);
+    printf("Reading %u bytes\n", *sz);
+    if (*sz == 0) {
+        return 0;
+    }
+    *f = malloc(*sz * sizeof(char));
+    while (rd != *sz) {
+        rd += recv(stream_fd, *f + rd, (*sz - rd), 0);
+    }
+    return 1;
 }
 
-void do_get()
-{
-	int cpid = fork();
-	if(cpid == 0){
-		execlp(dec_path, dec_path, NULL);
-		printf("Cannot exec: %s\n", dec_path);
-		exit(1);
-	}
-	mkfifo(out_pipe, 0666);
-	printf("Connecting to %s\n", in_addr);
-	pipe_fd = open(out_pipe, O_WRONLY);
-	stream_fd = socket(AF_INET, SOCK_STREAM, 0);
-	struct sockaddr_in saddr;
-	memset(&saddr, 0, sizeof(saddr));
-	saddr.sin_family = AF_INET;
-	saddr.sin_port = htons(1337);
-	if(!inet_aton(in_addr, &saddr.sin_addr)){
-		printf("Bad ip address: %s\n", in_addr);
-		exit(-1);
-	}
-	if(connect(stream_fd, (struct sockaddr *) &saddr, sizeof(saddr))){
-		perror("Failed to connect");
-		exit(-2);
-	}
-	char *f;
-	uint32_t sz = 0;
-	while(get_file_t(&f, &sz)){
-		write_file(f, sz);
-		free(f);
-		sz = 0;
-	}
-	sz = -1;
-	write(pipe_fd, &sz, sizeof(int));
-	close(pipe_fd);
+void do_get() {
+    int cpid = fork();
+    if (cpid == 0) {
+        execlp(dec_path, dec_path, NULL);
+        printf("Cannot exec: %s\n", dec_path);
+        exit(1);
+    }
+    mkfifo(out_pipe, 0666);
+    printf("Connecting to %s\n", in_addr);
+    pipe_fd = open(out_pipe, O_WRONLY);
+    stream_fd = socket(AF_INET, SOCK_STREAM, 0);
+    struct sockaddr_in saddr;
+    memset(&saddr, 0, sizeof(saddr));
+    saddr.sin_family = AF_INET;
+    saddr.sin_port = htons(1337);
+    if (!inet_aton(in_addr, &saddr.sin_addr)) {
+        printf("Bad ip address: %s\n", in_addr);
+        exit(-1);
+    }
+    if (connect(stream_fd, (struct sockaddr *) &saddr, sizeof(saddr))) {
+        perror("Failed to connect");
+        exit(-2);
+    }
+    char *f;
+    uint32_t sz = 0;
+    while (get_file_t(&f, &sz)) {
+        write_file(f, sz);
+        free(f);
+        sz = 0;
+    }
+    sz = -1;
+    write(pipe_fd, &sz, sizeof(int));
+    close(pipe_fd);
 }
 
-int main(int argc, char *argv[])
-{
-	if(argc >= 3){
-		dec_path = argv[2];
-	}
-	if(argc >= 2){
-		in_addr = argv[1];
-	}else{
-		in_addr = "127.0.0.1";
-	}
-	do_get();
-	return 0;
+int main(int argc, char *argv[]) {
+    if (argc >= 3) {
+        dec_path = argv[2];
+    }
+    if (argc >= 2) {
+        in_addr = argv[1];
+    } else {
+        in_addr = "127.0.0.1";
+    }
+    do_get();
+    return 0;
 }
