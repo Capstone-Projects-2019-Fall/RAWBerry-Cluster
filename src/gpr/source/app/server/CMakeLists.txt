@@ -1,5 +1,5 @@
 # executable
-set( EXE_NAME simple_compress )
+set( EXE_NAME server )
 
 
 
@@ -17,20 +17,21 @@ include_directories( "../../lib/vc5_common" )
 include_directories( "../../lib/common/private" )
 include_directories( "../simple_compression" )
 
+
 include_directories(${MPI_INCLUDE_PATH})
 
 if(EXISTS "${CMAKE_SOURCE_DIR}/source/lib/vc5_decoder")
-  include_directories( "../../lib/vc5_decoder" )
-  add_definitions("-DGPR_READING=1")
+    include_directories( "../../lib/vc5_decoder" )
+    add_definitions("-DGPR_READING=1")
 else(EXISTS "${CMAKE_SOURCE_DIR}/source/lib/vc5_decoder")
-  add_definitions("-DGPR_READING=0")
+    add_definitions("-DGPR_READING=0")
 endif(EXISTS "${CMAKE_SOURCE_DIR}/source/lib/vc5_decoder")
 
 if(EXISTS "${CMAKE_SOURCE_DIR}/source/lib/vc5_encoder")
-  include_directories( "../../lib/vc5_encoder" )
-  add_definitions("-DGPR_WRITING=1")
+    include_directories( "../../lib/vc5_encoder" )
+    add_definitions("-DGPR_WRITING=1")
 else(EXISTS "${CMAKE_SOURCE_DIR}/source/lib/vc5_encoder")
-  add_definitions("-DGPR_WRITING=0")
+    add_definitions("-DGPR_WRITING=0")
 endif(EXISTS "${CMAKE_SOURCE_DIR}/source/lib/vc5_encoder")
 
 include_directories( "../../lib/md5_lib" )
@@ -38,10 +39,10 @@ include_directories( "../../lib/dng_sdk" )
 include_directories( "../../lib/gpr_sdk/public" )
 
 if(EXISTS "${CMAKE_SOURCE_DIR}/source/lib/tiny_jpeg")
-  include_directories( "../../lib/tiny_jpeg" )
-  add_definitions("-DGPR_JPEG_AVAILABLE=1")  
+    include_directories( "../../lib/tiny_jpeg" )
+    add_definitions("-DGPR_JPEG_AVAILABLE=1")
 else(EXISTS "${CMAKE_SOURCE_DIR}/source/lib/tiny_jpeg")
-  add_definitions("-DGPR_JPEG_AVAILABLE=0")
+    add_definitions("-DGPR_JPEG_AVAILABLE=0")
 endif(EXISTS "${CMAKE_SOURCE_DIR}/source/lib/tiny_jpeg")
 
 # add executable
@@ -51,23 +52,23 @@ add_executable( ${EXE_NAME} ${GPRTOOLS_SRC_FILES} ${GPRTOOLS_INC_FILES} )
 target_link_libraries( ${EXE_NAME} gpr_sdk )
 
 if(EXISTS "${CMAKE_SOURCE_DIR}/source/lib/tiny_jpeg")
-  target_link_libraries( ${EXE_NAME} tiny_jpeg )
+    target_link_libraries( ${EXE_NAME} tiny_jpeg )
 endif(EXISTS "${CMAKE_SOURCE_DIR}/source/lib/tiny_jpeg")
 
 target_link_libraries( ${EXE_NAME} dng_sdk xmp_core )
 
 if(EXISTS "${CMAKE_SOURCE_DIR}/source/lib/vc5_decoder")
-  target_link_libraries( ${EXE_NAME} vc5_decoder )
+    target_link_libraries( ${EXE_NAME} vc5_decoder )
 endif(EXISTS "${CMAKE_SOURCE_DIR}/source/lib/vc5_decoder")
 
 if(EXISTS "${CMAKE_SOURCE_DIR}/source/lib/vc5_encoder")
-  target_link_libraries( ${EXE_NAME} vc5_encoder )
+    target_link_libraries( ${EXE_NAME} vc5_encoder )
 endif(EXISTS "${CMAKE_SOURCE_DIR}/source/lib/vc5_encoder")
 
 target_link_libraries( ${EXE_NAME} vc5_common common md5_lib expat_lib cJSON argument_parser )
 
 
-# In order to use Carbon API, define qEnableCarbon in gpr_platform.h and uncomment code below 
+# In order to use Carbon API, define qEnableCarbon in gpr_platform.h and uncomment code below
 # if (APPLE)
 #	target_link_libraries( ${EXE_NAME} "-framework Carbon" )
 # endif (APPLE)

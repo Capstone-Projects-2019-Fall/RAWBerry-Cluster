@@ -74,6 +74,8 @@ add_subdirectory( "source/app/RAWBerry-Decode" )
 add_subdirectory( "source/app/rtsp" )
 add_subdirectory( "source/app/pputd" )
 add_subdirectory( "source/app/simple_compression" )
+add_subdirectory( "source/app/server" )
+add_subdirectory( "source/app/client" )
 
 add_subdirectory( "source/app/tsvr" )
 add_subdirectory( "source/app/tcli" )
