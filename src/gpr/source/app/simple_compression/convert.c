@@ -4,6 +4,7 @@
 
 #include "convert.h"
 
+
 void convert(char *path_in, char *path_out) {
 
     // Allocate a buffer to read into
@@ -49,4 +50,35 @@ void convert(char *path_in, char *path_out) {
     free(input_buffer.buffer);
     free(outb.buffer);
 
+}
+
+void read_convert_dir(char *dirin, char *dirout) {
+
+    // structure describing an open directory.
+    DIR *dir;
+    // returns handle to the directory opened - to be used with readdir()
+    dir = opendir(dirin);
+
+    // used to return information about directory entries
+    struct dirent *ent;
+
+    // each time readdir() is called with the dir handle, it returns the filename of the next file in the directory
+    while ((ent = readdir(dir))) {
+        if (*(ent->d_name) == '.') {
+            // Force next iteration - filters out current dir and parent dir results (hidden)
+            continue;
+        }
+
+        // allocate space for path string
+        char *fullpath = malloc(strlen(dirin)
+                                + strlen(ent->d_name) + 2);
+        char *out = malloc(strlen(dirout) + strlen(ent->d_name) + 2);
+        if (!fullpath || !out) {
+            exit(5);
+            /* Uh We Might be F****d here? Whatever */
+        }
+        sprintf(fullpath, "%s/%s", dirin, ent->d_name);
+        sprintf(out, "%s/%s", dirout, ent->d_name);
+        convert(fullpath, out);
+    }
 }

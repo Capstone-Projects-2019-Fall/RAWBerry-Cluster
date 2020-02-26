@@ -1,9 +1,9 @@
 //
-// Created by Christian Lomboy on 2/24/20.
+// Created by Christian Lomboy on 2/26/20.
 //
 
-#ifndef GPR_CONVERT_H
-#define GPR_CONVERT_H
+#ifndef GPR_SERVER_H
+#define GPR_SERVER_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,17 +18,20 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
 
 
 #include "gpr.h"
 #include "gpr_allocator.h"
 #include "gpr_buffer.h"
+//#include "../../lib/vc5_encoder/vc5_encoder.h"
 #include "vc5_encoder.h"
 #include "timer.h"
 #include "config.h"
 
-void convert(char *path_in, char *path_out);
+int create_client_socket(int port, const int* s_sock);
 
-void read_convert_dir(char *dirname, char *dirout);
+int send_dir(char *dirin, char *dirsend);
 
-#endif //GPR_CONVERT_H
+#endif //GPR_SERVER_H

@@ -31,6 +31,7 @@ int main() {
         printf("Error making connection to remote socket \n\n");
     }
 
+    // TODO implement multiple files being read from client
     // read picture size
     printf("Reading picture size...\n");
     int size;
