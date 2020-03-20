@@ -16,7 +16,7 @@ void convert(char *path_in, char *path_out) {
     // Struct for image parameters (input width, height, fast encoding, preview image, etc.)
     gpr_parameters params;
     // defaults: enable preview - true, compute md5sum - false, fast encoding - false, etc.
-    gpr_parameters_set_defaults(&params);
+    gpr_parameters_set_optimal(&params);
 
     // disabling preview and enabling fast encoding reduces file size and compression time
     // SDK DOES read this from DNG input - tested with debugger - but there is another factor affecting the output
